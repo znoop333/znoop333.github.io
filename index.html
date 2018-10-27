@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Dave&#039;s programming blog | Turning tea into code </title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://www.djohn89.com/blog/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://www.djohn89.com/blog/wp-content/themes/twentyfourteen/js/html5.js"></script>
+	<![endif]-->
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Dave&#039;s programming blog &raquo; Feed" href="http://www.djohn89.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dave&#039;s programming blog &raquo; Comments Feed" href="http://www.djohn89.com/blog/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.djohn89.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='http://www.djohn89.com/blog/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfourteen-style-css'  href='http://www.djohn89.com/blog/wp-content/themes/twentyfourteen/style.css?ver=4.9.3' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfourteen-ie-css'  href='http://www.djohn89.com/blog/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='sccss_style-css'  href='http://www.djohn89.com/blog?sccss=1&#038;ver=4.9.3' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.djohn89.com/blog/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.djohn89.com/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.djohn89.com/blog/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.djohn89.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.djohn89.com/blog/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.3" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="home blog masthead-fixed list-view full-width grid">
+<div id="page" class="hfeed site">
+	
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="http://www.djohn89.com/blog/" rel="home">Dave&#039;s programming blog</a></h1>
+
+			<div class="search-toggle">
+				<a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container">Search</a>
+			</div>
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle">Primary Menu</button>
+				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+				<div id="primary-menu" class="nav-menu"></div>
+			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+				<form role="search" method="get" class="search-form" action="http://www.djohn89.com/blog/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>			</div>
+		</div>
+	</header><!-- #masthead -->
+
+	<div id="main" class="site-main">
+
+<div id="main-content" class="main-content">
+
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+		
+<article id="post-240" class="post-240 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2018/05/extending-wonderware-with-rabbitmq/" rel="bookmark">Extending Wonderware with RabbitMQ</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2018/05/extending-wonderware-with-rabbitmq/" rel="bookmark"><time class="entry-date" datetime="2018-05-14T10:16:58+00:00">May 14, 2018</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p>Wonderware makes excellent HMIs (computer displays in an industrial environment), but what if you have a large legacy C# application that you want to use with Wonderware without paying for more licenses? I ran into this situation recently, and I came up with the following solution: create an &#8220;adapter&#8221; program that provides <a href="https://www.rabbitmq.com/">RabbitMQ</a> functionality inside the Wonderware galaxy.</p>
+<p>Specifically, load the <a href="https://www.wonderware.com/hmi-scada/toolkits/">MX Access Toolkit</a> DLL and the RabbitMQ.NET client, and translate messages in between them. So if you get a RabbitMQ message that says &#8220;change Wonderware attribute X to a new value Y&#8221;, then the adapter does the equivalent operation in the Galaxy using the MX Access Toolkit. If a Wonderware attribute changes value (using MX Access subscribe()), then post a RabbitMQ message indicating the updated value to non-Wonderware clients who read messages from RabbitMQ. I used JSON for the message format because it&#8217;s simple, universally supported, and not too big.</p>
+<p>This approach provides bi-directional communication between everything in Wonderware and everything outside Wonderware, using RabbitMQ as the universal platform for exchanging messages. RabbitMQ is free (but commercial support is available from Pivotal), fast, and very reliable. RabbitMQ can also reach web applications using WebSTOMP (i.e., Javascript) and non-C# applications using the other client libraries (Java, C++, Python, etc.).</p>
+<p>Limitations of this approach: Wonderware is expensive, so if you just want a PLC communication library, you should use Kepware. Obviously, you&#8217;re not going get tech support for extending Wonderware in this way, and since you&#8217;re avoiding a lot of license fees per computer (Platform, ArchestrA license), you won&#8217;t get any help from the sales department either. Also, Wonderware now includes its own webserver, so you could just use that for your web applications.</p>
+<p>For more details, see the source code at <a href="https://github.com/znoop333/RMQWonderwareAdapter">https://github.com/znoop333/RMQWonderwareAdapter</a></p>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-236" class="post-236 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2018/01/presentation-using-big-data-from-automotive-assembly-errors/" rel="bookmark">Presentation &#8211; Using Big Data from Automotive Assembly Errors</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2018/01/presentation-using-big-data-from-automotive-assembly-errors/" rel="bookmark"><time class="entry-date" datetime="2018-01-27T13:09:13+00:00">January 27, 2018</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p>Here is a link to the slides (<a href="https://docs.google.com/presentation/d/1w3nDW61PHT1FMIiVjEIpNYHYvJ9M8jJm4r2Q8wTdE40/edit?usp=sharing">Google slides</a>)</p>
+<p>Presented at FoxCon Toledo Software Developers Conference, Toledo, OH, on 1/27/2018.</p>
+<p>Abstract:</p>
+<p>Electronic torque tools used in automobile production produce a large amount of data as workers and robots physically assemble a vehicle. This data includes alarms and errors for various potential defects such as rehit bolts, cross-threaded bolts, incorrectly removed bolts, failure to achieve torque within engineering specifications, etc. In his presentation David will reveal how an analysis of this data can yield new insights into the causes of operator errors and solutions in new quality auditing systems, both on and off the production line.</p>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-234" class="post-234 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2018/01/foxcon-toledo-2018-abstracts/" rel="bookmark">FoxCon Toledo 2018 Abstracts</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2018/01/foxcon-toledo-2018-abstracts/" rel="bookmark"><time class="entry-date" datetime="2018-01-26T11:23:54+00:00">January 26, 2018</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<h1><strong>FoxCon Toledo 2018 </strong>Conference Presentation Abstracts</h1>
+<p>Park Inn Hotel, Toledo, Ohio. January 27th &amp; 28th, 2018</p>
+<p><strong>Bob Pierce</strong>               Allentown</p>
+<p><span style="color: #ff00ff;">Living in a Legacy World</span></p>
+<p>Last year Bob showed a case study of automating Smooth-On Corp., a large chemical manufacturing plant in Allentown, using Visual FoxPro. This year he will delve into the issues and opportunities of the process of migrating a large legacy application while still having to maintain and actively develop it to meet current demand.  He will be discussing how the business model changes over time to transition from entrepreneurial to corporate and the role of senior (Legacy) management in transitioning the business to the next generation to ensure future growth and viability.  This session is designed to be interactive, so your input is welcome.</p>
+<p><strong>Dave Bernard</strong>           Atlanta</p>
+<p><span style="color: #ff00ff;">Lessons Learned from 40 Years of Software Development</span></p>
+<p>Well, 39 years, to be exact. Since the late 70&#8217;s, Dave has worked on many software development projects (over 75 since 2000 alone), including mainframe, minicomputer, microcomputer, and mobile platforms, for many different industries, and in multiple countries. Dave will share a number of technical and non-technical lessons he&#8217;s learned over that time, some that are obvious, some that are not-so-obvious, and some that are counterintuitive and even controversial. Dave expects this presentation to have a high interaction-to-material ratio.</p>
+<p><strong>David Johnson</strong>          Toledo</p>
+<p><span style="color: #ff00ff;">Big Data from Automotive Assembly Errors</span></p>
+<p>Electronic torque tools used in automobile production produce a large amount of data as workers and robots physically assemble a vehicle.  This data includes alarms and errors for various potential defects such as rehit bolts, cross-threaded bolts, incorrectly removed bolts, failure to achieve torque within engineering specifications, etc.  In his presentation David will reveal how an analysis of this data can yield new insights into the causes of operator errors and solutions in new quality auditing systems, both on and off the production line.</p>
+<p>David Johnson is a Systems Control And Data Acquisition (SCADA) programmer at the Toledo South Assembly Plant, which has built the Jeep Wrangler from 2006 until April. After then, the plant will retool to produce the new Jeep Scrambler pickup truck, available to consumers in mid to late 2019. The new 2018 Jeep Wrangler is now available from the Toledo North Assembly Plant.</p>
+<p><strong>Doug Hennig</strong>          Winnipeg</p>
+<p><span style="color: #ff00ff;">Practical Uses of wwDotNetBridge to Extend Your VFP Applications</span></p>
+<p>wwDotNetBridge lets you call just about any .NET code directly from Visual FoxPro and helps overcome most of the limitations of regular .NET COM interop. This library by Rick Strahl allows you to provide .NET functionality to your Visual FoxPro applications that wouldn&#8217;t otherwise be available. In this session, you&#8217;ll see many practical examples that show how you can add new capabilities to your applications that would be difficult or impossible to achieve natively in Visual FoxPro.</p>
+<p><span style="color: #ff00ff;">Creating Beautiful Web Sites Easily Using Bootstrap</span></p>
+<p>Laying out a web page using HTML and CSS can be challenging. Do you use the older table mechanism or CSS floats to place objects side-by-side? How do you deal with differences in browsers? And what about handling different devices: phones, tablets, laptops, and desktops?</p>
+<p>Bootstrap is a free, open source framework for developing responsive, mobile-first web sites. It solves many problems web developers typically face and makes it easy to create beautiful web sites in record time, even for inexperienced developers.</p>
+<p>This session shows how to get started with Bootstrap, examines using its grid system to easily layout your page elements, and discusses how Bootstrap components add attractive and functional elements to your web site. We&#8217;ll do a &#8220;makeover&#8221; of a real web site to show how easy is it to make it more attractive, functional, and mobile-friendly.</p>
+<p><strong>Kevin Cully</strong>               Atlanta</p>
+<p><span style="color: #ff00ff;">Accessing and manipulating application data using Xojo</span></p>
+<p>Xojo is a great tool for programmers who are used to developing in Visual Foxpro and Microsoft .NET. It allows application development, not just only Windows, but also Mac, Linux, Web, and iOS. This presentation will focus on the various techniques used in Xojo accesses to update data: SQL Pass Through, SQL Prepared Statements, and Object Relational Mapping.</p>
+<p>For the last two years Kevin has a Senior Business Analyst and a DBA for the Cherokee County Government, deploying Xojo based solutions in a variety of county operational units. Kevin has two boys in college and a small farm where he lives with his wife and two dogs where they grow blueberries.</p>
+<p><strong>Mike Levy</strong>              Cincinnati</p>
+<p><span style="color: #ff00ff;">Given I have to test, when I do, then it should be cool</span></p>
+<p>The goal of this quick talk is to build awareness around a set of testing tools, commonly used in the Behavior-Driven Development space (BDD) for codifying acceptance criteria, but are additionally useful for the entire testing triangle.</p>
+<p><strong>Ondrej Balas</strong>          Detroit</p>
+<p><span style="color: #ff00ff;">Open Source Game Development in the .NET Ecosystem</span></p>
+<p>With so many frameworks to choose from, aspiring game developers are often overwhelmed with options. In this session we&#8217;ll explore the decisions that go into choosing the right framework for your project. Next we&#8217;ll look at one in particular: Duality. Duality is a flexible and open source framework for developing 2D games with .NET. I&#8217;ll show you the fundamental patterns and principles behind game development and walk you through creating a simple game in Duality.</p>
+<p>Ondrej Balas is the owner of UseTech Design, a Michigan-based development company that focuses primarily on .NET and other Microsoft technologies. Ondrej is also a Microsoft MVP in Visual Studio and Development Technologies, a writer for Visual Studio Magazine, and is very active in the Michigan software development community. Ondrej works across many industries including finance, healthcare, manufacturing, and logistics. Areas of expertise include similarity and matching across large data sets, algorithm design, distributed architecture, and software development practices.</p>
+<p><strong>Sam Nasr</strong>             Cleveland</p>
+<p><span style="color: #ff00ff;">Data Time Travel with Temporal Tables</span></p>
+<p>SQL Server 2016 introduced Temporal Tables, allowing a developer to retrieve data from a specific point in time, without backups.  With a few TSQL commands a historical table can be created, automatically updated, and readily accessed.</p>
+<p>Sam Nasr has been a software developer since 1995, focusing mostly on Microsoft technologies. Having achieved multiple certifications from Microsoft (MCSA, MCAD, MCTS, and MCT), Sam develops, teaches, and tours the country to present various topics in .Net. He’s involved with the Cleveland C#/VB.Net User Group, where he has been the group leader since 2003. In addition, he’s the leader of the .Net Study Group, an author for Visual Studio Magazine, and a Microsoft MVP since 2013.  When not coding, Sam loves spending time with his family and friends or volunteering at his local church.</p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-227" class="post-227 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2018/01/foxcon-toledo-2018-schedule/" rel="bookmark">FoxCon Toledo 2018 Schedule</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2018/01/foxcon-toledo-2018-schedule/" rel="bookmark"><time class="entry-date" datetime="2018-01-21T20:30:54+00:00">January 21, 2018</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p><span style="color: #003300;"><strong>FoxCon Toledo 2018</strong></span></p>
+<p>Conference Presentation Schedule</p>
+<p>Park Inn Hotel, Toledo, Ohio</p>
+<p>January 27th &amp; 28th, 2018</p>
+<h2><span style="color: #003300;">Saturday January 27</span></h2>
+<p><u>Time</u>    <u>Speaker</u>         <u>Topic</u></p>
+<p>08:00-09:00 <strong>Bob Ruple</strong>       <span style="color: #ff00ff;">Opening Comments</span></p>
+<p>09:00-10:15 <strong>Bob Pierce     </strong><span style="color: #ff00ff;">Living in a Legacy World</span></p>
+<p>10:15-10:30                Break</p>
+<p>10:30-11:45 <strong>Doug Hennig     </strong><span style="color: #ff00ff;">Practical Uses of wwDotNetBridge to Extend Your VFP Applications</span></p>
+<p><span style="color: #003300;"><strong>11:45-12:45 pm</strong><strong>              </strong><strong>Lunch at Park Inn Hotel</strong></span></p>
+<p>12:45-02:00 <strong>Sam Nasr </strong>       <span style="color: #ff00ff;">Data Time Travel with Temporal Tables</span></p>
+<p>02:00-02:15                 Break</p>
+<p>02:15-03:15 <strong>David Johnson</strong>   <span style="color: #ff00ff;">Using Big Data from Automotive Assembly Errors</span></p>
+<p>03:15-03:30                Break</p>
+<p>03:30-04:45 <strong>Dave Bernard    </strong><span style="color: #ff00ff;">Lessons Learned from 40 Years of Software Development</span></p>
+<p>06:30 Cocktails</p>
+<p>07:30 Dinner</p>
+<h2><span style="color: #003300;">Sunday January 28</span></h2>
+<p><u>Time</u>      <u>Speaker </u>       <u>Topic</u></p>
+<p>08:30-09:00 <strong>Bob Ruple</strong>       <span style="color: #ff00ff;">Opening Comments</span></p>
+<p>09:00-10:15 <strong>Ondrej Balas</strong>   <span style="color: #ff00ff;">Open Source Game Development in the .NET Ecosystem</span></p>
+<p>10:15-10:30                Break</p>
+<p>10:30-11:45 <strong>Kevin Cully</strong>        <span style="color: #ff00ff;">Accessing and manipulating application data using Xojo</span></p>
+<p><strong>    <span style="color: #003300;">11:45-12:45 pm</span></strong><span style="color: #003300;"><strong>              </strong><strong>Lunch at Park Inn Hotel</strong></span></p>
+<p>12:45-01:15 <strong>Mike Levy </strong>      <span style="color: #ff00ff;">Given I have to test, when I do, then it should be cool</span></p>
+<p>01:15-01:30                Break</p>
+<p>01:30-02:45 <strong>Doug Hennig       </strong><span style="color: #ff00ff;">Creating Beautiful Web Sites Easily Using Bootstrap</span></p>
+<p>02:45-03:00               <span style="color: #ff00ff;"> Closing Comments</span></p>
+<p><span style="color: #003300;"><strong>3:00 pm</strong><strong>                                       </strong><strong>Conference Dismisses</strong></span></p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-222" class="post-222 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2018/01/codemash-2018-reviews/" rel="bookmark">Codemash 2018 reviews</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2018/01/codemash-2018-reviews/" rel="bookmark"><time class="entry-date" datetime="2018-01-13T14:05:09+00:00">January 13, 2018</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p>I&#8217;m writing my thoughts here about the sessions I attended at CodeMash 2018. Overall, I had a great time and learned some new and important things about the latest technologies. This year I tried to attend more data science / machine learning talks, though several of them were cancelled at the last minute. (Perhaps the bad weather was to blame.)</p>
+<p>I wrote these notes during or immediately after each talk, and I submitted some of the text to the session survey part of the Attendee Hub app on my phone. I think it&#8217;s a good idea to send the feedback to the speakers, but I don&#8217;t think it is used by reviewers for next year, so I&#8217;m not sure it matters very much. Regardless, I write to consolidate my own learning, if for no other reason.</p>
+<h1><span id="rAECCd" role="heading" aria-level="1">Fast Neural Networks &#8211; a no brainer </span></h1>
+<p>Speakers: Riccardo Terrell</p>
+<p>The speaker used the agent model because ANNs are embarassingly parallel. Map agents to nodes &#8211; 1:1, send updates between them (values forward, backpropagation corrections backward). Make agents reactive to messages (updates from dependent nodes). The speaker has an e-book on MEAP about it &#8211; Parallel NN as map reduce problem &#8211; simpler way to implement NN.</p>
+<p>The speaker tried to cover too much content. Also, I didn&#8217;t hear any good outcomes or reasons for why he reimplemented backpropagation (a very old algorithm). What was learned by redoing it with actors?</p>
+<h1><span id="rAECCd" role="heading" aria-level="1">Getting Started with Deep Learning</span></h1>
+<p>Speakers: Seth Juarez</p>
+<p>confusion matrix- be careful of TN vs FP box location. Works for MS; uses VS to edit Python; tensorflow implementation in python for MNIST. Check channel 9 msdn for newer presentation</p>
+<p>cool twilio use &#8211; text the presenter to ask questions during presentation</p>
+<p>This speaker was great because he told lots of jokes to keep the talk interesting despite the underlying math. I really liked the twilio based questions via text messages!</p>
+<h1 class="yj6qo"><span id="rAECCd" role="heading" aria-level="1">Imposter Syndrome: Overcoming Self-Doubt in Success</span></h1>
+<div class="yj6qo">Speakers: Heather Downing</div>
+<div></div>
+<div>
+<div class="adL">
+<p>The speaker did a very good job motivating the subject, but I would&#8217;ve liked to hear more about practical things that can be done to deal with imposter syndrome. I agree with &#8220;co-bragging&#8221;, but I think other good options include public speaking to build confidence or doing volunteer work to appreciate how it&#8217;s a 1st world problem.</p>
+</div>
+</div>
+<div class="adL">
+<p>cycle of failure: overly confident &#8211; procrastinate and rely on luck. under confident &#8211; put in excessive time and effort. Discount success and undermine ego.</p>
+<p>How can you tell if someone will eventually succeed after a failure? You are not the failure; own your mistakes and learn from them. Don&#8217;t be scared of failure; be scared of not finding the truth.</p>
+<p>&#8220;Co-bragging&#8221; &#8211; praise your co-workers&#8217; acheivements, and they praise you. Create a positive culture that avoids hurtful comparisons.</p>
+<p>Fake it until you become it, then pay it forward.</p>
+</div>
+<h1>Machine Learning at Scale, How to Keep Learning as Your Data Keeps Increasing</h1>
+<p>Speakers: Matt Winkler</p>
+<p>This was exactly why I come to codemash &#8211; I want to hear about the latest tech so that I can keep up with the industry standards. I thought the speaker did an excellent job of reviewing the latest ML implementations and describing how to deploy them at scale. I loved all the detailed examples!</p>
+<p>data prep: spark, pandas, dplyR<br />
+scale up: spark cluster, HDInsight<br />
+aggregation: AML workbench</p>
+<p>Azure Machine Learning workbench can automatically learn how to create columns by example (formatting and aggregating a date time column). (automatically generates python code!)</p>
+<p>Nvidia&#8217;s latest GPU was announced at NIPS conference (academic AI researchers).</p>
+<p>VM recommendations: use version control so that you can migrate easily. make scripts for any required setup. track your outcomes from experimenting with different models. benchmark the price effectiveness of different configurations.</p>
+<p>home camera &#8211; Amazon deep lens &#8211; recognizes faces</p>
+<p>MSSQL 2017 has integrated ML algorithms INSIDE it! see tutorials?!</p>
+<h1><span id="rAECCd" role="heading" aria-level="1">Walking the High Wire: Patching Erlang Live</span></h1>
+<p>Speakers: John Daily</p>
+<p>The speaker did a great job of motivating the use of Erlang for live patches, which is exactly what I wanted to hear about. But I would&#8217;ve liked to have seen a non-trivial example, or some more information about how it&#8217;s used in the real world.</p>
+<p>Power isn&#8217;t pretty &#8211; erlang is designed for fault tolerance, not usability. Its network IO is fundamentally async but reliable, unlike RPC or CORBRA.</p>
+<h1><span id="rAECCd" role="heading" aria-level="1">App architecture without RDBS vs NoSQL drama</span></h1>
+<p>Speakers: Jeff Putz</p>
+<p>The speaker has a lot of good experience to share. He&#8217;s obviously worked in diverse applications, and I appreciate hearing about tradeoffs between technologies instead of just advertising the latest tech. I think it&#8217;s really important to repeat the message about not being obsessed with the latest tech just because it&#8217;s new. I wish the presentation didn&#8217;t get sidetracked by arguments about issues of personal preference in DB design.</p>
+<p>NoSQL advantages &#8211; less CPU, high write thruput, maybe higher dev productivity</p>
+<p>Fight the urge to normalize everything. Don&#8217;t make complicated schema for queries that will never be used. Focus on the problem domain, not the persistence and code style. Running multiple queries can be OK (as compared to a join).</p>
+<p>SQL can do key value pairs OK. The death of SQL in 2010 was greatly exaggerated.</p>
+<p>Aggregate queries with joins cause lots of database work. Avoid redoing them in real time. Use the client layer to maintain a cached state of frequently queried aggregates; don&#8217;t be afraid to store redundant data because it&#8217;s so cheap now. SQL was originally designed to minimize storage at the expense of CPU (i.e. normalization).</p>
+<h1><span id="rAECCd" role="heading" aria-level="1">Scala for the Java Developer: It&#8217;s Easier Than You Think</span></h1>
+<p>Speakers: Justin Pihony</p>
+<p>I liked this talk because I want to learn at least one new programming paradigm every time I come to CodeMash, and the speaker did a great job of being an ambassador for Scala. I appreciated hearing about the limitations and realistic expectations for the language. Things to improve: show applications and companies using it.</p>
+<p>Scala runs on JVM; compatible with java, but it&#8217;s functional and immutable first. Less verbose; fixes many annoyances with Java&#8217;s legacy conventions. Includes REPL.</p>
+<h1><span id="rAECCd" role="heading" aria-level="1">Ride the rails: Handling errors the functional way</span></h1>
+<p>Speakers: Sam Hanes</p>
+<p>The speaker did a very good talk on functional programming basics in F#. I enjoy sessions like these for reminding me that there are alternatives to traditional imperative paradigms. Suggestion: use font colors with better contrast (dark red text on black backgrounds is difficult to read). Overall very good talk.</p>
+<p>Functional programming &#8211; avoid mutable state.</p>
+<p>Use bind to connect a switch function to two track handling. Exceptions can be converted into failures (if they are predictable enough to catch).</p>
+<h1>A Game of Theories: why languages do what they do</h1>
+<p><b>Speakers:</b> <a href="http://www.codemash.org/speakers?speakerid=2a823543-9c11-4f18-8af9-83fe28c595ec">Rae Krantz</a></p>
+<p>The speaker did a fun talk about comparing programming languages and GoT. This type of talk is nice to have as a break in between &#8220;serious business&#8221; and learning new tech. Suggestions: use the full time slot. Show the same algorithm implemented in different languages. Talk more about the supporting libraries (not just the language itself).</p>
+<p>Ruby, python, go, erlang, clojure, JavaScript &#8211; not sure why these 6 as opposed to any other survey of languages. Popularity?</p>
+<p>(I went to this talk because the session &#8220;<span id="rAECCd" role="heading" aria-level="1">The Polyglot Data Scientist &#8211; Adventures with R, Python, and SQL</span>&#8221; by Sarah Dutkiewicz was cancelled. It sounded like the snow storm scared a lot of people into leaving CodeMash early, and some other speakers cancelled their talks for being sick.)</p>
+<h2>Image Recognition with Convolutional Neural Networks using Keras and CoreML</h2>
+<p><b>Speakers:</b> <a href="http://www.codemash.org/speakers?speakerid=4c5bfe3c-98e5-4ea9-9750-d47c4ffc5e02">Tim LeMaster</a></p>
+<p>This talk was too introductory, barely covering any applications and only talking about history. I walked out after 10 minutes to go eat lunch and do professional networking.</p>
+<h1><span id="rAECCd" role="heading" aria-level="1">How to Count Your Chickens After They&#8217;ve Hatched</span></h1>
+<p><b>Speakers:</b> <a href="http://www.codemash.org/speakers?speakerid=b357b7ce-91ce-4292-90da-0a6956cd6156">Gary Short</a></p>
+<p>The speaker is very entertaining and amusing, and it&#8217;s great to see a fun talk about a relevant topic (ML). Images are easy to relate to, and it&#8217;d be cool to see more talks with them. I don&#8217;t think C# was the right choice for this algorithm &#8211; python sklearn has built-in implementations for this problem.</p>
+<p>Counting chickens in brightfield images &#8211; threshold grayscale image, then try k-NN. k-NN doesn&#8217;t work because k is unknown? The algorithm is pretty ad hoc, but more power to him if it works. 85% accurate but told to deploy it by customer farmer anyway.</p>
+<h1><a href="http://www.codemash.org/sessions?id=7864">[Sponsor Session] Attracting and Retaining Top Technical Talent (a.k.a. &#8220;Insomnia Cure #1 for Software Development Leaders&#8221;) </a></h1>
+<p><b>Speakers:</b> <a href="http://www.codemash.org/speakers?speakerid=33fd3305-8986-425e-8656-6b5cc463c847"> Stout Systems</a></p>
+<p>This talk was pretty good, and it make me feel better about my chances of getting a different job someday. On a daily basis, I really have no idea how good the market is for programmers, but I still remember the 2004 IT recession.</p>
+<p>top 5 for recruiting/retaining talent &#8211;</p>
+<p>5. salary (and PTO, retirement, health care, bonus, stock, options &#8211; cash equivalents)</p>
+<p>4. workplace culture (office space features, remote work, flex schedule, work/life balance)</p>
+<p>3. career growth (holding same job for years is boring and a career killer; upskilling and training is good. )</p>
+<p>2. [lack of] process (shifting requirements, changing priorities, inconsistent deadlines, no deployments) &#8211; also leadership issues (excessive meetings, no clear decisions).</p>
+<p>1. technology stack (fear of extinction; huge, messy codebase) &#8211; transform or evolve, within appropriate constraints (relevant tech, reasonable schedules). automate mundane tasks (build, deploy). allow some freedom of tools (svn vs git, OS, editors).</p>
+<h1 class="schedule-session-title"><a href="http://www.codemash.org/sessions?id=7156"> R Performance (It’s not R, it’s You) </a></h1>
+<p><b>Speakers:</b> <a href="http://www.codemash.org/speakers?speakerid=afdd2428-10c7-4392-af03-ae467a114a50">Tim Hoolihan</a></p>
+<p>The speaker gave a pretty good overview of performance issues in R. I&#8217;m not really an R user, so I attended this talk just to see if it was much better or different than python based ML. My conclusion: no because R uses the python ML libraries!</p>
+<h1 class="schedule-session-title"><a href="http://www.codemash.org/sessions?id=7220"> How Not to Destroy Data </a></h1>
+<p><b>Speakers:</b> <a href="http://www.codemash.org/speakers?speakerid=1434dfae-bc8d-4238-b34c-2afb3edab4b3">Michael Perry</a></p>
+<p>I liked how this talk summarized an academic topic in a relatable way. Despite being in the last time slot, I learned some fascinating ideas about Historical Modelling. I like having some more challenging topics to attend.</p>
+<p>Audit log problems &#8211; not reliable or type safe. Large. Simple</p>
+<p>Event sourcing. Derive object state by reading whole table of changes. Order is significant.</p>
+<p>Historical modelling. Partially ordered. Not simple, but better??</p>
+<p>* Every field is immutable<br />
+* Surrogate key is only used internally (not in API)<br />
+* everything else is the identity in API</p>
+<p>Use timestamps as &#8220;uniquifiers&#8221;</p>
+<p>* A fact cannot be deleted<br />
+* query uses WHERE NOT EXISTS subclause</p>
+<p>speaker name precedessor record &#8211; a Name is identified by its nameId and all predecessor records. This is git-style version control inside a db!</p>
+<p>Mutable properties can&#8217;t be part of entity. detect and resolve conflicts via knowing predecessors.</p>
+<p>Events move entities forward thru workflow, pointing backward to previous event.</p>
+<p>Advantages: no locks. Offline data is OK. Cluster synch is easier (eventual consistency via Active-Active clusters). Microservice as historical db.</p>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-216" class="post-216 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2018/01/presentations-list/" rel="bookmark">Presentations List</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2018/01/presentations-list/" rel="bookmark"><time class="entry-date" datetime="2018-01-01T16:17:16+00:00">January 1, 2018</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p>Here is a list of work I&#8217;ve presented since 2015 at various local users groups and conferences. These projects show a commitment to continued professional development and networking. I&#8217;ll keep updating this list as time goes by.</p>
+<h1>2018</h1>
+<p><span class="il">FoxCon</span> <span class="il">Toledo</span> 2018 Presentation – Big Data from Automotive Assembly Errors (TBD: Jan 27, 2018 ?).</p>
+<p><a href="http://www.codemash.org/">CodeMash</a> 2018 Lightning talk (TBD) &#8211; Fast comparison of Tesseract and a Convolutional Recurrent Neural Network for automatically reading dot peened VIN stamps.</p>
+<h1>2017</h1>
+<p><a href="https://www.meetup.com/GDGToledo/events/243610233/">Google Developers Group Toledo</a> and <a href="https://www.meetup.com/Toledo-Web-Professionals/events/244814755/">Toledo Web Professionals</a> meetings on Nov 9, 2017 &#8211; <a href="http://www.djohn89.com/blog/2017/11/presentation-building-your-own-collaborative-editing-web-forms-for-free/">Building Your Own Collaborative Editing Web Forms For Free</a>.</p>
+<p><span class="il">FoxCon</span> <span class="il">Toledo</span> 2017 Presentation – <a href="http://www.djohn89.com/blog/2017/01/foxcon-toledo-2017-presentation-using-machine-learning-to-automatically-predict-and-identify-defects-in-automotive-assembly-processes/" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.djohn89.com/blog/2017/01/foxcon-toledo-2017-presentation-using-machine-learning-to-automatically-predict-and-identify-defects-in-automotive-assembly-processes/&amp;source=gmail&amp;ust=1514908565417000&amp;usg=AFQjCNF1ecY_BFpXp3xt8jLTfTRhMzrmqA">Using Machine Learning to Automatically Predict and Identify Defects in Automotive Assembly Processes</a></p>
+<p><a href="http://nwo.sqlpass.org/Home.aspx?EventID=3856">Northwest Ohio SQL PASS Chapter </a>presentation &#8211; <a href="http://www.djohn89.com/blog/2017/07/presentation-idea-using-columnstore-indexes-to-store-and-analyze-billions-of-torques/">Using Columnstore Indexes to Store and Analyze Billions of Torques</a>. <span style="color: #ff0000;">Cancelled because users group has been abandoned! </span></p>
+<h1>2016</h1>
+<p><a href="https://www.meetup.com/Toledo-Web-Professionals/"><span class="il">Toledo</span> Web Professionals</a> 2016 Presentation: <a href="http://www.djohn89.com/blog/2016/10/twp-presentation-real-time-messaging-to-webapps-from-a-production-database/" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.djohn89.com/blog/2016/10/twp-presentation-real-time-messaging-to-webapps-from-a-production-database/&amp;source=gmail&amp;ust=1514908565417000&amp;usg=AFQjCNEjUxyt16mSOaEdDOyptkxU07EeCg">Real-time Messaging to Webapps from a Production Database</a></p>
+<p><span class="il">FoxCon</span> <span class="il">Toledo</span> 2016 Presentation &#8211; <a href="http://www.djohn89.com/blog/2016/03/foxcon2016-presentation-and-handout/" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.djohn89.com/blog/2016/03/foxcon2016-presentation-and-handout/&amp;source=gmail&amp;ust=1514908565417000&amp;usg=AFQjCNE8P7NBUArLgo8O5GVanmowSpSGNQ">Building Webapps to Help You Build a Jeep </a>(<a href="http://www.djohn89.com/blog/2016/01/foxcon2016-abstract-and-references/" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.djohn89.com/blog/2016/01/foxcon2016-abstract-and-references/&amp;source=gmail&amp;ust=1514908565417000&amp;usg=AFQjCNFZ_8hN-lU-gjDtbGvLcFVI75nmig">video references here</a>).</p>
+<h1>2015</h1>
+<p><span class="il">FoxCon</span> <span class="il">Toledo</span> 2015 Presentation &#8211; <a href="http://www.djohn89.com/blog/2015/02/follow-up-nwnug-presentation/" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.djohn89.com/blog/2015/02/follow-up-nwnug-presentation/&amp;source=gmail&amp;ust=1514908565418000&amp;usg=AFQjCNG-SgeSfcjSIiF61A3rju_U5FQSHA">SQL Server Notifications in a manufacturing environment.</a> Also presented at the <a href="http://www.meetup.com/NW-NUG/">NWNUG meeting</a> in Feb 2015 and again at <a href="http://www.fanug.org/">the FANUG</a> meeting shortly after.</p>
+<p><a href="http://nwo.sqlpass.org/Home.aspx?EventID=3856">Northwest Ohio SQL PASS Chapter </a>Presentation &#8211; an edited version of <a href="http://www.djohn89.com/blog/2015/09/sql-server-users-group-presentation-nwo-pass/">SQL Server Notifications in a manufacturing environment</a> with less C# and more SQL Server details about database administration for Service Broker.</p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-211" class="post-211 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2017/11/presentation-building-your-own-collaborative-editing-web-forms-for-free/" rel="bookmark">Presentation &#8211; Building Your Own Collaborative Editing Web Forms For Free</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2017/11/presentation-building-your-own-collaborative-editing-web-forms-for-free/" rel="bookmark"><time class="entry-date" datetime="2017-11-07T11:10:33+00:00">November 7, 2017</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p><strong>Links to slides: <a href="https://docs.google.com/presentation/d/1MzVEcI69tGmkM168Kxfq166x8A1WbMHcp9qBiLkfVxE/edit?usp=sharing">Google Slides</a>,  <a href="http://www.djohn89.com/blog/wp-content/uploads/2017/11/CollabEdit-Presentation.pdf">PDF format</a>, <a href="http://www.djohn89.com/blog/wp-content/uploads/2017/11/CollabEdit-Presentation.pptx">PPT format</a> </strong></p>
+<p>Presented at <a href="https://www.meetup.com/GDGToledo/events/243610233/">Google Developers Group Toledo</a> and <a href="https://www.meetup.com/Toledo-Web-Professionals/events/244814755/">Toledo Web Professionals</a> meetings on Nov 9, 2017.</p>
+<h2>Abstract</h2>
+<p>Have your business users ever said, &#8220;we have this Excel form that we need to turn into a web form&#8221;? So you, as a full-stack web developer, turn it into a HTML form with an AJAX POST to save the data to a database table in the standard CRUD model. It works well enough, but then the users said, &#8220;we really need simultaneous editing for everyone in the office.&#8221; Now you&#8217;re in trouble because you&#8217;re trying to reinvent Google Docs / Sheets, which are very complex. How do those collaborative editing tools really work?</p>
+<p>We will look at the Google Realtime API, which uses Operational Transformation to automatically synchronize a document between multiple simultaneous editors. Everything you know about distributed version control systems applies to this situation, but now you need to make it work seamlessly for users who have never heard of &#8220;git rebase&#8221;. The client and server implementation of Operational Transformation is very challenging.</p>
+<p>Alternatives to Operational Transformation (OT) include Differential Synchronization (DS, aka. 3-way merge), Conflict-free Replicated Data Type (CRDT), and plain old Last Write Wins (LWW). For any of these methods, the critical elements include websockets, message queues, and persistent data storage. This presentation will include a demonstration of a simple implementation of collaborative editing with free, locally hosted software only.</p>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-208" class="post-208 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2017/07/presentation-idea-using-columnstore-indexes-to-store-and-analyze-billions-of-torques/" rel="bookmark">Presentation idea &#8211; Using Columnstore Indexes to Store and Analyze Billions of Torques</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2017/07/presentation-idea-using-columnstore-indexes-to-store-and-analyze-billions-of-torques/" rel="bookmark"><time class="entry-date" datetime="2017-07-22T20:40:28+00:00">July 22, 2017</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<div>This is an abstract I wrote for a local area users group, only to find out that they had stopped meeting. Toledo doesn&#8217;t seem to be able to keep many computer-based user interest groups alive. I&#8217;m posting it here for my own records.</div>
+<div></div>
+<div></div>
+<div>Abstract</div>
+<div>
+Torque tools (impact wrenches, electronic motors, rotary torque sensors) produce lots of data as a vehicle is being built. Torque data is used to control the movement of the production lines and to do <a href="http://www.mountztorque.com/learning-center/torque-measurement" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.mountztorque.com/learning-center/torque-measurement&amp;source=gmail&amp;ust=1500842300619000&amp;usg=AFQjCNFrzpwwf1sLY-tiIVIb0Ows5tqAYQ">quality control analysis</a>. During production, traditional row-based storage makes the most sense, using the VIN and torque tool ID as the primary key in a table optimized for insertion speed and VIN-based lookups. However, post-production it makes more sense to switch to <span class="il">column</span>-based storage for quality control analysis because aggregation functions (mean, std. dev.) need to be computed over large ranges of data (regardless of VIN), and many torque values are similar. <span class="il">Columnstore</span> indexes are a good solution to the latter storage and analysis problem, and they have gotten much better in SQL Server 2016. I&#8217;ll describe how they&#8217;re useful for this problem for analyzing how well the torque tools are working <a href="https://en.wikipedia.org/wiki/Process_performance_index" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://en.wikipedia.org/wiki/Process_performance_index&amp;source=gmail&amp;ust=1500842300619000&amp;usg=AFQjCNG7FqaP0mYf2VrJ4N37cKPr6hMoaQ">using simple statistical techniques</a>.</div>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-202" class="post-202 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2017/05/thoughts-on-project-euler-in-python/" rel="bookmark">Thoughts on Project Euler in Python</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2017/05/thoughts-on-project-euler-in-python/" rel="bookmark"><time class="entry-date" datetime="2017-05-13T14:35:37+00:00">May 13, 2017</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p>I&#8217;ve been doing Project Euler problems to learn more about Python 3.5+ (as opposed to 2.7). The Project Euler website says, &#8220;Real learning is an active process and seeing how it is done is a long way from experiencing that epiphany of discovery. Please do not deny others what you have so richly valued yourself.&#8221; So I&#8217;m not supposed to post full solutions or even hints. However, I can make general comments that are not specific to any Project Euler problems.</p>
+<p>I find it very helpful to have the following tools ready to go before doing any Project Euler problems: a list of primes up to 10**9 or so, a list of primitive Pythagorean triplets up to 10**6, and the latest version of a big integer library. Much of Project Euler is based on prime numbers, so I used <a href="https://cr.yp.to/primegen.html">primegen</a> to create a text file with lots of primes in it. Reimplementing the Sieve of Eratosthenes gets really boring after a while, and the Sieve of Atkin is much better anyway.</p>
+<p>Pythagorean triplets show up occasionally, so I have a static text file with primitive triplets up to 10**6. I used an existing <a href="http://www.mathblog.dk/tools/pythagorean-triplets-generator/">pythagorean triplets generator</a>, but <a href="https://en.wikipedia.org/wiki/Formulas_for_generating_Pythagorean_triples#Pythagorean_triples_by_use_of_matrices_and_linear_transformations">the matrix formula</a> isn&#8217;t too terrible to implement.</p>
+<p>Python 3 has much improved support arbitrary length integers over Python 2. The int datatype is gone, replaced by long, then unified back to int again. The only real problem is remembering the change in the integer division operator, but I&#8217;ve used &#8220;from future import __division__&#8221; practically everywhere.</p>
+<p>Generators and comprehensions have big improvements in Python 3+. I really like them for using a functional programming style, and they can improve program speed and reduce memory usage a bit.</p>
+<p>Finally, regardless of language, I always try to review some common strategies from dynamic programming and graph search algorithms. It&#8217;s surprising how often these ideas are part of the best solutions to Project Euler problems.</p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+
+<article id="post-182" class="post-182 post type-post status-publish format-standard hentry category-uncategorized">
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="http://www.djohn89.com/blog/2017/02/linear-algebra-review/" rel="bookmark">Linear algebra review</a></h1>
+		<div class="entry-meta">
+			<span class="entry-date"><a href="http://www.djohn89.com/blog/2017/02/linear-algebra-review/" rel="bookmark"><time class="entry-date" datetime="2017-02-24T14:48:57+00:00">February 24, 2017</time></a></span> <span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.djohn89.com/blog/author/djohn89/" rel="author">djohn89</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script></p>
+<p>It&#8217;s been a while since I tried to solve a system of equations without<br />
+using a numerical library, so I figured it was time to do a linear<br />
+algebra review.</p>
+<p>\[<br />
+A=\left[\begin{array}{cc}<br />
+1 &#038; 2\\<br />
+3 &#038; 4<br />
+\end{array}\right]=\left[\begin{array}{c}<br />
+r_{1}^{T}\\<br />
+r_{2}^{T}<br />
+\end{array}\right]=\left[\begin{array}{cc}<br />
+c_{1} &#038; c_{2}\end{array}\right]<br />
+\]</p>
+<p>This should be the easiest matrix to work with: small size, nice integer values, non-colinear columns and rows, non-zero determinant, full rank, etc. Let&#8217;s go through the basic definitions, just because it&#8217;s been a while. $A$ is 2&#215;2 (MxN), which is small and square. Let&#8217;s check the column space of $A$ for colinearity by reducing to row echelon form by adding $-3r_{1}^{T}$ to row 2:</p>
+<p>\[<br />
+\left[\begin{array}{cc}<br />
+1 &#038; 2\\<br />
+0 &#038; -2<br />
+\end{array}\right]<br />
+\]</p>
+<p>Then adding $r_{2}^{T}$ to row 1:</p>
+<p>\[<br />
+\left[\begin{array}{cc}<br />
+1 &#038; 0\\<br />
+0 &#038; -2<br />
+\end{array}\right]<br />
+\]</p>
+<p>So the good news is that the column space of $A$ has linearly independent columns, $\left[\begin{array}{c}<br />
+1\\<br />
+3<br />
+\end{array}\right]$ and $\left[\begin{array}{c}<br />
+2\\<br />
+4<br />
+\end{array}\right]$, which form a basis for $\mathbb{R^{\mathrm{2}}}$, and rank($A$) is 2. So the null space of $A$ is empty. That&#8217;s the best possible outcome for a matrix because it means that an inverse exists. </p>
+<p>But before exploring that, let&#8217;s think about the row space of $A$. Using the same row reductions as above, we can conclude that $A$ has linearly independent rows, $\left[\begin{array}{cc} 1 &#038; 2\end{array}\right]$ and $\left[\begin{array}{cc} 3 &#038; 4\end{array}\right]$, which form a basis for $\mathbb{R^{\mathrm{2}}}$, and rank($A^{T}$) is 2. So the left null space of $A$ is also empty. The row space of $A$ is isomorphic to the column space of $A^{T}$ by definition, and $A$ happens to have full rank, so an inverse exists. Let&#8217;s use Gauss-Jordan elimination to find it:</p>
+<p>\[<br />
+\left[\begin{array}{ccccc}<br />
+1 &#038; 2 &#038; | &#038; 1 &#038; 0\\<br />
+3 &#038; 4 &#038; | &#038; 0 &#038; 1<br />
+\end{array}\right]<br />
+\]</p>
+<p>Starting with an augmented matrix $\left[\begin{array}{ccc}<br />
+A &#038; | &#038; I\end{array}\right]$, we can use row operations to find $\left[\begin{array}{ccc}<br />
+I &#038; | &#038; A^{-1}\end{array}\right]$. Add $-3r_{1}^{T}$ to row 2:</p>
+<p>\[<br />
+\left[\begin{array}{ccccc}<br />
+1 &#038; 2 &#038; | &#038; 1 &#038; 0\\<br />
+0 &#038; -2 &#038; | &#038; -3 &#038; 1<br />
+\end{array}\right]<br />
+\]</p>
+<p>Then add $r_{2}^{T}$ to row 1:</p>
+<p>\[<br />
+\left[\begin{array}{ccccc}<br />
+1 &#038; 0 &#038; | &#038; -2 &#038; 1\\<br />
+0 &#038; 2 &#038; | &#038; -3 &#038; 1<br />
+\end{array}\right]<br />
+\]</p>
+<p>Finally rescale row 2:</p>
+<p>\[<br />
+\left[\begin{array}{ccccc}<br />
+1 &#038; 0 &#038; | &#038; -2 &#038; 1\\<br />
+0 &#038; 1 &#038; | &#038; -\frac{3}{2} &#038; \frac{1}{2}<br />
+\end{array}\right]<br />
+\]</p>
+<p>Therefore: </p>
+<p>\[<br />
+A^{-1}=\left[\begin{array}{cc}<br />
+-2 &#038; 1\\<br />
+-\frac{3}{2} &#038; \frac{1}{2}<br />
+\end{array}\right]<br />
+\]</p>
+<p>Now we need to check that $A^{-1}A=I$:<br />
+\begin{eqnarray*}<br />
+\left[\begin{array}{cc}<br />
+2 &#038; 1\\<br />
+-\frac{3}{2} &#038; \frac{1}{2}<br />
+\end{array}\right]\left[\begin{array}{cc}<br />
+1 &#038; 2\\<br />
+3 &#038; 4<br />
+\end{array}\right] &#038; = &#038; \left[\begin{array}{cc}<br />
+1 &#038; 0\\<br />
+0 &#038; 1<br />
+\end{array}\right]<br />
+\end{eqnarray*}</p>
+<p>Of course, there is an explicit formula for the inverse of a 2&#215;2 matrix:</p>
+<p>\[<br />
+\left[\begin{array}{cc}<br />
+a &#038; b\\<br />
+c &#038; d<br />
+\end{array}\right]^{-1}=\frac{1}{\det A}\left[\begin{array}{cc}<br />
+d &#038; -b\\<br />
+-c &#038; a<br />
+\end{array}\right]<br />
+\]</p>
+<p>For our $A$, $\det A=ad-bc=-2$. Unfortunately, analytical inverses don&#8217;t exist for larger matrices, or they are so long and complex as to be of limited utility. But there is at least one important idea to take away from the inverse: it can only exist if the determinant is non-zero. This becomes a very important fact for the eigenvalue problem. </p>
+<p>One last thing I wanted to write about for now: the L2 norm (or Euclidean norm) of a vector $x=\left[\begin{array}{cccc}<br />
+x_{1} &#038; x_{2} &#038; \cdots &#038; x_{n}\end{array}\right]^{T}$ is defined as:</p>
+<p>\[<br />
+\left\Vert x\right\Vert _{2}^{2}=\sum_{i=1}^{n}x_{i}^{2}<br />
+\]</p>
+<p>Suppose that we&#8217;re fitting data $\left(a_{ij},y_{i}\right)$ to a known linear model$A$ and we want to determine the unknown coefficients $x$ that best fit the data using ordinary least squares:</p>
+<p>\begin{eqnarray*}<br />
+\left[\begin{array}{c}<br />
+y_{1}\\<br />
+y_{2}\\<br />
+\vdots\\<br />
+y_{m}<br />
+\end{array}\right] &#038; = &#038; \left[\begin{array}{cccc}<br />
+a_{1,1} &#038; a_{1,2} &#038; \cdots &#038; a_{1,n}\\<br />
+a_{2,1} &#038; a_{2,2} &#038; \cdots &#038; a_{2,n}\\<br />
+\vdots &#038; \vdots &#038; \ddots &#038; \vdots\\<br />
+a_{m,1} &#038; a_{m,2} &#038; \cdots &#038; a_{m,n}<br />
+\end{array}\right]\left[\begin{array}{c}<br />
+x_{1}\\<br />
+x_{2}\\<br />
+\vdots\\<br />
+x_{n}<br />
+\end{array}\right]\\<br />
+y &#038; = &#038; Ax<br />
+\end{eqnarray*}</p>
+<p>And we want to choose the $x$ which minimizes the L2 norm of the residuals because we assume them to be Gaussian:</p>
+<p>\[<br />
+J\left(x\right)=\left\Vert Ax-y\right\Vert _{2}^{2}<br />
+\]</p>
+<p>Then $J\left(x\right)$ can be expanded:</p>
+<p>\begin{eqnarray*}<br />
+\left\Vert Ax-y\right\Vert _{2}^{2} &#038; = &#038; \left(Ax-y\right)^{T}\left(Ax-y\right)\\<br />
+ &#038; = &#038; \left(x^{T}A^{T}-y^{T}\right)\left(Ax-y\right)\\<br />
+ &#038; = &#038; x^{T}A^{T}Ax-x^{T}A^{T}y-y^{T}Ax+y^{T}y<br />
+\end{eqnarray*}</p>
+<p>However, $x^{T}A^{T}y$ is a scalar that can be computed as $y^{T}Ax$ by reversing the order of the multiplications, so the last expression can be further simplied:</p>
+<p>\begin{eqnarray*}<br />
+x^{T}A^{T}Ax-x^{T}A^{T}y-y^{T}Ax+y^{T}y &#038; = &#038; x^{T}A^{T}Ax-2y^{T}Ax+y^{T}y<br />
+\end{eqnarray*}</p>
+<p>This might look ugly, but we can now minimize $J\left(x\right)$ by<br />
+taking the derivative with respect to $x$:</p>
+<p>\begin{eqnarray*}<br />
+\frac{dJ\left(x\right)}{dx} &#038; = &#038; 2x^{T}A^{T}A-2y^{T}A\\<br />
+ &#038; = &#038; 2A^{T}Ax-2A^{T}y<br />
+\end{eqnarray*}</p>
+<p>Where we used the fact that $x^{T}A^{T}A=A^{T}Ax$ and $y^{T}A=A^{T}y$ because it&#8217;s just changing the order of the multiplications again.</p>
+<p>Now we can derive the celebrated pseudo-inverse of $A$ by setting the derivative to zero:</p>
+<p>\begin{eqnarray*}<br />
+2A^{T}Ax-2A^{T}y &#038; = &#038; 0\\<br />
+A^{T}Ax &#038; = &#038; A^{T}y\\<br />
+x &#038; = &#038; \left(A^{T}A\right)^{-1}A^{T}y<br />
+\end{eqnarray*}</p>
+<p>However, the inverse of $A^{T}A$ may not exist, or it may be very hard to compute (due to numerical instability). An alternative solution is to use gradient descent. Since we already have $\frac{dJ\left(x\right)}{dx}$ in a nice form:</p>
+<p>\begin{eqnarray*}<br />
+\frac{dJ\left(x\right)}{dx} &#038; = &#038; 2A^{T}\left(Ax-y\right)<br />
+\end{eqnarray*}</p>
+<p>We can start at any point $x=x_{0}$ and take a step along the direction given by the derivative, $x_{1}=x_{0}-\gamma\frac{dJ\left(x\right)}{dx}$. The problem is how big of a step to take. Despite the existence of a global minimum and an analytical form for the derivative, the steps could either be too small (taking forever to converge) or too large (diverging even when starting near the global minimum). This is where I wrote a paper about bracketing the minimum using a priori constraints (i.e., Golden section search and Brent&#8217;s method), but variations on line search minimization are also possible. </p>
+<p>I&#8217;ve read that the conjugate gradient method is the more popular solution to this problem now. Gradient descent searches strictly along the derivative, whereas the conjugate gradient method chooses a different search direction every time. The Grahm-Schmidt procedure is used to orthogonalize the gradient vectors, and then the conjugate gradient method moves along that new basis. This can be much faster than gradient descent, but it can become slow if the condition number of $A$ is too large. But it&#8217;s still a good choice because it doesn&#8217;t require the Hessian matrix to be calculated or inverted (as per Newton&#8217;s method). </p>
+<p>If you&#8217;ve got lots of memory and $M,N$ are small-ish, the Levenberg-Marquardt algorithm can converge even faster because it approximates the Hessian with the Jacobian matrix and chooses directions either along the derivative or the Hessian, whichever is better. Unfortunately, it doesn&#8217;t work with regularization, and it has a few more internal parameters, and it usually runs out of memory when computing $\left(J^{T}J+\lambda I\right)^{-1}$. So I usually end up using the conjugate gradient method anyway because it can be regularized and doesn&#8217;t require crazy amounts of memory.</p>
+<p>At CodeMash 2017 I heard a presentation about artificial neural networks where the presenter complained bitterly about how his L2 minimization (&#8220;backtracking&#8221;) in the neural network was converging very slowly. I thought to suggest an improved algorithm (conjugate gradient), but his talk was focused on a high level introduction with no math, so it didn&#8217;t seem appropriate at the time. That inspired me to write this post. Then I saw that someone else already did conjugate gradients with artificial neural networks in 1992. ??</p>
+	</div><!-- .entry-content -->
+	
+	</article><!-- #post-## -->
+	<nav class="navigation paging-navigation" role="navigation">
+		<h1 class="screen-reader-text">Posts navigation</h1>
+		<div class="pagination loop-pagination">
+			<span aria-current='page' class='page-numbers current'>1</span>
+<a class='page-numbers' href='http://www.djohn89.com/blog/page/2/'>2</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='http://www.djohn89.com/blog/page/5/'>5</a>
+<a class="next page-numbers" href="http://www.djohn89.com/blog/page/2/">Next &rarr;</a>		</div><!-- .pagination -->
+	</nav><!-- .navigation -->
+	
+		</div><!-- #content -->
+	</div><!-- #primary -->
+	</div><!-- #main-content -->
+
+<div id="secondary">
+		<h2 class="site-description">Turning tea into code </h2>
+	
+		<nav role="navigation" class="navigation site-navigation secondary-navigation">
+		<div class="menu-science-container"><ul id="menu-science" class="menu"><li id="menu-item-220" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-220"><a href="http://www.djohn89.com/blog/2018/01/presentations-list/">Presentations List</a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="http://www.djohn89.com/science">Publications</a></li>
+</ul></div>	</nav>
+	
+		<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://www.djohn89.com/blog/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+											<li>
+					<a href="http://www.djohn89.com/blog/2018/05/extending-wonderware-with-rabbitmq/">Extending Wonderware with RabbitMQ</a>
+									</li>
+											<li>
+					<a href="http://www.djohn89.com/blog/2018/01/presentation-using-big-data-from-automotive-assembly-errors/">Presentation &#8211; Using Big Data from Automotive Assembly Errors</a>
+									</li>
+											<li>
+					<a href="http://www.djohn89.com/blog/2018/01/foxcon-toledo-2018-abstracts/">FoxCon Toledo 2018 Abstracts</a>
+									</li>
+											<li>
+					<a href="http://www.djohn89.com/blog/2018/01/foxcon-toledo-2018-schedule/">FoxCon Toledo 2018 Schedule</a>
+									</li>
+											<li>
+					<a href="http://www.djohn89.com/blog/2018/01/codemash-2018-reviews/">Codemash 2018 reviews</a>
+									</li>
+					</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+			<li><a href='http://www.djohn89.com/blog/2018/05/'>May 2018</a></li>
+	<li><a href='http://www.djohn89.com/blog/2018/01/'>January 2018</a></li>
+	<li><a href='http://www.djohn89.com/blog/2017/11/'>November 2017</a></li>
+	<li><a href='http://www.djohn89.com/blog/2017/07/'>July 2017</a></li>
+	<li><a href='http://www.djohn89.com/blog/2017/05/'>May 2017</a></li>
+	<li><a href='http://www.djohn89.com/blog/2017/02/'>February 2017</a></li>
+	<li><a href='http://www.djohn89.com/blog/2017/01/'>January 2017</a></li>
+	<li><a href='http://www.djohn89.com/blog/2016/10/'>October 2016</a></li>
+	<li><a href='http://www.djohn89.com/blog/2016/03/'>March 2016</a></li>
+	<li><a href='http://www.djohn89.com/blog/2016/01/'>January 2016</a></li>
+	<li><a href='http://www.djohn89.com/blog/2015/09/'>September 2015</a></li>
+	<li><a href='http://www.djohn89.com/blog/2015/07/'>July 2015</a></li>
+	<li><a href='http://www.djohn89.com/blog/2015/06/'>June 2015</a></li>
+	<li><a href='http://www.djohn89.com/blog/2015/05/'>May 2015</a></li>
+	<li><a href='http://www.djohn89.com/blog/2015/03/'>March 2015</a></li>
+	<li><a href='http://www.djohn89.com/blog/2015/02/'>February 2015</a></li>
+	<li><a href='http://www.djohn89.com/blog/2015/01/'>January 2015</a></li>
+	<li><a href='http://www.djohn89.com/blog/2014/11/'>November 2014</a></li>
+	<li><a href='http://www.djohn89.com/blog/2014/10/'>October 2014</a></li>
+	<li><a href='http://www.djohn89.com/blog/2014/09/'>September 2014</a></li>
+	<li><a href='http://www.djohn89.com/blog/2014/06/'>June 2014</a></li>
+	<li><a href='http://www.djohn89.com/blog/2014/05/'>May 2014</a></li>
+	<li><a href='http://www.djohn89.com/blog/2014/04/'>April 2014</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-1"><a href="http://www.djohn89.com/blog/category/uncategorized/" >Uncategorized</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>			<ul>
+						<li><a href="http://www.djohn89.com/blog/wp-login.php">Log in</a></li>
+			<li><a href="http://www.djohn89.com/blog/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.djohn89.com/blog/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>	</div><!-- #primary-sidebar -->
+	</div><!-- #secondary -->
+
+		</div><!-- #main -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			
+			<div class="site-info">
+								<a href="http://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+	<script type='text/javascript' src='http://www.djohn89.com/blog/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315'></script>
+<script type='text/javascript' src='http://www.djohn89.com/blog/wp-includes/js/wp-embed.min.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#038;ver=1.3.8'></script>
+</body>
+</html>
