@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart member functions</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>CChart member functions</b>
+</font>
+</center>
+</h2>
+<hr>
+These are the member functions of CChart:
+<p>
+<b>Construction/Destruction</b>
+<ul>
+	<li> <a href="CChart.Constructor.htm">CChart</a> - Default constructor
+	<li> <a href="CChart.Constructor.htm">~CChart</a> - Default destructor
+</ul>
+
+<b>Overridable</b>
+<ul>
+	<li> <a href="CChart.OnDraw.htm">OnDraw</a> - Draw the chart
+	<li> <a href="CChart.Serialize.htm">Serialize</a> - Save or restore a chart
+	<li> <a href="CChart.WriteTextFile.htm">WriteTextFile</a> - Save the data to a text file
+	<li> <a href="CChart.GetPlotRect.htm">GetPlotRect</a> - Return the rect of the data region of the plot
+	<li> <a href="CChart.DeleteAllData.htm">DeleteAllData</a> - Delete every data set
+	<li> <a href="CChart.DeleteData.htm">DeleteData</a> - Delete a specific data set
+	<li> <a href="CChart.SetDataModified.htm">SetDataModified</a> - Call after modifying internal data by hand
+
+	<li> <a href="CChart.DataToLP.htm">DataToLP</a> - Convert from a data point to a logical point
+	<li> <a href="CChart.DataToLP.htm">LPToData</a> - Convert from a logical point to a chart point
+	<li> <a href="CChart.DataToLP.htm">LPToNearest</a> - Convert from a logical point to the nearest data value
+	
+	<li> <a href="CChart.AxisSettings.htm">AxisSettings</a> - Show the axis settings dialog box
+	<li> <a href="CChart.DataSettings.htm">DataSettings</a> - Show the data settings dialog box
+	<li> <a href="CChart.PlotSettings.htm">PlotSettings</a> - Show the plot settings dialog box
+	<li> <a href="CChart.ShowPopupMenu.htm">ShowPopupMenu</a> - Show the shortcut menu for the chart
+</ul>
+<b>Axes</b>
+<ul>
+	<li> <a href="CChart.GetAxisCount.htm">GetAxisCount</a> - Get the number of axes attached to the chart
+	<li> <a href="CChart.GetAxis.htm">GetAxis</a> - Get a specific axis
+	<li> <a href="CChart.GetAxisByLocation.htm">GetAxisByLocation</a> - Get an axis reference by its location
+	<li> <a href="CChart.AddAxis.htm">AddAxis</a> - Add an axis to the chart
+</ul>
+<b>Data</b>
+<ul>
+	<li> <a href="CChart.GetDataSet.htm">GetDataSet</a> - Get a pointer to a data set
+	<li> <a href="CChart.GetDataSetCount.htm">GetDataSetCount</a> - Get the number of data sets attached to the chart
+	<li> <a href="CChart.AddData.htm">AddData</a> - Add a data set to the chart
+	<li> <a href="CChart.SetData.htm">SetData</a> - Change the data in an existing data set
+	<li> <a href="CChart.GetDataTitle.htm">GetDataTitle</a> - Get the title of the data set
+	<li> <a href="CChart.GetDataTitle.htm">SetDataTitle</a> - Set the title of the data set
+</ul>
+<b>Colors</b>
+<ul>
+	<li> <a href="CChart.GetTitleColor.htm">GetTitleColor</a> - Get the color of the title
+	<li> <a href="CChart.GetTitleColor.htm">SetTitleColor</a> - Set the color of the title
+	<li> <a href="CChart.GetBackgroundColor.htm">GetBackgroundColor</a> - Get the background color
+	<li> <a href="CChart.GetBackgroundColor.htm">SetBackgroundColor</a> - Set the background color
+	<li> <a href="CChart.GetLineColor.htm">GetLineColor</a> - Get the color of the bounding box lines
+	<li> <a href="CChart.GetLineColor.htm">SetLineColor</a> - Set the color of the bounding box lines
+	<li> <a href="CChart.GetMajorGridColor.htm">GetMajorGridColor</a> - Get the color of the major grid lines
+	<li> <a href="CChart.GetMajorGridColor.htm">SetMajorGridColor</a> - Set the color of the major grid lines
+	<li> <a href="CChart.GetMinorGridColor.htm">GetMinorGridColor</a> - Get the color of the minor grid lines
+	<li> <a href="CChart.GetMinorGridColor.htm">SetMinorGridColor</a> - Set the color of the minor grid lines
+</ul>
+<b>Grids</b>
+<ul>
+	<li> <a href="CChart.GetMajorGridLineSize.htm">GetMajorGridLineSize</a> - Get the line size of the major grids
+	<li> <a href="CChart.GetMajorGridLineSize.htm">SetMajorGridLineSize</a> - Set the line size of the major grids
+	<li> <a href="CChart.GetMinorGridLineSize.htm">GetMinorGridLineSize</a> - Get the line size of the minor grids
+	<li> <a href="CChart.GetMinorGridLineSize.htm">SetMinorGridLineSize</a> - Set the line size of the minor grids
+	<li> <a href="CChart.GetMinorGridLineStyle.htm">GetMinorGridLineStyle</a> - Get the line style of the minor grids
+	<li> <a href="CChart.GetMinorGridLineStyle.htm">SetMinorGridLineStyle</a> - Set the line style of the minor grids
+	<li> <a href="CChart.DrawMajorMinorGrids.htm">DrawMajorMinorGrids</a> - Draws the grids
+</ul>
+<b>Plot range</b> - These functions determine the correct axis to use for setting the range
+<ul>
+	<li> <a href="CChart.SetRange.htm">SetRange</a> - Set the x range or the y range
+	<li> <a href="CChart.SetRange.htm">SetXRange</a> - Set the x range
+	<li> <a href="CChart.SetRange.htm">SetYRange</a> - Set the y range
+	<li> <a href="CChart.IsAutoRange.htm">IsAutoRange</a> - Determine whether x and y are auto ranged
+	<li> <a href="CChart.IsAutoRange.htm">IsXAutoRange</a> - Determine whether the x axis is auto ranged
+	<li> <a href="CChart.IsAutoRange.htm">IsYAutoRange</a> - Determine whether the y axis is auto ranged
+	<li> <a href="CChart.SetAutoRange.htm">SetAutoRange</a> - Set the x or y axis to be auto ranged
+	<li> <a href="CChart.SetAutoRange.htm">SetXAutoRange</a> - Set the x axis to be auto ranged
+	<li> <a href="CChart.SetAutoRange.htm">SetYAutoRange</a> - Set the y axis to be auto ranged
+</ul>
+<b>Title</b>
+<ul>
+	<li> <a href="CChart.GetTitle.htm">GetTitle</a> - Get the chart title
+	<li> <a href="CChart.GetTitle.htm">SetTitle</a> - Set the chart title
+</ul>
+<b>Utility</b>
+<ul>
+	<li> <a href="CChart.GetIndex.htm">GetIndex</a> - Return an array index from a data ID (protected)
+	<li> <a href="CChart.GetEraseBackground.htm">GetEraseBackground</a> - Determine whether the background is erased during an update
+	<li> <a href="CChart.GetEraseBackground.htm">SetEraseBackground</a> - Set whether the background is erased during an update
+	<li> <a href="CChart.GetOptimalRange.htm">GetOptimalRange</a> - Get optimal ranges and tick marks from the data
+	<li> <a href="CChart.GetOptimalRange.htm">GetOptimalRangeExact</a> - Get optimal tick marks from the range
+	<li> <a href="CChart.GetTickOptimalTickInterval.htm">GetTickOptimalTickInterval</a> - Get optimal tick mark interval from the range
+	<li> <a href="CChart.AdjustPlotSizeForAxes.htm">AdjustPlotSizeForAxes</a> - Adjust the size of the plotting rectangle for the size of the axes
+	<li> <a href="CChart.AdjustPlotSizeForTitle.htm">AdjustPlotSizeForTitle</a> - Adjust the size of the plotting rectangle for the size of the chart title
+	<li> <a href="CChart.DrawPlotTitle.htm">DrawPlotTitle</a> - Draws the plot title
+	<li> <a href="CChart.EraseBackground.htm">EraseBackground</a> - Erase the plot background
+	<li> <a href="CChart.DrawFrame.htm">DrawFrame</a> - Draws a frame around the plotting rectangle
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+
+</BODY>
+</HTML>

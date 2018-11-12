@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::ShowPopupMenu</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::ShowPopupMenu</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	virtual int		ShowPopupMenu( CWnd *window, UINT nFlags, CPoint point );
+<br>
+	virtual int		ShowPopupMenu( CMenu *passedMenu, CWnd *window, UINT nFlags, CPoint point );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> passedMenu - If non-NULL, appends the popup menu to the passed menu, otherwise creates a new menu
+	<li> window - The owning window for the popup
+	<li> nFlags - The nFlags parameter from OnRButtonDown events
+	<li> point - The point where the click ocurred (see Description)
+</ul></p>
+<b>Returns</b>
+<p>
+A <a href="PopupConstants.htm">popup menu constant</a> representing what happened.
+<p>
+<b>Description</b>
+<p>
+The default implementation of this function does nothing. Override this function to display a popup (shortcut) menu specific to the chart type (see <a href="../CXYChart/CXYChart.ShowPopupMenu.htm">CXYChart::ShowPopupMenu</a>)
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+

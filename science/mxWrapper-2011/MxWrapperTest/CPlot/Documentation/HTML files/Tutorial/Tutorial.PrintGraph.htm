@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Tutorial: Print the chart</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>Print the chart</b>
+</font>
+</center>
+</h2>
+Printing the chart is almost exactly the same as <a href="Tutorial.DrawGraph.htm">drawing the chart</a>. You need to set up the mapping mode, get the client rectangle, and pass that to the OnDraw function. For this example, we also need to first set up the OnPreparePrinting function so that the framework knows we have only one page to print:
+
+<pre><font color="#770000">BOOL CTestProjectView::OnPreparePrinting(CPrintInfo* pInfo)
+{
+	// default preparation
+	pInfo->SetMaxPage( 1 );
+	return DoPreparePrinting(pInfo);
+}</font></pre>
+Then, we can do one of two things with printing. We can do the very simple print covering the entire page (note that the OnPrint function must be added using the ClassWizard):
+
+<pre><font color="#770000">
+void CTestProjectView::OnPrint(CDC* pDC, CPrintInfo* pInfo) 
+{
+	CRect		rect = pInfo->m_rectDraw;
+
+	nOldMode = pDC->SetMapMode( MM_LOMETRIC );
+	pDC->DPtoLP( (LPPOINT)&rect, 2 );
+	m_Chart.OnDraw( pDC, rect );
+	pDC->SetMapMode( nOldMode );
+}
+</font></pre>
+Or, if we are so inclined, we can make it so that the graph prints at the maximum size of, but the same aspect ratio as, the view that we are looking at the chart in:
+
+<pre><font color="#770000">
+void CTestProjectView::OnPrint(CDC* pDC, CPrintInfo* pInfo) 
+{
+	CRect		rect;
+	CRect		thisRect;
+	float		ratio;
+	int			nOldMode;
+
+	GetClientRect( thisRect );
+
+	// Get the aspect ratio
+	ratio = (float)thisRect.Width() / (float)thisRect.Height();
+
+	rect = pInfo->m_rectDraw;
+
+	if( (float)abs(rect.Width()) / (float)abs(rect.Height()) > ratio )
+	{
+		// chop off some width
+		rect.right = rect.left + (int)(abs(rect.Height()) * ratio);
+	}
+	else
+	{
+		// chop some off height
+		rect.bottom = rect.top + (int)(abs(rect.Width()) / ratio);
+	}
+
+	nOldMode = pDC->SetMapMode( MM_LOMETRIC );
+	pDC->DPtoLP( (LPPOINT)&rect, 2 );
+	m_Chart.OnDraw( pDC, rect );
+	pDC->SetMapMode( nOldMode );
+}
+</font></pre>
+And if the moons align and the code compiles, you might end up with something that looks like this:
+<br>
+<img src="images/xy_print.png">
+<br>
+<hr>
+<b>Tutorial:</b>
+<ul>
+	<li> <a href="Tutorial.AddFiles.htm">Add the CPlot files and resources to your project</a>
+	<li> <a href="Tutorial.AddView.htm">Add a chart object to your view</a>
+	<li> <a href="Tutorial.CreateData.htm">Create data for a chart</a>
+	<li> <a href="Tutorial.CreateGraph.htm">Create a chart and set up axes</a>
+	<li> <a href="Tutorial.DrawGraph.htm">Draw the chart</a>
+	<li> <a href="Tutorial.PrintGraph.htm">Print the graph</a>
+	<li> <a href="Tutorial.ContextMenu.htm">Add shortcut menu support</a>
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+</BODY>
+</HTML>
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart::AdjustPlotSizeForWindowSize</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::AdjustPlotSizeForWindowSize</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	CRect	AdjustPlotSizeForWindowSize( CDC *pDC, CRect destRect, CRect plotRect );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> pDC - A pointer to a device context
+	<li> destRect - The total plotting region for the chart
+	<li> plotRect - That portion of destRect where the image will be drawn
+</ul><p>
+<b>Returns</b>
+<p>
+A rectangle representing any adjustments made to plotRect to take into account the window size and the <a href="CImageChart.m_Variables.htm">scaling variables</a>.
+<p>
+<b>Description</b>
+<p>
+This function examines the window size and the <a href="CImageChart.m_Variables.htm">scaling variables</a> to determine the best size for the image. It also sets the m_Scale variable to whatever the current scaling of the image is.
+<p>
+<hr>
+<a href="CImageChart.0index.htm">CImageChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

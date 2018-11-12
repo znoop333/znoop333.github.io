@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart::GetScaledImageData</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::GetScaledImageData</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	BYTE	*GetScaledImageData( BYTE *data, int *dims, BOOL allocate );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> data - A pointer to data to a word-aligned byte image
+	<li> dims - A pointer to an integer array containing the TWO dimensions of the image
+	<li> allocate - Set to TRUE to allocate temporary memory which must be then disposed of in a later call to GetScaledImageData
+</ul><p>
+<b>Returns</b>
+<p>
+A pointer to a word-aligned byte image which is scaled for the current window size.
+<p>
+<b>Description</b>
+<p>
+This function looks at the current image scaling, and takes a byte image and does appropriate scaling on the image in order to display it the correct size on the screen. See <a href="CImageChart.m_Variables.htm">scaling variables</a> for more information on scaling in CImageChart.
+<p>
+<hr>
+<a href="CImageChart.0index.htm">CImageChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

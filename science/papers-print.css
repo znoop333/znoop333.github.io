@@ -1,0 +1,30 @@
+body {
+ color : #000000;
+ background: white;
+ font-size: 14pt;
+ }
+
+#outerContainer {
+	width: 100%;
+	background: #FFF;
+	border: none;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+a:link, a:visited {
+ color: #520;
+ background: transparent;
+ font-weight: bold;
+ text-decoration: underline;
+ }
+ 
+#MyMenu { display : none; } 
+
+.figure {width: 100%; border-radius: 0; border: none;
+	min-width: 600px;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.figureTextLabelWhite {position: absolute; top: 5px; left: 5px; font-weight:bold; color:#FFFFFF}

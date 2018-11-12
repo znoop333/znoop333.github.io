@@ -1,0 +1,848 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="Auto Generated" value="Yes">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Introduction">
+		<param name="Local" value="HTML files/Introduction.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CPlot Class Library Reference">
+		<param name="Local" value="HTML files/index.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CAxis member functions">
+			<param name="Local" value="HTML files/CAxis/CAxis.0index.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::AddAxisPopupMenus">
+				<param name="Local" value="HTML files/CAxis/CAxis.AddAxisPopupMenus.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::AddNumberOfTicksPopup">
+				<param name="Local" value="HTML files/CAxis/CAxis.AddNumberOfTicksPopup.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::CAxis">
+				<param name="Local" value="HTML files/CAxis/CAxis.Constructor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::CopyAxis">
+				<param name="Local" value="HTML files/CAxis/CAxis.CopyAxis.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetColor">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetLineSize">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetLineSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetLocation">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetLocation.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetLowerRange">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetLowerRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetMinorTickCount">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetMinorTickCount.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetMinDisplaySize">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetMinSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetPaddingSize">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetPaddingSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetRange">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::SetRange">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTickCount">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetTickCount.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::SetTickCount">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetTickCount.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTickLabel">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetTickLabel.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTickPosition">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetTickPosition.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTitle">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::SetTitle">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTitleColor">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetTitleColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetUpperRange">
+				<param name="Local" value="HTML files/CAxis/CAxis.GetUpperRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::InterpretAxisPopupMenuItem">
+				<param name="Local" value="HTML files/CAxis/CAxis.InterpretAxisPopupMenuItem.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::IsRangeSet">
+				<param name="Local" value="HTML files/CAxis/CAxis.IsRangeSet.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::IsVisible">
+				<param name="Local" value="HTML files/CAxis/CAxis.IsVisible.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::OnDraw">
+				<param name="Local" value="HTML files/CAxis/CAxis.OnDraw.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::Serialize">
+				<param name="Local" value="HTML files/CAxis/CAxis.Serialize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::SetDefaults">
+				<param name="Local" value="HTML files/CAxis/CAxis.SetDefaults.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CAxisSettings members">
+			<param name="Local" value="HTML files/CAxisSettings/CAS.0index.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CChart member functions">
+			<param name="Local" value="HTML files/CChart/CChart.0index.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::AddAxis">
+				<param name="Local" value="HTML files/CChart/CChart.AddAxis.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::AddData">
+				<param name="Local" value="HTML files/CChart/CChart.AddData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::AdjustPlotSizeForAxes">
+				<param name="Local" value="HTML files/CChart/CChart.AdjustPlotSizeForAxes.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::AdjustPlotSizeForTitle">
+				<param name="Local" value="HTML files/CChart/CChart.AdjustPlotSizeForTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::AxisSettings">
+				<param name="Local" value="HTML files/CChart/CChart.AxisSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::CChart">
+				<param name="Local" value="HTML files/CChart/CChart.Constructor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::DataSettings">
+				<param name="Local" value="HTML files/CChart/CChart.DataSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::DataToLP">
+				<param name="Local" value="HTML files/CChart/CChart.DataToLP.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::LPToData">
+				<param name="Local" value="HTML files/CChart/CChart.DataToLP.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::LPToNearest">
+				<param name="Local" value="HTML files/CChart/CChart.DataToLP.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::DeleteAllData">
+				<param name="Local" value="HTML files/CChart/CChart.DeleteAllData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::DeleteData">
+				<param name="Local" value="HTML files/CChart/CChart.DeleteData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::DrawFrame">
+				<param name="Local" value="HTML files/CChart/CChart.DrawFrame.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::DrawMajorMinorGrids">
+				<param name="Local" value="HTML files/CChart/CChart.DrawMajorMinorGrids.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::DrawPlotTitle">
+				<param name="Local" value="HTML files/CChart/CChart.DrawPlotTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::EraseBackground">
+				<param name="Local" value="HTML files/CChart/CChart.EraseBackground.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetAxis">
+				<param name="Local" value="HTML files/CChart/CChart.GetAxis.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetAxisByLocation">
+				<param name="Local" value="HTML files/CChart/CChart.GetAxisByLocation.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetAxisCount">
+				<param name="Local" value="HTML files/CChart/CChart.GetAxisCount.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetBackgroundColor">
+				<param name="Local" value="HTML files/CChart/CChart.GetBackgroundColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetAbsoluteDataSet">
+				<param name="Local" value="HTML files/CChart/CChart.GetAbsoluteDataSet.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetDataSet">
+				<param name="Local" value="HTML files/CChart/CChart.GetDataSet.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetDataSetCount">
+				<param name="Local" value="HTML files/CChart/CChart.GetDataSetCount.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetDataTitle">
+				<param name="Local" value="HTML files/CChart/CChart.GetDataTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetDataTitle">
+				<param name="Local" value="HTML files/CChart/CChart.GetDataTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetEraseBackground">
+				<param name="Local" value="HTML files/CChart/CChart.GetEraseBackground.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetEraseBackground">
+				<param name="Local" value="HTML files/CChart/CChart.GetEraseBackground.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetIndex">
+				<param name="Local" value="HTML files/CChart/CChart.GetIndex.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetLineColor">
+				<param name="Local" value="HTML files/CChart/CChart.GetLineColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetMajorGridColor">
+				<param name="Local" value="HTML files/CChart/CChart.GetMajorGridColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetMajorGridLineSize">
+				<param name="Local" value="HTML files/CChart/CChart.GetMajorGridLineSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetMajorGridLineStyle">
+				<param name="Local" value="HTML files/CChart/CChart.GetMajorGridLineStyle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetMinorGridColor">
+				<param name="Local" value="HTML files/CChart/CChart.GetMinorGridColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetMinorGridLineSize">
+				<param name="Local" value="HTML files/CChart/CChart.GetMinorGridLineSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetMinorGridLineStyle">
+				<param name="Local" value="HTML files/CChart/CChart.GetMinorGridLineStyle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetOptimalRange">
+				<param name="Local" value="HTML files/CChart/CChart.GetOptimalRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetOptimalRangeExact">
+				<param name="Local" value="HTML files/CChart/CChart.GetOptimalRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetPlotRect">
+				<param name="Local" value="HTML files/CChart/CChart.GetPlotRect.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetTickOptimalTickInterval">
+				<param name="Local" value="HTML files/CChart/CChart.GetTickOptimalTickInterval.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetTitle">
+				<param name="Local" value="HTML files/CChart/CChart.GetTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetTitle">
+				<param name="Local" value="HTML files/CChart/CChart.GetTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::GetTitleColor">
+				<param name="Local" value="HTML files/CChart/CChart.GetTitleColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::IsAutoRange">
+				<param name="Local" value="HTML files/CChart/CChart.IsAutoRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::IsXAutoRange">
+				<param name="Local" value="HTML files/CChart/CChart.IsAutoRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::IsYAutoRange">
+				<param name="Local" value="HTML files/CChart/CChart.IsAutoRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::OnDraw">
+				<param name="Local" value="HTML files/CChart/CChart.OnDraw.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::PlotSettings">
+				<param name="Local" value="HTML files/CChart/CChart.PlotSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::Serialize">
+				<param name="Local" value="HTML files/CChart/CChart.Serialize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetAutoRange">
+				<param name="Local" value="HTML files/CChart/CChart.SetAutoRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetXAutoRange">
+				<param name="Local" value="HTML files/CChart/CChart.SetAutoRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetYAutoRange">
+				<param name="Local" value="HTML files/CChart/CChart.SetAutoRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetData">
+				<param name="Local" value="HTML files/CChart/CChart.SetData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetDataModified">
+				<param name="Local" value="HTML files/CChart/CChart.SetDataModified.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetRange">
+				<param name="Local" value="HTML files/CChart/CChart.SetRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetXRange">
+				<param name="Local" value="HTML files/CChart/CChart.SetRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::SetYRange">
+				<param name="Local" value="HTML files/CChart/CChart.SetRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::ShowPopupMenu">
+				<param name="Local" value="HTML files/CChart/CChart.ShowPopupMenu.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChart::WriteTextFile">
+				<param name="Local" value="HTML files/CChart/CChart.WriteTextFile.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CChartData member functions">
+			<param name="Local" value="HTML files/CChartData/CChartData.0index.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChartData::CChartData">
+				<param name="Local" value="HTML files/CChartData/CChartData.Constructor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChartData::DeleteData">
+				<param name="Local" value="HTML files/CChartData/CChartData.DeleteData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChartData::GetData">
+				<param name="Local" value="HTML files/CChartData/CChartData.GetData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChartData::GetDimensions">
+				<param name="Local" value="HTML files/CChartData/CChartData.GetDimensions.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChartData::GetNDimensions">
+				<param name="Local" value="HTML files/CChartData/CChartData.GetNDimensions.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChartData::Serialize">
+				<param name="Local" value="HTML files/CChartData/CChartData.Serialize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChartData::SetData">
+				<param name="Local" value="HTML files/CChartData/CChartData.SetData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CChartData::SetDimensions">
+				<param name="Local" value="HTML files/CChartData/CChartData.SetDimensions.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CColorControl member functions">
+			<param name="Local" value="HTML files/CColorControl/CColorControl.0index.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CColorControl::CColorControl">
+				<param name="Local" value="HTML files/CColorControl/CColorControl.Constructor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CColorControl::GetColor">
+				<param name="Local" value="HTML files/CColorControl/CColorControl.GetColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CColorControl::SetColor">
+				<param name="Local" value="HTML files/CColorControl/CColorControl.GetColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CColorControl::GetColorControlColor">
+				<param name="Local" value="HTML files/CColorControl/CColorControl.GetColorControlColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CColorControl::SetColorControlColor">
+				<param name="Local" value="HTML files/CColorControl/CColorControl.GetColorControlColor.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CDataSettingsDialog members">
+			<param name="Local" value="HTML files/CDataSettingsDialog/CDataSettingsDialog.0index.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CImageChart member functions">
+			<param name="Local" value="HTML files/CImageChart/CImageChart.0index.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::AddData">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.AddData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::AddImage">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.AddData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::SetData">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.AddData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::AdjustPlotSizeForWindowSize">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.AdjustPlotSizeForWindowSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::AxisSettings">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.AxisSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::CImageChart">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.Constructor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::DataSettings">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.DataSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::DeleteData">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.DeleteData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::DeleteImage">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.DeleteImage.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::DrawDataSet">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.DrawDataSet.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::DrawPlotBasics">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.DrawPlotBasics.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::GetMinDataDimensions">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.GetMinDataDimensions.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::GetPalette">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.GetPalette.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::SetPalette">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.GetPalette.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::GetPlotRange">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.GetPlotRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::GetPlotRect">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.GetPlotRect.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::GetPlotScale">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.GetPlotScale.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::GetScaledImageData">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.GetScaledImageData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::InterpretPopupMenuItem">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.InterpretPopupMenuItem.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="m_PlotToWindowSize">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.m_Variables.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="m_MaintainAspectRatio">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.m_Variables.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::OnDraw">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.OnDraw.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::PlotSettings">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.PlotSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::Serialize">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.Serialize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::SetUserByteImagePtr">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.SetUserByteImagePtr.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::GetUserByteImagePtr">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.SetUserByteImagePtr.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::GetUserImagePtr">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.SetUserImagePtr.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::SetUserImagePtr">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.SetUserImagePtr.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImageChart::ShowPopupMenu">
+				<param name="Local" value="HTML files/CImageChart/CImageChart.ShowPopupMenu.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CImagePalette member functions">
+			<param name="Local" value="HTML files/CImagePalette/CImagePalette.0index.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImagePalette::CImagePalette">
+				<param name="Local" value="HTML files/CImagePalette/CImagePalette.Constructor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImagePalette::GetBitmapInfo">
+				<param name="Local" value="HTML files/CImagePalette/CImagePalette.GetBitmapInfo.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImagePalette::GetNumEntries">
+				<param name="Local" value="HTML files/CImagePalette/CImagePalette.GetNumEntries.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImagePalette::GetCurPaletteNumber">
+				<param name="Local" value="HTML files/CImagePalette/CImagePalette.GetPalette.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImagePalette::SetPalette">
+				<param name="Local" value="HTML files/CImagePalette/CImagePalette.GetPalette.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImagePalette::GetPalette">
+				<param name="Local" value="HTML files/CImagePalette/CImagePalette.GetPalettePtr.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CImagePalette::Serialize">
+				<param name="Local" value="HTML files/CImagePalette/CImagePalette.Serialize.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CImagePlotSettingsDialog members">
+			<param name="Local" value="HTML files/CImagePlotSettingsDialog/CImagePlotSettingsDialog.0index.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CPlotSettingsDialog members">
+			<param name="Local" value="HTML files/CPlotSettingsDialog/CPlotSettingsDialog.0index.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CXYChart member functions">
+			<param name="Local" value="HTML files/CXYChart/CXYChart.0index.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::AddData">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.AddData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::AddDataPopupMenus">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.AddXXPopupMenu.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::AddChartTypePopup">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.AddXXPopupMenu.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::AddLineSizePopup">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.AddXXPopupMenu.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::AddMarkerPopup">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.AddXXPopupMenu.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::AxisSettings">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.AxisSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::CXYChart">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.Constructor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::CopyChartData">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.CopyChartData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::DataSettings">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.DataSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::DeleteAllData">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.DeleteAllData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::DeleteData">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.DeleteData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::DrawDataSet">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.DrawDataSet.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::DrawMarker">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.DrawMarker.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::DrawPlotBasics">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.DrawPlotBasics.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetChartType">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetChartType.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetChartType">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetChartType.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetDataColor">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetDataColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetDataColor">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetDataColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetDataLineSize">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetDataLineSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetDataLineSize">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetDataLineSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetDataLineStyle">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetDataLineStyle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetDataLineStyle">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetDataLineStyle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetDataRanges">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetDataRanges.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetMarkerFrequency">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetMarkerFrequency.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetMarkerFrequency">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetMarkerFrequency.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetMarkerFillState">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetMarkerFillState.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetMarkerFillState">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetMarkerFillState.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetMarkerSize">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetMarkerSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetMarkerSize">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetMarkerSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetMarkerType">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetMarkerType.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetMarkerType">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetMarkerType.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetPlotRange">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetPlotRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetPlotRect">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetPlotRect.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::GetRangeFromData">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.GetRangeFromData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::InterpretDataSetPopupMenuItem">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.InterpretDataSetPopupMenuItem.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::InterpretPopupMenuItem">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.InterpretPopupMenuItem.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::OnDraw">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.OnDraw.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::PlotSettings">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.PlotSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::Serialize">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.Serialize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetData">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.SetData.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::SetDefaults">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.SetDefaults.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::ShowPopupMenu">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.ShowPopupMenu.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CXYChart::WriteTextFile">
+				<param name="Local" value="HTML files/CXYChart/CXYChart.WriteTextFile.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Utility functions">
+			<param name="Local" value="HTML files/Utility/Utility.0index.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="AddColorTableMenu">
+				<param name="Local" value="HTML files/Utility/Utility.AddColorTableMenu.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Graph Types">
+		<param name="Local" value="HTML files/ChartTypes.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tutorial">
+		<param name="Local" value="HTML files/Tutorial/Tutorial.0index.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Add CPlot files">
+			<param name="Local" value="HTML files/Tutorial/Tutorial.AddFiles.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Add a Chart Object to your view">
+			<param name="Local" value="HTML files/Tutorial/Tutorial.AddView.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Create chart axes">
+			<param name="Local" value="HTML files/Tutorial/Tutorial.CreateData.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Create chart data">
+			<param name="Local" value="HTML files/Tutorial/Tutorial.CreateGraph.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Draw the chart">
+			<param name="Local" value="HTML files/Tutorial/Tutorial.DrawGraph.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Print the chart">
+			<param name="Local" value="HTML files/Tutorial/Tutorial.PrintGraph.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Add shortcut menu support">
+			<param name="Local" value="HTML files/Tutorial/Tutorial.ContextMenu.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Frequently Asked Questions">
+		<param name="Local" value="HTML files/FAQ/FAQ.0index.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="License">
+		<param name="Local" value="HTML files/license.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Contact Information">
+		<param name="Local" value="HTML files/contact.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

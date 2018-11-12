@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Tutorial: Add CPlot files</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>Add CPlot files</b>
+</font>
+</center>
+</h2>
+There are three steps to getting CPlot set up to be used in your project.
+<ol>
+	<li> <a href="#step1">Copy the source files to your project</a>
+	<li> <a href="#step2">Add the source files to your project</a>
+	<li> <a href="#step3">Add the resources to your project</a>
+</ol>
+
+<a name="step1"></a><b>Step 1</b>
+<br>
+Copy the following files into your project directory:
+<ul>
+	<li> The entire folder "CPlot Sources"
+</ul>
+
+<a name="step2"></a><b>Step 2</b>
+<br>
+Add these files (the .h and .cpp ones) to your project by choosing the Project --> Add To Project --> Files... menu item. Select all the files in the dialog box that comes up and click OK.
+<br>
+<img src="images/add_files.png">
+<br>
+<p>
+<a name="step3"></a><b>Step 3</b>
+<br>
+Visual Studio does not, in my opinion, have great support for resources. I include resources in CPlot because I think they make things easier, but at the same time, Visual Studio makes it hard to manage multiple resource sets. Hard isn't the word, but perhaps it requires more forethought than I'm used to putting in. =)
+<p>
+Having said that, it isn't all that difficult to add the CPlot resources to your project. choose the View --> Resource Includes ... menu item:
+<br>
+<img src="images/resource_includes_menu.png">
+<p>
+In the area labeled "Compile-time directives", enter the following:
+<pre><font color="#3333aa">#include "CPlot Sources/CPlotResources.rc"</font></pre>
+<br>(Note I haven't updated the image... the include should have "CPlot Sources/CPlotResources.rc", not what is in the image. If there is already text in the box, append it to the text, do not replace the text.)
+<br>
+<img src="images/resource_includes_dialog.png">
+<p>
+Now the resources have been added to your project. The resources all have very large ID numbers, which should not interfere with the resource IDs in your project. If you feel that this may be the case, feel free to edit "CPlotResources/resource.h" and change the numbers.
+<p>
+Even though the resources have been added to your project, you will not be able to edit them with the resource editor because they will not show up in the list. You need to add the resource file manually. Again, choose  Project --> Add To Project --> Files..., change the type to resource files, and select the file "CPlotResources/CPlotResources.rc". Visual Studio will tell you that only one resource file can be active at a time. This is OK. But now the CPlot resources should show up as a separate folder in the resources tab.
+<p>
+Because of the way Visual Studio does things, you will want to do a full rebuild the next time you build your project after adding these resources.
+<hr>
+<b>Tutorial:</b>
+<ul>
+	<li> <a href="Tutorial.AddFiles.htm">Add the CPlot files and resources to your project</a>
+	<li> <a href="Tutorial.AddView.htm">Add a chart object to your view</a>
+	<li> <a href="Tutorial.CreateData.htm">Create data for a chart</a>
+	<li> <a href="Tutorial.CreateGraph.htm">Create a chart and set up axes</a>
+	<li> <a href="Tutorial.DrawGraph.htm">Draw the chart</a>
+	<li> <a href="Tutorial.PrintGraph.htm">Print the graph</a>
+	<li> <a href="Tutorial.ContextMenu.htm">Add shortcut menu support</a>
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+</BODY>
+</HTML>

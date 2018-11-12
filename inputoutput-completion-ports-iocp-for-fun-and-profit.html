@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Input/Output Completion Ports (IOCP) for fun and profit</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/inputoutput-completion-ports-iocp-for-fun-and-profit.html" rel="bookmark"
+           title="Permalink to Input/Output Completion Ports (IOCP) for fun and profit">Input/Output Completion Ports (IOCP) for fun and profit</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-09-14T18:26:00-04:00">
+                Published: Sun 14 September 2014
+        </abbr>
+		<br />
+        <abbr class="modified" title="2014-09-14T18:26:00-04:00">
+                Updated: Sun 14 September 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/mfc.html">MFC</a> </p>
+</footer><!-- /.post-info -->      
+    I've written a number of C++/MFC programs using the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa365683%28v=vs.85%29.aspx">overlapped I/O approach</a>, and it has always been a real pain. Even MSDN doesn't really seem to like it:
+
+<img src="https://msdn.microsoft.com/dynimg/IC12128.png" alt="" />
+
+The problem with doing asynchronous I/O with OVERLAPPED function calls like ReadFileEx is that you have to be extremely careful with how you design your program to continue executing with a callback function or by waiting on an EVENT handle to get signaled. The callback function requires dealing with <a href="http://blogs.msdn.com/b/oldnewthing/archive/2004/06/29/168719.aspx">alertable states</a>, which is <a href="http://blogs.msdn.com/b/oldnewthing/archive/2011/02/02/10123392.aspx">really error-prone</a>.  No, <a href="http://blogs.msdn.com/b/oldnewthing/archive/2011/02/02/10123392.aspx">seriously, don't do it </a>because dealing with the re-entrancy can drive you nuts. Alertable wait states are terribly hard to reason about because it is the non-GUI analog to pumping messages (c.f. <a href="http://blogs.msdn.com/b/oldnewthing/archive/2006/05/03/589110.aspx">Raymond Chen</a>).
+
+So I recently started using IOCP for the same purposes, and I'm happy to report that it works much better! I guess that shouldn't be a surprise because it's <a href="http://www.flounder.com/iocompletion.htm">been recommended by some excellent programmers</a>. Anyway, here's the rough idea of how I got it to work for me:
+<ol>
+	<li>Create a background thread with an IOCP handle.</li>
+	<li>Open a file (or socket, serial port, etc.) with OpenFile and associate it with the IOCP.</li>
+	<li>Initiate I/O using ReadFile (not ReadFileEx).</li>
+	<li>Handle <strong>both synchronous and asynchronous</strong> completion of the I/O.</li>
+</ol>
+That last point was the hardest for me to realize that I absolutely have to deal with synchronous, immediate completion of the I/O (not just asynchronous completion from the IOCP). So you really do have to check the return value from ReadFile and also GetLastError() == ERROR_IO_PENDING.
+
+IOCP is so good that it is <a href="http://blog.stephencleary.com/2013/11/there-is-no-thread.html">the basis for C#'s multi-threading I/O</a>. The designers of C# must not have even cared about the old ways to do I/O (e.g., waiting on events, alertable callbacks with APCs, OVERLAPPED callback functions, etc.).
+    
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

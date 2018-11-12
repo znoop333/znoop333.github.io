@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CAxis::GetRange</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CAxis::GetRange</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CAxis::SetRange</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>void	GetRange( double *range );
+<br>
+void	SetRange( double low, double high);
+<br>
+void	SetRange( BOOL set, double low, double high );</b>
+<p>
+<b>Parameters</b>
+<ul>
+	<li> range - a pre-allocated two element double array to receive the range of the current axis
+	<li> set - A Boolean representing whether this is a user-set, or an auto-range set
+	<li> low - The low end of the range (need not be less than high)
+	<li> high - The high end of the range (need not be greater than low)
+</ul>
+<b>Description</b>
+<p>
+GetRange  function copies the range of the current axis into range.
+<p>
+For GetRange, if the axis is set for auto-ranging, it will copy the auto-ranged values into range, provided the chart has been displayed. The value returned by GetRange is invalid until the chart is displayed.
+<p>
+For SetRange, calling this function with set equal to TRUE or without set means that auto-ranging is turned off for this axis. Calling this function with set equal to FALSE retains auto-ranging.
+<p>
+<hr>
+<a href="CAxis.0index.htm">CAxis Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>AddColorTableMenu</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>AddColorTableMenu</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+void	AddColorTableMenu( CMenu *menu, UINT startVal = IDS_COLORTABLE_START );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> menu - A pointer to a popup menu to add the menu items to
+	<li> startVal - The starting menu ID. This defaults to IDS_COLORTABLE_START
+</ul><p>
+<B>Description</B>
+<p>
+This function will add a series of menu items containing the text for the available color tables (obtained from a string resource) to the menu. The menu should be created using CreatePopupMenu. Before adding the menu to your menu, you may want to detach it. The code below shows an example of what an initialization might look like (see the example project in MainFrm.cpp):
+<pre><font color="#770000">	CMenu		*menu, newMenu;
+	HMENU		hMenu;
+
+	menu = this->GetMenu();
+	newMenu.CreatePopupMenu();
+
+	AddColorTableMenu( &newMenu );
+	hMenu = newMenu.Detach();
+	menu->ModifyMenu( ID_PLOTSETTINGS_COLORTABLE, MF_POPUP | MF_BYCOMMAND, (UINT) hMenu, "Color Table" );
+</font></pre>
+Here, ID_PLOTSETTINGS_COLORTABLE is the menu item where the color table should be added to.
+<p>
+<hr>
+<a href="CColorControl.0index.htm">CColorControl Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+

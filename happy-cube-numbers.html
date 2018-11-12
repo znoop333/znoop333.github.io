@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Happy Cube Numbers</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/happy-cube-numbers.html" rel="bookmark"
+           title="Permalink to Happy Cube Numbers">Happy Cube Numbers</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-05-10T18:13:00-04:00">
+                Published: Sat 10 May 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+
+</footer><!-- /.post-info -->      
+&nbsp;<br>
+<br>
+Fun programming: this post is based on a certain Project named for a famous mathematician (Euler), but the exact problem is different than the programming question posted there because it is considered bad form to spoil the solutions. This text should be unattractive to Google searches and people looking to spoil the fun of figuring out a hard problem without help.<br>
+<br>
+I'll discuss a related problem which has different mathematical properties but the similar programming challenges. The original problem is better known as <a href="https://en.wikipedia.org/wiki/Happy_number" target="_blank">Happy Numbers</a>. The modification for today's discussion is a variation called Happy Cube Numbers which has the following new properties: A positive integer i is represented in base-10 and its digits are individually summed and cubed to produce another integer j. The following definition captures this function:<br>
+<br>
+let<br>
+\[
+i=\sum_{k=1}^{\left\lceil \log_{10}i\right\rceil }10^{k-1}d_{k}
+\]
+<br>
+and define<br>
+\[<br>
+f\left(i\right)=\sum_{k}d_{k}^{3}<br>
+\]<br>
+<br>
+If f(i)=i, then i is a Happy Cube Number.<br>
+<br>
+For example,<br>
+<br>
+\[<br>
+i=371=10^{2}3+10^{1}7+10^{0}1<br>
+\]<br>
+<br>
+Which is a Happy Cube Number because:<br>
+<br>
+\[<br>
+f(371)=3^{3}+7^{3}+1^{3}=371<br>
+\]<br>
+<br>
+Given this definition, we can already write some code and find some Happy Cube Numbers:<br>
+<pre><span class="Statement">def</span> <span class="Identifier">sumCubedDigits</span>(N):<br>
+    mysum=<span class="Constant">0L</span><br>
+    <span class="Statement">while</span> N &gt; <span class="Constant">0</span>:<br>
+        mysum += (N%<span class="Constant">10</span>)**<span class="Constant">3</span><br>
+        N //= <span class="Constant">10</span><br>
+    <span class="Statement">return</span> mysum</pre><br>
+This python code is very fast, O(log10(i)), and we can use it to exhaustively search for 5-digit Happy Cube Numbers:<br>
+<pre><span class="Identifier">print</span> [i <span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">100000L</span>) <span class="Statement">if</span> sumCubedDigits(i)==i]<br>
+</pre><br>
+Output:<br>
+[0, 1, 153, 370, 371, 407]<br>
+<br>
+From these results, we might conjecture that there are no Happy Cube Numbers above 407. Indeed, this is the case because f(i) &lt; i for most i. Consider all 5-digit integers:<br>
+<br>
+\[<br>
+i=[d_{5}d_{4}d_{3}d_{2}d_{1}]_{10}=10^{4}d_{5}+10^{3}d_{4}+10^{2}d_{3}+10^{1}d_{2}+10^{0}d_{1}\leq10^{5}<br>
+\]<br>
+<br>
+When running these integers through f:<br>
+<br>
+\[<br>
+f\left(i\right)=d_{5}^{3}+d_{4}^{3}+d_{3}^{3}+d_{2}^{3}+d_{1}^{3}\leq5\cdot9^{3}<br>
+\]<br>
+<br>
+The latter inequality follows because each of the 5 digits can be at most 9. So f(i) is much smaller than i for most integers, and f(i) cannot be equal to i for any number with 4 or more digits. Therefore, the only Happy Cube Numbers are [0, 1, 153, 370, 371, 407], as stated earlier.<br>
+<br>
+There is one other interesting behavior to note: some infinitely repeating cycles of integers can occur in Happy Cube sequences. Consider:<br>
+<pre><span class="Identifier">print</span> [<span class="Identifier">int</span>(sumCubedDigits(i)) <span class="Statement">for</span> i <span class="Statement">in</span> [<span class="Constant">133</span>, <span class="Constant">55</span>, <span class="Constant">250</span>, <span class="Constant">133</span>]]</pre><br>
+Output:<br>
+<pre>[55, 250, 133, 55]</pre><br>
+Therefore, this cycle will repeat forever. How can other cycles be identified? Writing some code provides a relatively quick solution. For example, two-cycle pairs of integers can be identified by applying f() twice and excluding the trivial solutions (immediately repeating numbers).<br>
+<pre><span class="Identifier">print</span> [(i,int(sumCubedDigits(i))) <span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">10000L</span>) <span class="Statement">if</span> sumCubedDigits(sumCubedDigits(i))==i <span class="Statement">and</span> sumCubedDigits(i)!=i ]</pre><br>
+Output:<br>
+<pre>[(136, 244), (244, 136), (919, 1459), (1459, 919)]</pre><br>
+Bigger integers can't be part of a two-integer cycle because f() decreases too rapidly.<br>
+<br>
+Applying similar logic, we can find three-integer cycles:<br>
+<pre>s3 = sumCubedDigits<br>
+<span class="Identifier">print</span> [(i,<span class="Identifier">int</span>(s3(i)),<span class="Identifier">int</span>(s3(s3(i)))) <span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">10000L</span>) <span class="Statement">if</span> s3(s3(s3(i)))==i <span class="Statement">and</span> s3(s3(i))!=i <span class="Statement">and</span> s3(i)!=i ]<br>
+</pre><br>
+Note that I took advantage of python's true object nature to rename the function to s3 to make the command above easier to read. Output:<br>
+<pre>[(55, 250, 133), (133, 55, 250), (160, 217, 352), (217, 352, 160), (250, 133, 55), (352, 160, 217)]<br>
+</pre><br>
+So if we remove the redundant entries, there are two cycles of length three: (55, 250, 133) and (160, 217, 352), two cycles of length two: (136, 244) and (919, 1459), and five immediately repeating positive integers: 1, 153, 370, 371, 407. Since every iteration of f will rapidly decrease large values of i, we can conjecture that all integers will terminate in one of the above 9 situations.<br>
+<br>
+How do we know that cycles of length four or longer don't exist? Exhaustively searching 4-digit integers with code similar to s3 above shows that such cycles don't occur. A different way to think about it is that this entire exercise for 4-digit integers is trying to solve the following <a href="https://en.wikipedia.org/wiki/Diophantine_equation">Diophantine equation</a>:<br>
+<br>
+\[<br>
+10^{3}d_{4}+10^{2}d_{3}+10d_{2}+d_{1}=d_{4}^{3}+d_{3}^{3}+d_{2}^{3}+d_{1}^{3}<br>
+\]<br>
+<br>
+Unfortunately, Diophantine equations are very hard to solve. Brute force solutions are often the only ones available. So let's get back to programming. Among all of the 4-digit integers, how many of them will reach each of the 9 situations? How can we efficiently find the final value or cycle from iterating this process on a given integer?<br>
+<br>
+The first programming tool we'll need for an efficient solution is a form of caching because there is no point in continuing to iterate when we've already found the final value or entered a cycle. Memoization solves the caching problem by avoiding a recalculation of an integer we've previously computed. Here's a straightforward class decorator which takes advantage of the fact that Python objects are true classes:<br>
+<pre><span class="Statement">class</span> <span class="Identifier">memoizer</span>(<span class="Identifier">object</span>):<br>
+    <span class="Constant">'''Decorator. Caches results'''</span><br>
+    <span class="Statement">def</span> <span class="Identifier">__init__</span>(self,fn):<br>
+        self.fn = fn<br>
+        self.cache = {}<br>
+    <span class="Statement">def</span> <span class="Identifier">__call__</span>(self,*args):<br>
+        <span class="Statement">if</span> args <span class="Statement">in</span> self.cache:<br>
+            <span class="Statement">return</span> self.cache[args]<br>
+        <span class="Statement">else</span>:<br>
+            val = self.fn(*args)<br>
+            self.cache[args] = val<br>
+            <span class="Statement">return</span> val</pre><br>
+<br>
+The next tool we need is some basic recursion and datatypes. We'll (ab)use the python dictionary to get what we need:<br>
+<br>
+<pre><br>
+<span class="Comment"># recurse until a known solution is reached</span><br>
+<span class="PreProc">@</span><span class="Identifier">memoizer</span><br>
+<span class="Statement">def</span> <span class="Identifier">IterateCubedDigits</span>(N):<br>
+    <span class="Statement">return</span> IterateCubedDigits(<span class="Identifier">int</span>(sumCubedDigits(N)))<br>
+<br>
+knownValues = {<br>
+(<span class="Constant">1</span>,): (<span class="Constant">1</span>),<br>
+(<span class="Constant">55</span>,): (<span class="Constant">55</span>, <span class="Constant">250</span>, <span class="Constant">133</span>),<br>
+(<span class="Constant">133</span>,): (<span class="Constant">55</span>, <span class="Constant">250</span>, <span class="Constant">133</span>),<br>
+(<span class="Constant">136</span>,): (<span class="Constant">136</span>, <span class="Constant">244</span>),<br>
+(<span class="Constant">153</span>,): (<span class="Constant">153</span>),<br>
+(<span class="Constant">160</span>,): (<span class="Constant">160</span>, <span class="Constant">217</span>, <span class="Constant">352</span>),<br>
+(<span class="Constant">217</span>,): (<span class="Constant">160</span>, <span class="Constant">217</span>, <span class="Constant">352</span>),<br>
+(<span class="Constant">244</span>,): (<span class="Constant">136</span>, <span class="Constant">244</span>),<br>
+(<span class="Constant">250</span>,): (<span class="Constant">55</span>, <span class="Constant">250</span>, <span class="Constant">133</span>),<br>
+(<span class="Constant">352</span>,): (<span class="Constant">160</span>, <span class="Constant">217</span>, <span class="Constant">352</span>),<br>
+(<span class="Constant">370</span>,): (<span class="Constant">370</span>),<br>
+(<span class="Constant">371</span>,): (<span class="Constant">371</span>),<br>
+(<span class="Constant">407</span>,): (<span class="Constant">407</span>),<br>
+(<span class="Constant">919</span>,): (<span class="Constant">919</span>, <span class="Constant">1459</span>),<br>
+(<span class="Constant">1459</span>,): (<span class="Constant">919</span>, <span class="Constant">1459</span>)<br>
+}<br>
+<br>
+IterateCubedDigits.cache = knownValues.copy()<br>
+</pre><br>
+<br>
+By only storing the final result, we can avoid using too much memory. The cache uses O(N) entries for N integers, and lookup times will be log(N). That's a good tradeoff because otherwise, we'd have to iterate many more times to find the final value of each integer. <br>
+<br>
+Finally, we can ask where a given integer goes. E.g., 1337:<br>
+<br>
+<pre><br>
+<span class="Identifier">print</span> IterateCubedDigits(<span class="Constant">1337</span>)<br>
+</pre><br>
+<br>
+Output: [371].<br>
+<br>
+So what happens to the first 20 integers? <br>
+<br>
+<pre><br>
+list1 = [(i,IterateCubedDigits(i)) <span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">1</span>,<span class="Constant">21</span>)]<br>
+<span class="Identifier">print</span> <span class="Constant">'</span><span class="Special">\n</span><span class="Constant">'</span>.join(<span class="Identifier">map</span>(<span class="Identifier">str</span>, list1))<br>
+</pre><br>
+<br>
+Output: <br>
+<pre><br>
+(1, 1)<br>
+(2, 371)<br>
+(3, 153)<br>
+(4, (55, 250, 133))<br>
+(5, 371)<br>
+(6, 153)<br>
+(7, 370)<br>
+(8, 371)<br>
+(9, 153)<br>
+(10, 1)<br>
+(11, 371)<br>
+(12, 153)<br>
+(13, (55, 250, 133))<br>
+(14, 371)<br>
+(15, 153)<br>
+(16, (160, 217, 352))<br>
+(17, 371)<br>
+(18, 153)<br>
+(19, 370)<br>
+(20, 371)<br>
+</pre><br>
+<br>
+371 and 370 look like popular final values for this process. Let's create a histogram out of the first thousand integers.<br>
+<br>
+<pre><br>
+d={}<br>
+list1000 = [(i,IterateCubedDigits(i)) <span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">1</span>,<span class="Constant">1001</span>)]<br>
+<span class="Statement">for</span> (k1,v1) <span class="Statement">in</span> list1000:<br>
+    <span class="Statement">if</span> v1 <span class="Statement">in</span> d:<br>
+        d[v1] = d[v1]+<span class="Constant">1</span><br>
+    <span class="Statement">else</span>:<br>
+        d[v1] = <span class="Constant">1</span><br>
+<br>
+hist = <span class="Identifier">sorted</span>(d.items(), key=<span class="Statement">lambda</span> x: x[<span class="Constant">1</span>], reverse=<span class="Identifier">True</span>)<br>
+<span class="Identifier">print</span> <span class="Constant">'</span><span class="Special">\n</span><span class="Constant">'</span>.join(<span class="Identifier">map</span>(<span class="Identifier">str</span>,hist))<br>
+</pre><br>
+<br>
+This code requires a little more explanation. Having generated an explicit list of the final values corresponding to each integer, a dictionary is constructed, and it counts the number of values in each of the final values (either a cycle or a single integer). We then sort it by a descending number of counts and print pairs consisting of the final value and the count. <br>
+<br>
+Output:<br>
+<pre><br>
+(153, 333)<br>
+(371, 303)<br>
+(370, 174)<br>
+((55, 250, 133), 66)<br>
+((160, 217, 352), 51)<br>
+(407, 30)<br>
+((919, 1459), 24)<br>
+(1, 10)<br>
+((136, 244), 9)<br>
+</pre><br>
+<br>
+It looks like my intuition was wrong, at least for the integers up to 1000. 153 is actually the most common final value (33.3%), as compared to 371 at 30.3% and 370 at 17.4%.<br>
+<br>
+Going up to 6-digit numbers, those percentages are similar: 153 is 33.3%, 371 is 29.5%, and 370 is 18.1%. Surprisingly, the (136, 244) cycle is less popular than having 1 as a final value.<br>
+<br>
+Output:<br>
+<pre><br>
+(153, 333333)<br>
+(371, 295281)<br>
+(370, 181041)<br>
+((55, 250, 133), 53370)<br>
+((160, 217, 352), 39195)<br>
+(407, 38052)<br>
+((919, 1459), 32274)<br>
+(1, 14953)<br>
+((136, 244), 12501)<br>
+</pre><br>
+<br>
+The execution time of this algorithm was under 2 seconds for computing these values for the first million integers. A slower algorithm would surely fail under these conditions.<br>
+<br>
+Conclusions: I explored an interesting number theory problem and produced some concise python code which solves the problem very quickly. Algorithmic and mathematical analyses were used to produce correct results with minimal computation.
+
+<script type="text/javascript" async src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

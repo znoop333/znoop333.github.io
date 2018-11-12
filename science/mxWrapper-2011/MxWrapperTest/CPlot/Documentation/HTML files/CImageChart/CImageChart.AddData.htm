@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart::AddData</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::AddData</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::AddImage</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::SetData</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+int		AddData( T *data, int nDims, int *dimArray );
+<br>
+int SetData( T *data, int nDims, int *dimArray );
+<br>
+BOOL	AddImage( T *data, int nDims, int *dimArray, BOOL doScale, BOOL doOffset )
+</b>
+<p>
+
+<b>Parameters</b>
+<p><ul>
+	<li> data - An array of any data type to store into the current chart
+	<li> nDims - The number of dimensions in data
+	<li> dimArray - An array with the size of each of the dimensions in data
+	<li> doScale - A boolean representing whether to scale the image data to the number of palette indices
+	<li> doOffset - A boolean representing whether to offset the image data so that the minimum is zero
+</ul></p>
+<b>Returns</b>
+<p>
+SetData and AddData return an positive integer if successful, a negative integer if unsucessful. This is to be consistent with SetData and AddData in other chart types which return a negative integer if unsucessful (instead of FALSE, or zero, as AddImage returns).
+<p>
+AddImage returns a boolean representing whether data creation was sucessful.
+<p>
+<b>Description</b>
+<p>
+These functions change the current image data to the new data. CImageChart allows for only one active data set, so these functions overwrite the current data.
+<p>
+For details on data sets, see <a href="../CChartData/CChartData.SetData.htm">CChartData::SetData<p>
+<hr>
+<a href="CImageChart.0index.htm">CImageChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+

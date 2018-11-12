@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Frequently Asked Questions</Title>
+</HEAD>
+<BODY>
+<h1>
+<font color="#990000">
+<center>
+<b>Frequently Asked Questions</b>
+</font>
+</center>
+</h1>
+<hr>
+
+Some frequently asked questions about CPlot
+<p>
+<ol>
+	<li> <a href="#faq_legend">Why is there no legend support?</a>
+	<li> <a href="#faq_other_plot">I need to plot bar graphs or pie charts or MY chart, can you support this?</a>
+	<li> <a href="#faq_cgraph">CGraph came before you, why didn't you use that?</a>
+	<li> <a href="#faq_derive_cview">Why didn't you derive CChart from CView instead of CObject?</a>
+	<li> <a href="#faq_naming_conventions">What is <b>up</b> with your naming conventions?</a>
+	<li> <a href="#faq_resources">Why are there resources to add?</a>
+	<li> <a href="#faq_scroll_support">Why isn't there support for scrolling?</a>
+	<li> <a href="#faq_license">What kind of license does this code have?</a>
+</ol>
+<hr>
+<b>The actual answers:</b>
+<p>
+
+<a name="faq_legend"></a><li>Why is there no legend support?
+<p>
+<ul>
+Because I don't need it. If I find that people are interested and/or using CPlot, I'll probably add legend support. But if, like so many other programming projects in the world, CPlot is simply overlooked (I have no problem with this... there is too much code in the world for all of it to get looked at), I don't particularly feel the need to add legend support when it is not something I need. If you want legend support, <a href="../contact.htm">contact me</a>.
+<p>
+Of course, this is an open source product, and if you care to add legend support on your own, I'd be happy to add you to the development team for this project. See the <a href="../contact.htm">contact page</a> for information on the hosting of this project.
+</ul>
+<p>
+
+<a name="faq_other_plot"></a><li>I need to plot bar graphs or pie charts or MY chart, can you support this?
+<p>
+<ul>
+I probably could, but perhaps I will not. CPlot does what I need it to do, and it does it well enough for my purposes. If you are interested in pie charts or bar graphs or other such things, I highly recommend you look at the free CGraph library by Brian Convery. It can be found at <a href="http://members.home.net/bconvery3/">http://members.home.net/bconvery3/</a>. However, just because I say probably not doesn't mean no. If you have a graph type you would like to be supported, feel free to <a href="../contact.htm">contact me</a>.
+<p>
+Of course, this is an open source product, and if you care to add plot support on your own, I'd be happy to add you to the development team for this project. See the <a href="../contact.htm">contact page</a> for information on the hosting of this project.
+</ul>
+<p>
+
+<a name="faq_cgraph"></a><li>CGraph came before you, why didn't you use that?
+<p>
+<ul>
+CGraph is great, it produces wonderful plots, and it was my "inspiration" for writing CPlot. However, CGraph had some limitations in its data storage options (and API) which didn't allow it to do massive XY scatter plots or, especially, two dimensional data. CPlot doesn't have these same limitations (it has others!).
+<p>
+Also, I like to write code. I like to learn how to do new things, and I'd never written a complete plotting display program before (heck, I'd never used MFC before). Many times in my life, I re-invent the wheel and my wheel has 16 edges instead of being round, but I invented it, and I learned from it, which is most of the fun in programming for me.
+</ul>
+<p>
+
+<a name="faq_derive_cview"></a><li> Why didn't you derive CChart from CView instead of CObject?
+<p>
+<ul>
+Because I didn't. =)
+<p>
+Actually, I had never used MFC before when I started writing CPlot, so some of my choices may not have been the best. However, I still think that deriving from CObject was OK since it ensures that CPlot is completely independent of the view architecture of the program (some may consider this a bad thing). But the way it is, you can have a plot as a sub-section of a view, and not have to worry about view creation and management. Just call the appropriate OnDraw function with the client rectangle for the chart. It couldn't be (much) easier.
+</ul>
+<p>
+
+<a name="faq_naming_conventions"></a><li>What is <b>up</b> with your naming conventions?
+<p>
+<ul>
+Hey, it's free, what are you complaining about? =)
+<p>
+First things first: I'm a Mac programmer. It's 90% of the GUI programming that I have done in my life. So, I tend to borrow some of the conventions from there, such as constants beginning with lowercase k, and having some name spelled out with first letter capitals.
+<p>
+<pre>#define	kMenuAxisRange	100</pre>
+<p>
+Other than that, for member variables, I try to follow the m_ convention. And every once in a while, I even use the variable prefix notation such as m_bVariableName such that one knows that m_bVariableName is a boolean. But I'll be honest, I'm not consistent. It's hard to be consistent when you're used to one thing, and having to do another. And no one is paying you to do it right. =)
+<p>
+Don't even get me started about how inconsistent I can be with function naming. I hate it, myself. =)
+</ul>
+<p>
+
+<a name="faq_resources"></a><li> Why are there resources to add?
+<p>
+<ul>
+I wanted to be able to have dialog boxes to go with changing settings on each of the axes. And the easiest way to do so was to use the resource editor to make a dialog box. I could have taken the results of the resource editor, copied the bounding rectangles, or the header file, or whatever, and constructed the dialog box manually at run time. But I don't do that. I like dialog box editors. They are great things. If you want to modify the dialog box, you can, fairly easily.
+</ul>
+<p>
+
+<a name="faq_scroll_support"></a><li>Why isn't there support for scrolling?
+<p>
+<ul>
+This is a feature I didn't need, so I didn't bother putting it in. However, since it is derived from CObject and not CView, if your view supports scrolling, there should be no reason that CPlot shouldn't work within the scrolling. (Not that I've tried this, but it makes sense since only the bounding rectangle is passed. If that is constant, but the clipping/view rectangle changes, CPlot doesn't really care.)
+</ul>
+<p>
+
+<a name="faq_license"></a><li>What kind of license does this code have?
+<p>
+<ul>
+This code is licensed under the standard BSD license. See the <a href="../license.htm">license page</a> for more information.
+</ul>
+<p>
+
+
+</BODY>
+</HTML>

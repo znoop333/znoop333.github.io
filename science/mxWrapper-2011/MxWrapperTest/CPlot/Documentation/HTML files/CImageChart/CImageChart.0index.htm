@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart member functions</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>CImageChart member functions</b>
+</font>
+</center>
+</h2>
+<hr>
+CImageChart is derived from <a href="../CChart/CChart.0index.htm">CChart</a>, and thus inherets all the functionality of the parent class. The functions listed here are specific to image charts or are overrides of the parent function.
+<p>
+CImageChart allows for only one data set at a time. Thus the data functions below will modify the current data set. Even the <a href="CImageChart.AddData.htm">AddData</a> function is overloaded to overwrite the current data.
+<p>
+CImageChart has specific ways of drawing images. See the <a href="CImageChart.m_Variables.htm">variables page</a> for a description of the three drawing modes. It also uses pre-made color tables for displaying the data. More information on the color tables can be found on the <a href="CImageChart.GetPalette.htm">GetPalette</a> page.
+<p>
+These are the member functions of CImageChart:
+<p>
+<b>Construction/Destruction</b>
+<ul>
+	<li> <a href="CImageChart.Constructor.htm">CImageChart</a> - Default constructor
+	<li> <a href="CImageChart.Constructor.htm">~CImageChart</a> - Default destructor
+</ul>
+
+<b>Overridden</b>
+<ul>
+	<li> <a href="CImageChart.OnDraw.htm">OnDraw</a> - Draw the chart
+	<li> <a href="CImageChart.Serialize.htm">Serialize</a> - Save or restore a chart
+	<li> <a href="CImageChart.GetPlotRect.htm">GetPlotRect</a> - Return the rect of the data region of the plot
+	<li> <a href="CImageChart.DeleteData.htm">DeleteData</a> - Delete a specific data set
+	<li> <a href="CImageChart.AxisSettings.htm">AxisSettings</a> - Show the axis settings dialog box
+	<li> <a href="CImageChart.PlotSettings.htm">PlotSettings</a> - Show the plot settings dialog box
+	<li> <a href="CImageChart.ShowPopupMenu.htm">ShowPopupMenu</a> - Show the shortcut menu for the chart
+	<li> <a href="CImageChart.AddData.htm">AddData</a> - Change the current image
+	<li> <a href="CImageChart.AddData.htm">SetData</a> - Change the data in an existing data set
+</ul>
+<b>Drawing</b>
+<ul>
+	<li> <a href="CImageChart.DrawPlotBasics.htm">DrawPlotBasics</a> - Erase the background and draw the frame
+	<li> <a href="CImageChart.DrawDataSet.htm">DrawDataSet</a> - Draw the image
+</ul>
+<b>Data</b>
+<ul>
+	<li> <a href="CImageChart.SetUserByteImagePtr.htm">SetUserByteImagePtr</a> - Set a temporary pointer to a byte image to draw with
+	<li> <a href="CImageChart.SetUserByteImagePtr.htm">GetUserByteImagePtr</a> - Retrieve the temporary pointer to a byte image to draw with
+	<li> <a href="CImageChart.SetUserImagePtr.htm">SetUserImagePtr</a> - Set a temporary pointer to image data
+	<li> <a href="CImageChart.SetUserImagePtr.htm">SetUserImagePtr</a> - Retrieve the temporary pointer to image data
+	<li> <a href="CImageChart.GetScaledImageData.htm">GetScaledImageData</a> - Create scaled image data
+	<li> <a href="CImageChart.AddData.htm"> AddImage</a> - Change the current image
+	<li> <a href="CImageChart.DeleteImage.htm">DeleteImage</a> -Delete the current image
+</ul>
+<b>Miscelaneous</b>
+<ul>
+	<li> <a href="CImageChart.GetPlotRange.htm">GetPlotRange</a> - Get the x and y range of the image
+	<li> <a href="CImageChart.GetMinDataDimensions.htm">GetMinDataDimensions</a> - Get the x and y size of the image
+	<li> <a href="CImageChart.AdjustPlotSizeForWindowSize.htm">AdjustPlotSizeForWindowSize</a> - Adjust the plot size to fit the window, depending on scaling options
+	<li> <a href="CImageChart.GetPalette.htm">GetPalette</a> - Get the current palette for the image
+	<li> <a href="CImageChart.GetPalette.htm">SetPalette</a> - Set the current palette for the image
+	<li> <a href="CImageChart.SetPaletteMenu.htm">SetPaletteMenu</a> - Set the current palette for the image based of a menu selection
+	<li> <a href="CImageChart.GetPlotScale.htm">GetPlotScale</a> - Get the current scaling factor for the image
+	<li> <a href="CImageChart.InterpretPopupMenuItem.htm">InterpretPopupMenuItem</a> - Interpret a user selection in a shortcut menu
+</ul>
+<b>Variables</b>
+<ul>
+	<li> <a href="CImageChart.m_Variables.htm">m_PlotToWindowSize</a> - Adjust the plot to the window size, or scale by factors of 2?
+	<li> <a href="CImageChart.m_Variables.htm">m_MaintainAspectRatio</a> - Maintain the aspect ratio of the image when drawing
+
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+
+</BODY>
+</HTML>

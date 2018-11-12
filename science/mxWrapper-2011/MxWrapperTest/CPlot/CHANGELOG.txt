@@ -1,0 +1,61 @@
+ChangeLog:
+
+1.0.5
+21 Jul 03: Release
+21 Jul 03: Checked include files for necessity, and finally fixed bad
+	include problems!
+21 Jul 03: Fixed problem of axis not displaying when axis is entirely negative
+28 May 03: Moved main CPlot sources to individual folder for easy copying and
+	adding to new projects.
+
+1.0.4
+8 Apr 03: Fixed problem with positioning of left or right axis title when the axis
+	labels are small in width.
+
+1.0.3
+7 Apr 03: Release
+7 Apr 03: Updated documentation
+4 Apr 03: Added moving circle to current data set in sample application
+4 Apr 03: Added a sunken border around the color rectangles in ColorControl
+4 Apr 03: Added functions for converting between data coordinates and
+	logical coordinates. These are DataToLP, LPToData and LPToNearest.
+4 Apr 03: Added a SetDataModified function which tells the chart
+	object that the data arrays have been manually updated and to update
+	any internal references to the data (such as XYChart which keeps
+	track of the data minimum and maximum, or ImageChart which keeps
+	a byte array for display.)
+3 Apr 03: Moved m_DataTitle[] member from CXYChart up to CChart since
+	it is always applicable. The functions GetDataTitle and SetDataTitle
+	have also been moved up.
+3 Apr 03: Changed function "GetDataSet" to function "GetAbsoluteDataSet"
+	and added a function "GetDataSet" which used the data ID instead
+	of the absolute index in the array.
+3 Apr 03: Removed inclusion of "CPlot.h" in some of the source files
+	which made it impossible to use CPlot in another project! Whoops.
+
+
+1.0.2
+31 Mar 03: Small fixes to documentation
+28 Mar 03: Added functionality for changing line style of grids
+28 Mar 03: Added functionality for changing line style in XY plot
+27 Mar 03: Re-ordered tutorial files in help to match the order
+		of the tutorials
+19 Mar 03: Fixed bug in DeleteData that didn't check return of GetIndex
+	and allowed for deleting invalid data.
+
+1.0.1
+18 Mar 03: Release
+18 Mar 03: Updated documentation to reflect new location of resources
+			and GetMarkerFillState and SetMarkerFillState
+18 Mar 03: Added functionality for filled markers
+18 Mar 03: Move CPlot resources file to main directory. This prevents
+	Visual C++ from losing the binary files for the Color table descriptions.
+	It's not optimal, but I don't know what else to do!
+18 Mar 03: Fixed bug causing incorrect clipping of image chart when printing
+18 Mar 03: Fixed bug in MySelectFont that resulted in deleting a font
+			before deselecting it. Resulted in crash in CXYChart print
+			preview.
+17 Mar 03: Added functionality for putting colormap popup menu in CImageChart
+
+1.0
+12 Mar 03: First release

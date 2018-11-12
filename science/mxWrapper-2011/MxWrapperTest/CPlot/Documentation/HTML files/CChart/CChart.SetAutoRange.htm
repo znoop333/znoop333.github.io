@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::SetAutoRange</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::SetAutoRange</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::SetXAutoRange</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::SetYAutoRange</b>
+</font>
+</center>
+</h3>
+
+<hr>
+<b>
+	void	SetAutoRange( BOOL setX);
+<br>
+	BOOL	SetXAutoRange( void );
+<br>
+	BOOL	SetYAutoRange( void );
+
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> setX - TRUE to set auto range of x axis, FALSE to set auto range of y axis
+</ul></p>
+<b>Description</b>
+<p>
+These functions set whether the X and Y directions are auto ranging based on what axes are present. By default, CChart and the derived functions assume that the bottom axis will determine the X range and the top axis will determine the Y range. However, in the case that a bottom axis doesn't exist, the top axis will determine the range. These functions will set the auto range flag for whatever axis controls the x or y range.
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CAxisSettings members</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>CAxisSettings members</b>
+</font>
+</center>
+</h2>
+<hr>
+CAxisSettings is derived from CDialog. It can be called simply as follows:
+<pre>
+CAxisSettings		dialog( NULL, this );
+
+dialog.m_CurAxis = whichAxis; // whichAxis is zero-based
+
+if( dialog.DoModal() == IDOK )
+{
+	// Need to update chart
+}
+</pre>
+<p>
+CAxisSettings requires that the dialog resource with id <b>IDD_AXIS_SETTINGS</b> exist in the current file. See the <a href="../Tutorial/Tutorial.0index.htm">tutorial</a> for more information on copying resources.
+<p>
+These are the members of CAxisSettings:
+<p>
+<b>Functions</b>
+<ul>
+	<li> CAxisSettings( CWnd* pParent, CChart *chart ) - The default constructor requires a pointer to a chart object from which to obtain the current axis settings, and to copy the settings back into. The parent window can be NULL or point to the parent window.
+</ul>
+<p>
+<b>Variables</b>
+<ul>
+	<li> int m_CurAxis - Set to the axis to display before calling DoModal. Default = 0
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+
+</BODY>
+</HTML>

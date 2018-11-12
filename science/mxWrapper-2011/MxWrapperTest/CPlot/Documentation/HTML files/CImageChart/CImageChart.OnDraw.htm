@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart::OnDraw</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::OnDraw</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+virtual void		OnDraw( CDC *pDC, CRect destRect );
+<br>
+virtual void		OnDraw( CDC *pDC, CRect destRect , CRect updateRect );</b>
+<p>
+<b>Parameters</b>
+<ul>
+	<li> pDC - Pointer to a device contect
+	<li> destRect - The destination rectangle for the chart
+	<li> updateRect - The clipping region of the client rectangle. If this value is not passed, the entire client rectangle is assumed to be the updateRect
+</ul>
+<b>Description</b>
+<p>
+The coordinates of clientRect, chartRect and updateRect should be LOMETRIC.
+<p>
+This function draws the current image. The updateRect is used only to calculate whether or not to draw the image (as this is the most time consuming portion of the drawing operation).
+<p>
+<hr>
+<a href="CImageChart.0index.htm">CImageChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+

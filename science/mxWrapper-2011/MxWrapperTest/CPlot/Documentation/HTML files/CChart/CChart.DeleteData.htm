@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::DeleteData</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::DeleteData</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	virtual BOOL	DeleteData( int dataRef );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> dataRef - A data reference number returned by <a href="CChart.AddData.htm">AddData</a> or <a href="CChart.SetData.htm">SetData</a>
+</ul></p>
+<b>Returns</b>
+<p>
+TRUE if the delete was sucessful, FALSE otherwise
+<p>
+<b>Description</b>
+<p>
+This function deletes a specific data set. Since all the settings are array based (instead of dynamic), this requires that the settings be moved around within the arrays to account for the newly missing member. Any child classes which override this function should also call the parent function (see <a href="../CXYChart/CXYChart.DeleteData.htm">CXYChart::DeleteData</a>)
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+

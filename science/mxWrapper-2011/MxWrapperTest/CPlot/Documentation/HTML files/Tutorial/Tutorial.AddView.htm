@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Tutorial: Add Chart Object</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>Add a Chart Object to your view</b>
+</font>
+</center>
+</h2>
+Now that you have <a href="Tutorial.AddFiles.htm">Added the CPlot files and resources</a> to your project, you will want to add a chart object to your document or view class. Where that might go is up to you. If you will be wanting to save and restore the chart object, then it is best that it goes in the document class. If you just are using the chart object for display, put it in your view class. For the purposes of this example, we'll put the chart object in the view class.
+<p>
+Edit the header file of your view class, and add the following line before the class declaration:
+<pre><font color="#770000">#include "Chart.h"</font></pre>
+This needs to be included in the header file since in the variable declaration, you'll add a reference to a chart object. In fact, do that now, and what you'll end up with is something that may look a little something like this:
+<pre><font color="#770000">
+#include "Chart.h"
+
+class CTestProjectView : public CView
+{
+protected: // create from serialization only
+	CTestProjectView();
+	DECLARE_DYNCREATE(CTestProjectView)
+
+// Attributes
+public:
+	CTestProjectDoc* GetDocument();
+
+	CXYChart		m_Chart;
+	// ... more declarations and stuff below
+</font></pre>
+Here I've chosen to include an <a href="../CXYChart/CXYChart.0index.htm">XY chart</a>, but it could just as easily have been an <a href="../CImageChart/CImageChart.0index.htm">Image Chart</a>.
+<hr>
+<b>Tutorial:</b>
+<ul>
+	<li> <a href="Tutorial.AddFiles.htm">Add the CPlot files and resources to your project</a>
+	<li> <a href="Tutorial.AddView.htm">Add a chart object to your view</a>
+	<li> <a href="Tutorial.CreateData.htm">Create data for a chart</a>
+	<li> <a href="Tutorial.CreateGraph.htm">Create a chart and set up axes</a>
+	<li> <a href="Tutorial.DrawGraph.htm">Draw the chart</a>
+	<li> <a href="Tutorial.PrintGraph.htm">Print the graph</a>
+	<li> <a href="Tutorial.ContextMenu.htm">Add shortcut menu support</a>
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+</BODY>
+</HTML>

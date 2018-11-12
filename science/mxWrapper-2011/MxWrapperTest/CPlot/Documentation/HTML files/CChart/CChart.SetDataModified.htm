@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::SetDataModified</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::SetDataModified</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+int		SetDataModified( int dataID );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> dataID - the ID number of the data set modified
+</ul></p>
+<b>Description</b>
+<p>
+Call this function after modifying the internal data of a data set by hand (such as calling <a href="CChart.GetDataSet.htm">GetDataSet</a>
+followed by <a href="../CChartData/CChartData.GetData.htm">CChartData.GetData</a> and modifying the contents of the
+pointer to the data. It makes sure that any internal data structures of the plot are updated (such as the
+maximum and minimum values of the data in the XY chart, and the BYTE image pointer in the image chart.)
+<p>
+The data ID is that returned by <a href="CChart.AddData.htm">AddData</a> or <a href="CChart.SetData.htm">SetData</a>.
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+

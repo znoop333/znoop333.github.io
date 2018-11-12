@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::SetRange</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::SetRange</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::SetXRange</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::SetYRange</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	void	SetRange( BOOL setX, double low, double high );
+<br>
+	void	SetXRange( double low, double high );
+<br>
+	void	SetYRange( double low, double high );
+
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> setX - TRUE to set x axis, FALSE to set y axis
+	<li> low - The lower range of the axis
+	<li> high - The upper range of the axis
+</ul></p>
+<b>Description</b>
+<p>
+These functions set the range of the axes on the current plot based on what axes are present. By default, CChart and the derived functions assume that the bottom axis will determine the X range and the top axis will determine the Y range. However, in the case that a bottom axis doesn't exist, the top axis will determine the range. These functions will set the range for whatever axis controls the x or y range.
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+

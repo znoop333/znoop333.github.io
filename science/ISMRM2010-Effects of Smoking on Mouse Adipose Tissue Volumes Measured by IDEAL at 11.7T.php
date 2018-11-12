@@ -1,0 +1,69 @@
+<html><head>
+<link rel="stylesheet" type="text/css" media="all" href="papers.css">
+<link rel="stylesheet" type="text/css" media="screen" href="papers-screen.css">
+<link rel="stylesheet" type="text/css" media="print" href="papers-print.css">
+<title>Effects of Smoking on Mouse Adipose Tissue Volumes Measured by IDEAL at 11.7T</title>
+</head>
+<body>
+
+<div id="outerContainer">
+
+<!-- Site Navigation Menu -->
+<?php include_once("menu.html") ?>
+
+<div id="body">
+
+
+<h1>Effects of Smoking on Mouse Adipose Tissue Volumes Measured by IDEAL at 11.7T</h1>
+
+<p>David Johnson, Jiarui Lian, Mohamed El-Mahdy, Jay L. Zweier.</p>
+
+<p>ISMRM 2010, Oral Presentation #55. <a href="PDF/2010-ISMRM-Slides-Smoking-55_5267.pdf">Powerpoint slides are available here [PDF].</a></p>
+
+<h2>Abstract</h2>
+
+<p>An imaging technique was developed to produce uniform, robust fat-water separation in mice at 11.7T using Iterative Decomposition of water and fat with Echo Asymmetry and Least-squares estimation method (IDEAL). Cigarette smoking (CS) C57BL/6 mice had less body weight and subcutaneous adipose tissue volumes as compared to controls. The volumes of muscle and other non-adipose tissues were not different between CS and control mice, supporting the hypothesis of a selective reduction in fat storage due to smoking.</p>
+
+<h2>Introduction</h2>
+
+<p>Cigarette smoking is a major risk factor for atherosclerotic cardiovascular diseases, which have also been linked to obesity. The association between smoking and obesity is well-established as smoking cessation is often associated with a significant gain of body weight [1], but the change in fat distribution due to smoking remains an open research topic. Obesity also affects cardiovascular events in smoking patients. Obese smokers have 6- to 11-fold increased cardiovascular mortality compared to normal weight, never smokers [2]. In comparison, non-obese smokers have only 3.5 fold increased mortality rates. Here, an <em>in vivo</em> mouse model of smoking-induced cardiovascular disorders is used to investigate differences in the distribution of fat due to smoking. We hypothesize that fat storage in adipose tissue will be reduced by smoking without a reduction in non-adipose tissue volumes.</p>
+
+<h2>Methods</h2>
+
+<p>Male C57BL/6 mice (8-weeks) were exposed to whole body mainstream cigarette smoke using a TE-10 cigarette smoking machine (Teague Enterprises, California) and 3R4F reference research cigarettes (University of Kentucky) with 3 sets of exposure (30 cigarettes over a period of ~24 min per set with 20 min fresh air breaks), 6 days per week. CS (N=5) and control mice (N=6) were scanned after 50 weeks of exposure using an <em>in vivo</em> imaging protocol to measure adipose tissue distribution by imaging in three 35 mm segments to fit within volume resonators available on the 11.7T. A short delay (79-790&micro;s) was inserted between the 180&deg; refocusing pulse and the readout gradient in a conventional spin echo sequence to introduce fat-water phase variation for IDEAL estimation of separate fat and water images [3]. Assuming a fat-water frequency difference of 1750 Hz at 11.7T, delays of 48&micro;s, 239&micro;s, and 430&micro;s were used to produce expected fat-water phases of pi/6, 5pi/6, and 3pi/2 radians, respectively. We reconstructed the fat and water estimates using vectorized IDEAL [4]. Tissue volumes were measured using in house software developed in Matlab (Mathworks, Natick, MA) and Amira (Visage Imaging Inc., San Diego, CA).</p>
+
+<h2>Results</h2>
+
+<p>Our protocol yielded robust measurements of adipose volumes in the mice with excellent contrast between the fat and water estimates (Fig 1). Body weights of CS mice were significantly reduced as compared to controls (28.2 &plusmn; 2.1 g vs. 33.6 &plusmn; 5.1 g, mean &plusmn; std. dev., P=0.02, Fig 2). Smoking significantly reduced subcutaneous adipose tissue volume (5.7 &plusmn; 2.0 cm3 vs. 9.3 &plusmn; 4.8 cm3, P&lt;0.01, 2-way ANOVA, Fig 3) but not visceral adipose tissue volume (1.3 &plusmn; 0.9 cm3 vs. 2.2 &plusmn; 1.3 cm3, P=0.15, not shown) or other non-fat tissues (25.2 &plusmn; 1.3 cm3 vs. 25.6 &plusmn; 4.6 cm3, P&gt;0.50, not shown).</p>
+
+<h2>Discussion</h2>
+
+<p>This mouse model supports the hypothesis of reduced fat storage due to smoking. The reduction of adipose tissue appears to be primarily subcutaneous, though a larger study might be able to show a significant reduction in visceral adipose tissue volume. Non-adipose tissue volumes were unchanged, which indicates that the effect of smoking is specific to fat storage. (A future study could investigate the stunted growth among very young smokers, which would possibly show differences in non-adipose tissues, i.e. muscle or bone volumes). Future work also could include inducing dietary obesity to investigate the effects of high fat diets and smoking on obesity.</p>
+
+<h2>References and Acknowledgements. </h2>[1] Filozof et al. Obes Rev 2004;5(2):95-103. [2] Freedman et al. Am J Prev Med 2006;31(5):355-362. [3] Reeder et al. MRM 2004; 51(1):35-45. [4] Johnson et al. accepted for publication in JMRI 2009. This work was supported by NIH 5R01EB004900 (Proton Electron Double Resonance Imaging (PEDRI) of Free Radicals) and conducted at the Center for Environmental and Smoking Induced Diseases (CESID) at The Ohio State University.</p>
+
+<a id="Fig1"><div class="figure">
+	<img src="images/ismrm2010-smoking-1.png" />
+<p class="figureCaption"><span class="figureName">Fig 1.</span> IDEAL reconstruction of source images (a) yields robust water (b) and fat estimates (c) in a control C57BL/6 mouse. Less adipose tissue is present in smoking-exposed mice (d)-(f).</p> 
+</div></a>
+
+<a id="Fig2"><div class="figure">
+	<img src="images/ismrm2010-smoking-2.png" />
+<p class="figureCaption"><span class="figureName">Fig 2.</span> Smoking exposed mice have significantly reduced body weights (P=0.02).</p> 
+</div></a>
+
+<a id="Fig3"><div class="figure">
+	<img src="images/ismrm2010-smoking-3.png" />
+<p class="figureCaption"><span class="figureName">Fig 3.</span> Subcutaneous adipose tissue volume is decreased in smoking-exposed mice (P&lt;0.01, 2-way ANOVA).</p> 
+</div></a>
+
+
+
+</div>
+</div>
+
+<!-- Google Analytics -->
+<?php include_once("analyticstracking.php") ?>
+
+</body></html>
+

@@ -1,0 +1,40 @@
+[OPTIONS]
+Auto TOC=3
+Compatibility=1.1 or later
+Compiled file=CAxis Help Project.chm
+Contents file=CAxis TOC.hhc
+Default topic=CAxis.0index.htm
+Display compile progress=No
+Index file=CAxis Index.hhk
+Language=0x1409 English (New Zealand)
+
+
+[FILES]
+CAxis.0index.htm
+CAxis.AddAxisPopupMenus.htm
+CAxis.AddNumberOfTicksPopup.htm
+CAxis.Constructor.htm
+CAxis.CopyAxis.htm
+CAxis.GetColor.htm
+CAxis.GetLineSize.htm
+CAxis.GetLocation.htm
+CAxis.GetLowerRange.htm
+CAxis.GetMinorTickCount.htm
+CAxis.GetMinSize.htm
+CAxis.GetPaddingSize.htm
+CAxis.GetRange.htm
+CAxis.GetTickCount.htm
+CAxis.GetTickLabel.htm
+CAxis.GetTickPosition.htm
+CAxis.GetTitle.htm
+CAxis.GetTitleColor.htm
+CAxis.GetUpperRange.htm
+CAxis.InterpretAxisPopupMenuItem.htm
+CAxis.IsRangeSet.htm
+CAxis.IsVisible.htm
+CAxis.OnDraw.htm
+CAxis.Serialize.htm
+CAxis.SetDefaults.htm
+
+[INFOTYPES]
+

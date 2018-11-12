@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Tutorial: Draw the chart</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>Draw the chart</b>
+</font>
+</center>
+</h2>
+Drawing the chart is a very easy operation. The only thing that has to be considered is that CPlot expects everything to be in the LOMETRIC mapping mode. If you are not in the LOMETRIC mapping mode, you need to convert the plotting rectangle to LOMETRIC units before passing it to CPlot. Beyond that, you simply need to call the OnDraw member of the chart with the current device context, and the plotting rectangle (which need not be the entire view, but any portion of it you care to have the chart drawn in.) Your CView derived OnDraw function may look something like the following:
+<pre><font color="#770000">void CTestProjectView::OnDraw(CDC* pDC)
+{
+	CRect		clientRect;
+	int			nOldMode;
+
+	nOldMode = pDC->GetMapMode();
+
+	GetClientRect( clientRect );
+
+	nOldMode = pDC->SetMapMode( MM_LOMETRIC );
+
+	pDC->DPtoLP( (LPPOINT) &clientRect, 2 );
+
+	m_Chart.OnDraw( pDC, clientRect );
+
+	pDC->SetMapMode( nOldMode );
+}</font></pre>
+If everything goes well, you should now be able to build and run your project (remember, if you haven't done a full rebuild since adding the resources, do so now.) When you run it, you should get a window that looks something like the following:
+<br>
+<img src="images/xy_draw.png">
+<p>
+Note that the X and Y ranges were automatically set by CPlot. We didn't even need to do anything with them! And the markers are there, just as requested. And the titles. Cool. In many cases, that's all you'll ever have to do. But <a href="Tutorial.PrintGraph.htm">printing</a> is also really easy with CPlot, as is obtaining <a href="Tutorial.ContextMenu.htm">contextual menu support</a>.
+<hr>
+<b>Tutorial:</b>
+<ul>
+	<li> <a href="Tutorial.AddFiles.htm">Add the CPlot files and resources to your project</a>
+	<li> <a href="Tutorial.AddView.htm">Add a chart object to your view</a>
+	<li> <a href="Tutorial.CreateData.htm">Create data for a chart</a>
+	<li> <a href="Tutorial.CreateGraph.htm">Create a chart and set up axes</a>
+	<li> <a href="Tutorial.DrawGraph.htm">Draw the chart</a>
+	<li> <a href="Tutorial.PrintGraph.htm">Print the graph</a>
+	<li> <a href="Tutorial.ContextMenu.htm">Add shortcut menu support</a>
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+</BODY>
+</HTML>
+
+
+

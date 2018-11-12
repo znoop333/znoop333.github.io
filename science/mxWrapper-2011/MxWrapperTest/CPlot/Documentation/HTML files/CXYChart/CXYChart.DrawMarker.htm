@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CXYChart::DrawMarker</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::DrawMarker</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	void	DrawMarker( CDC *pDC, CPoint point, int whichDataSet, int dataPointNumber );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> pDC - A pointer to a device context
+	<li> point - The point at which to draw the marker
+	<li> whichDataSet - The index of the data set being drawn
+	<li> dataPointNumber - Which data point in this data set is being drawn
+</ul></p>
+<b>Description</b>
+<p>
+This function uses the settings of the data to determine the frequency of the marker drawing and whether a marker should be drawn at this point. If so, it draws a marker. If not, it doesn't.
+<p>
+<hr>
+<a href="CXYChart.0index.htm">CXYChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

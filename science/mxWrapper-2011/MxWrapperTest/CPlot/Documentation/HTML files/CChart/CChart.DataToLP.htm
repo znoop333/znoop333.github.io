@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::DataToLP</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::DataToLP</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::LPToData</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::LPToNearest</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+void	DataToLP( CDC *pDC, double *data, LPPOINT point );
+<br>
+void	LPToData( CDC *pDC, LPPOINT point, double *data );
+<br>
+void	LPToNearest( CDC *pDC, LPPOINT point, double *data, int dataID = -1 );
+</b>
+<p>
+<b>Parameters</b>
+<ul>
+	<li> pdC - A pointer to a device context
+	<li> data - A pointer to a two element double array (pre-allocated) containing either
+	the data point of interest, or receiving the data point of interest
+	<li> point - A pointer to a POINT structure (or a CPoint) containing either the point
+	of interest (in logical units), or receiving the point of interest (in logical units)
+	<li> dataID - The data ID of the data set. Defaults to -1 (or the first data set)
+</ul>
+<b>Description</b>
+<p>
+These functions do coordinate transformations between the data set and logical (screen) units.
+<p>
+DataToLP and LPToData convert using only the limits of the chart (the main axes always being
+the bottom and left, with the top or right used if the bottom or left do not exist).
+<p>
+LPToNearest, however, looks at the data specified by dataID and determines what the closest point
+is in the data to the specified logical point. For XY charts, "closest" means that it looks at the point along
+the x axis, and finds the nearest point along the x axis to that point. For image charts, it is just
+the x and y values, rounded to the nearest data value. The sample program uses LPToNearest
+in the CPlotView class to highlight the nearest data point.
+<p>
+The data ID is that returned by <a href="CChart.AddData.htm">AddData</a> or <a href="CChart.SetData.htm">SetData</a>.
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+
+

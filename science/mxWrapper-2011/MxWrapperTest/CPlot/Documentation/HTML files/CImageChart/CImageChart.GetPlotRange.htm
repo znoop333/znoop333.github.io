@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart::GetPlotRange</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::GetPlotRange</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	void	GetPlotRange( double *xRange, double *yRange );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> xRange - a 2 element double array to receive the x range
+	<li> yRange - a 2 element double array to receive the x range
+</ul><p>
+<b>Description</b>
+<p>
+This function calculates the x and y range of the plot and returns it in the variables passed. For an image chart, if either the x or y axes are not set up, then the dimensions of the data are used as the axis limits.
+<p>
+In future versions of CPlot, I may extend the functionality of the image chart to have separate plotting and variable axes which would allow for plotting a portion of an image. But for now, I'm not doing that. =)
+<p>
+<hr>
+<a href="CImageChart.0index.htm">CImageChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

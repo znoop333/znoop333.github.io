@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChartData::SetDimensions</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChartData::SetDimensions</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	BOOL	SetDimensions( int nDims, int *dimArray );
+</b>
+<p>
+<p>Parameters</b>
+<p><ul>
+	<li> nDims - The number of dimensions in dimArray
+	<li> dimArray - An array of dimensions with nDims elements
+</ul><p>
+<b>Returns</b>
+<p>
+A boolean representing whether a dimensions change was successful.
+<p>
+<b>Description</b>
+<p>
+This function attempts to change the dimensions of the current data. It does NOT check that the new dimensions are the same size as the old dimensions, it only checks to make sure that any single dimension is not larger than the data set. Thus this can be a dangerous (and also useful) function!
+<p>
+<hr>
+<a href="CChartData.0index.htm">CChartData Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+
+

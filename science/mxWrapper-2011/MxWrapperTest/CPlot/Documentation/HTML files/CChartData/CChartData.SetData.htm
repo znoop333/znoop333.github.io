@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChartData::SetData</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChartData::SetData</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+BOOL		SetData( T *data, int nDims, int *dimArray );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> data - An array of any data type to store into the current chart
+	<li> nDims - The number of dimensions in data
+	<li> dimArray - An array with the size of each of the dimensions in data
+</ul></p>
+<b>Returns</b>
+<p>
+A boolean representing whether the data set was sucessfully created. 
+<p>
+<b>Description</b>
+<p>
+This function sets the data. If data already exists, it is deleted before copying over the new data. This function uses double-precision floating point for internal storage. Since the data is copied to a new array, the data pointed to by data may be safely destroyed after calling SetData.
+<p>
+The format of a data set is row major. Thus, for an image of dimensions 512x512, the data should be stored as
+<br>
+<pre>
+Row0.Col0 Row0.Col1 ... Row0.Col511 Row1.Col0 Row1.Col1 ... Row511.Col511
+</pre>
+<br>
+For XY data, such as used with <a href="../CXYChart/CXYChart.0index.htm">CXYChart</a>, the data is also row major. Row 0 is the X data, and Row 1 is the Y data. So the X data should be stored in its entirety, followed by the Y data.
+<br>
+<pre>
+int		*data, i, dims[] = {2,25};
+CChartData	dataSet;
+
+// allocate data
+data = malloc( 2 * 25 * sizeof( int ) );
+
+// initialize data to some values
+// We'll do y = 2 * x + 1
+for( i = 0; i < 25; i++ )
+{
+   data[i] = i;   // X Values
+   data[i+25] = 2 * i + 1;   // Y Values
+}
+
+dataSet.SetData( data, 2, dims );
+
+free( data );
+</pre>
+<p>
+<hr>
+<a href="CChartData.0index.htm">CChartData Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+
+
