@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - 208</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/presentation-idea-using-columnstore-indexes-to-store-and-analyze-billions-of-torques.html">Presentation idea - Using Columnstore Indexes to Store and Analyze Billions of Torques</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-07-22T20:40:28-04:00">
+                Published: Sat 22 July 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/208.html">208</a> </p>
+</footer><!-- /.post-info -->
+    <div>This is an abstract I wrote for a local area users group, only to find out that they had stopped meeting. Toledo doesn't seem to be able to keep many computer-based user interest groups alive. I'm posting it here for my own records.</div>
+<br><div></div>
+<br><div></div>
+<br><div>Abstract</div>
+<br><div>
+<br>Torque tools (impact wrenches, electronic motors, rotary torque sensors) produce lots of data as a vehicle is being built. Torque data is used to control the movement of the production lines and to do <a href="http://www.mountztorque.com/learning-center/torque-measurement" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.mountztorque.com/learning-center/torque-measurement&amp;source=gmail&amp;ust=1500842300619000&amp;usg=AFQjCNFrzpwwf1sLY-tiIVIb0Ows5tqAYQ">quality control analysis</a>. During production, traditional row-based storage makes the most sense, using the VIN and torque tool ID as the primary key in a table optimized for insertion speed and VIN-based lookups. However, post-production it makes more sense to switch to <span class="il">column</span>-based storage for quality control analysis because aggregation functions (mean, std. dev.) need to be computed over large ranges of data (regardless of VIN), and many torque values are similar. <span class="il">Columnstore</span> indexes are a good solution to the latter storage and analysis problem, and they have gotten much better in SQL Server 2016. I'll describe how they're useful for this problem for analyzing how well the torque tools are working <a href="https://en.wikipedia.org/wiki/Process_performance_index" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=https://en.wikipedia.org/wiki/Process_performance_index&amp;source=gmail&amp;ust=1500842300619000&amp;usg=AFQjCNG7FqaP0mYf2VrJ4N37cKPr6hMoaQ">using simple statistical techniques</a>.</div>
+                    </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

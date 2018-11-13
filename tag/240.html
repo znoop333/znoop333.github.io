@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - 240</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/extending-wonderware-with-rabbitmq.html">Extending Wonderware with RabbitMQ</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-05-14T10:16:58-04:00">
+                Published: Mon 14 May 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/240.html">240</a> </p>
+</footer><!-- /.post-info -->
+    Wonderware makes excellent HMIs (computer displays in an industrial environment), but what if you have a large legacy C# application that you want to use with Wonderware without paying for more licenses? I ran into this situation recently, and I came up with the following solution: create an "adapter" program that provides <a href="https://www.rabbitmq.com/">RabbitMQ</a> functionality inside the Wonderware galaxy.
+<br>
+<br>Specifically, load the <a href="https://www.wonderware.com/hmi-scada/toolkits/">MX Access Toolkit</a> DLL and the RabbitMQ.NET client, and translate messages in between them. So if you get a RabbitMQ message that says "change Wonderware attribute X to a new value Y", then the adapter does the equivalent operation in the Galaxy using the MX Access Toolkit. If a Wonderware attribute changes value (using MX Access subscribe()), then post a RabbitMQ message indicating the updated value to non-Wonderware clients who read messages from RabbitMQ. I used JSON for the message format because it's simple, universally supported, and not too big.
+<br>
+<br>This approach provides bi-directional communication between everything in Wonderware and everything outside Wonderware, using RabbitMQ as the universal platform for exchanging messages. RabbitMQ is free (but commercial support is available from Pivotal), fast, and very reliable. RabbitMQ can also reach web applications using WebSTOMP (i.e., Javascript) and non-C# applications using the other client libraries (Java, C++, Python, etc.).
+<br>
+<br>Limitations of this approach: Wonderware is expensive, so if you just want a PLC communication library, you should use Kepware. Obviously, you're not going get tech support for extending Wonderware in this way, and since you're avoiding a lot of license fees per computer (Platform, ArchestrA license), you won't get any help from the sales department either. Also, Wonderware now includes its own webserver, so you could just use that for your web applications.
+<br>
+<br>For more details, see the source code at <a href="https://github.com/znoop333/RMQWonderwareAdapter">https://github.com/znoop333/RMQWonderwareAdapter</a>
+<br>
+<br>&nbsp;
+                    </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

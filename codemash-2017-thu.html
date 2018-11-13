@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>CodeMash 2017 Thu</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/codemash-2017-thu.html" rel="bookmark"
+           title="Permalink to CodeMash 2017 Thu">CodeMash 2017 Thu</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-01-16T00:26:56-05:00">
+                Published: Mon 16 January 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/158.html">158</a> </p>
+</footer><!-- /.post-info -->      
+    <strong>How to Win Friends and Influence People With Data Visualization by <a href="http://www.codemash.org/speaker/amanda-cinnamon/" target="_blank">Amanda Cinnamon</a>.</strong>
+<br>This talk was pretty good because it covered the essentials about making good presentations. Focus on the action you want the audience to take. Don't overwhelm with data. The default Excel charts and tables have too many useless lines. Try using tables for their layouts, not emphasizing or using their lines. Pie charts use a lot of space but make area comparisons hard (nonlinear).
+<br>
+<br>Having said that, this presentation used a lot of xkcd comics, which is cheating. Also, the presenter seemed to be unaware of the wealth of existing books about making good presentations, in particular, <b><i>How to Write and Publish a Scientific Paper</i></b> by Robert A. Day. I emailed it to her, and she said she'd look into it. That's a good outcome.
+<br>
+<br><strong>A math-free introduction to Neural Networks</strong> by <a href="http://www.codemash.org/speaker/randall-koutnik/" target="_blank">Randall Koutnik</a>.
+<br>UI/UX Netflix employee. Enthusiast, not expert. No math, high level talk. Mostly pictures and poorly hand-drawn diagrams. Recommendations: Use Python tensor flow learning, not JS. Try those ANN tutorials again using Tensor Flow. This wasn't a good talk because I didn't learn much. At least the presenter was entertaining with the "Calculords" and "Warror JS" projects he worked on, but I wasn't convinced that he understood ANN very well.
+<br>
+<br><strong>Why Clock Speeds Won’t Be Getting Much Faster, or: EEs Are Amazing</strong> by <a href="http://www.codemash.org/speaker/dan-wiebe/" target="_blank">Dan Wiebe</a>. This was one of my favorite talks this year, despite it not being news for years. I really liked learning about the main factors currently limiting clock speeds in silicon: propagation delays, capacitative distortion, heat dissipation, speed of light, diode drop, and feature size (manufacturing contaminants). This presenter wasn't an EE, and he didn't seem to know much about the D latch (Flip flop) circuit he showed, but at least he got the facts right, and he gave a solid presentation.
+<br>
+<br><strong>A Synchronicity – Asynchronous Programming in Android</strong> by <a href="http://www.codemash.org/speaker/john-pendexter/">John Pendexter</a>. This talk was pretty good because the presenter emphasized the two main rules of Android threading and gave specific examples of what can go wrong if you don't. 1. Do not block the UI thread. 2. Do not access the UI outside the UI thread. (These are the same rules in every UI I've ever written for, i.e., Win32 and Android, but their exact details vary widely.) He covered a lot of libraries in a short time, but I was very satisfied with this presentation because I learned some new tricks for Loaders.
+<br>
+<br><strong>Digital Payments in a Mobile World</strong> by <a href="http://www.codemash.org/speaker/parag-joshi/" target="_blank">Parag Joshi</a>. I enjoyed learning about the different payment methods (Square readers, Stripe, Android Pay, Apple Wallet). The variations in fees are somewhat surprising, but I guess everyone needs to make a profit somehow. It was valuable to learn that there is no "debug" mode for payment APIs. All calls are real! Refund fees are about 30%. Also: charities are treated very differently by some APIs.
+<br>
+<br>Square readers for credit cards are used to build your own POS system. You can do NFC tap, chip reader, or mag stripe read. Square already has an app that businesses can use (no programming required). Even for 3rd party POS, Square App must be used. Fee for manually entering CC number is higher (due to fraud risk).
+<br>
+<br><strong>Python 3: It's Time</strong> by <a href="http://www.codemash.org/speaker/charles-yost/">Charles Yost</a>. I'm a casual Python user, mostly for Scikit-learn, but I haven't been happy to see the fragmentation of Python 2 vs 3. This talk convinced me that it's OK to just ignore Python 2 at this point. Python 3.0.0 (2008) was a complete rewrite with sluggish performance and few packages. The point of the rewrite was to fix Unicode strings and byte encoding. 3.2.0 was the first good one. Integer division is now float by default, but floor is available. map and filter return iterators. range now behaves like xrange, and xrange is gone. pyenv - easily switch between versions of python.
+<br>
+<br><strong>Stranger Streams: How to RxAndroid</strong> by <a href="http://www.codemash.org/speaker/michael-yotive/">Michael Yotive</a>. RxAndroid - subscribe to Android UI events as Observables. Schedule.io creates a pool of background threads, but they aren't used unless you observe on them. Warning: Observables are immutable, so calling functions on them will create new Observables. So always use method chaining! Warning: Back Pressure - when consumers can't consume events fast enough. Rx will throw "missing back pressure handler" exception; app dies.
+    
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

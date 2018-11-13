@@ -2,7 +2,7 @@
 <html lang="english">
 <head>
         <meta charset="utf-8" />
-        <title>Power digit sum</title>
+        <title>FoxCon Toledo Software Developers Conference 2015</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -21,40 +21,27 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/power-digit-sum.html" rel="bookmark"
-           title="Permalink to Power digit sum">Power digit sum</a></h1>
+        <a href="/foxcon-toledo-software-developers-conference-2015.html" rel="bookmark"
+           title="Permalink to FoxCon Toledo Software Developers Conference 2015">FoxCon Toledo Software Developers Conference 2015</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-06-28T17:39:24-04:00">
-                Published: Sat 28 June 2014
+        <abbr class="published" title="2015-01-18T11:13:27-05:00">
+                Published: Sun 18 January 2015
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-<p>tags: <a href="/tag/42.html">42</a> </p>
+<p>tags: <a href="/tag/68.html">68</a> </p>
 </footer><!-- /.post-info -->      
-    The Project Euler website appears to have died, so I'm writing a post as a tribute to its memory. An old but fun problem goes like this:
+    I will be presenting a talk called "<span style="color: #ff00ff;">SQL Server Notifications in a manufacturing environment</span>" at the annual FoxCon Toledo Software Developers Conference, Feb 7-8, 2015. Unfortunately, there isn't a website for FoxCon, but Bob Ruple is the organizer. I will post my slides on this website after the conference has started.
 <br>
-<br>2^15 = 32768, and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+<br>Abstract:
 <br>
-<br><strong>What is the sum of the digits of the number 2^1000?</strong>
-<br>
-<br>The simplest way to approach this problem is to brute force it in a programming language with big integer support, e.g., Python:
-<br><pre>N=<span class="Constant">2</span>**<span class="Constant">1000</span>
-<br>
-<br>mysum=<span class="Constant">0</span>
-<br><span class="Statement">while</span> N&gt;<span class="Constant">0</span>:
-<br>    N, r = <span class="Identifier">divmod</span>(N,<span class="Constant">10</span>)
-<br>    mysum += r
-<br>
-<br><span class="Identifier">print</span> mysum
-<br></pre>
-<br>
-<br>RIP, Project Euler.
+<br>Are we there yet? Are we there yet? Queries that poll a database looking for changes can waste tremendous amounts of network bandwidth, CPU, and other precious database server resources. By changing the structure of your SQL client to use query notifications rather than polling, you can reduce computational load on both the client and the server. We'll review the mechanism of asynchronous queuing in Microsoft SQL Server, and then we'll examine a case study of how it can be implemented in an automotive assembly plant. Examples of notifications include routine vehicle brake line leak testing and real-time detection of robot failures.
     
     </div><!-- /.entry-content -->
 

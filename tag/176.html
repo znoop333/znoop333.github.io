@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - 176</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/codemash-2017-fri.html">CodeMash 2017 Fri</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-01-31T11:27:44-05:00">
+                Published: Tue 31 January 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/176.html">176</a> </p>
+</footer><!-- /.post-info -->
+    <strong>Horizontally Scaling Node.js and WebSockets by <a href="http://www.codemash.org/speaker/james-simpson/" target="_blank">James Simpson</a>.</strong> Prepare for success with scalability. Automatic failover increases uptime. Load balancers: HAProxy, NGINX, ELB, http-proxy. HAProxy is recommended for not having vendor lock-in and for ease of deployment. Application: nodejs, running on multiple servers. Messaging: Redis, RabbitMQ, ZeroMQ. Redis can do key/value store in addition to pub/sub queues. Approaches: single core vs multi-core servers. (smaller, single core servers can scale up and down better than larger, multi-core servers. Single server failures are easier to manage when the number of servers automatically scales.)
+<br>
+<br><strong>Abusing C# More by <a href="http://www.codemash.org/speaker/jon-skeet/" target="_blank">Jon Skeet</a>.</strong> Silly and amusing edge cases of C# 7. I'm pretty sure I will never use the <a href="https://codeblog.jonskeet.uk/2014/12/01/when-is-an-identifier-not-an-identifier-attack-of-the-mongolian-vowel-separator/">mongolian vowel separator</a>, but at least now I know that it exists.
+<br>
+<br><strong>Tune SQL Server Like a Guru – The Big Three! by <a href="http://www.codemash.org/speaker/kevin-boles/">Kevin Boles</a></strong>. The big three are File IO Stall differential analysis, Wait Stats differential analysis, and sp_whoisactive. Not a surprise to me, but it's still good to review them so that I don't feel like I'm missing out on some new method of figuring out where SQL Server is having problems. Mr. Boles is an excellent speaker, and it was helpful to hear his explanations of some of the wait types.
+<br>
+<br>CXPACKET - excessive means inefficient parallel processing. See common TSQL Mistakes presentation (mismatched datatypes and function calls in WHERE clause). Adjust MAXDOP and cost threshold for paralelism. The default SQL Server configuration is bad. VMs can be especially bad: thin provisioned disks, underpowered CPU.
+<br>
+<br>ASYNC_NETWORKIO - server-side cursors are really bad. MS Entity Framework often does this.
+<br>
+<br>PAGELATCHIO - slow r/w to disk.
+<br>
+<br>PAGELATCH - not related to disk. Just allocation/deallocation of pages. Only 1 thread can hold the 8 KB page at a time. See especially TempDB.
+<br>
+<br>sp_WhoIsActive - best possible analysis tool. See also Ola Halagren's maintenance tool.
+<br>
+<br>SSMS tools pack - costs about $50, but automatically puts begin tran/rollback in every new query window in SSMS. Could save your job.
+<br>
+<br><strong>An Applied Introduction to R by <a href="http://www.codemash.org/speaker/gary-short/">Gary Short</a></strong>. Difference between trading and gambling: you can play both sides in trading, but not in gambling. Also, you can't bet against a horse in gambling. I found some of the high frequency trading terms in this presentation to be confusing: Dutching (betting on multiple stocks simultaneously), Scalping (not ticket scalping; buy at Key prices, aka crossover points, are points at which the first derivative changes??), "Back" vs "Lay". I didn't get much R out of this talk.
+<br>
+<br><strong>Machine Learning for Predictive Hiring aka Recruiting Isn't Just Rainbows and Kittens by <a href="http://www.codemash.org/speaker/centric-consulting/">Carmen Fontana</a></strong>. Speaker used to be a dev, now a recruiter at a business consulting firm. 60% FT, 40% contractors. Many short term contracts. Machine Learning with Textio - optimizes job ads for length, sentence length, wording choices, gender tone, verb usage. This was a pretty interesting talk because I didn't know that some HR departments are getting better about not using keyword filtering for every job ad.
+<br>
+<br><strong>Machines Learning Human Biases: How Does It Happen? Can We Unteach Them? by <a href="http://www.codemash.org/speaker/devney-hamilton/">Devney Hamilton</a></strong>. Google Word2Vec (2013). MIT team used Google News data to produce vectors representing the similarities between words (i.e., a word embedding). The ANN produced male/female-aligned patterns that reflect the existing stereotypes. De-bias the vector space?
+                    </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

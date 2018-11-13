@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - 125</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/codemash-2016-recap-day-4.html">CodeMash 2016 Recap – Day 4</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-01-10T20:58:48-05:00">
+                Published: Sun 10 January 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/125.html">125</a> </p>
+</footer><!-- /.post-info -->
+    <h2>ASP.NET 5: How to Get Your Cheese Back</h2>
+<br>This talk didn't do much for me except convince me that Microsoft continues to struggle for relevancy by reinventing the wheel. Rewriting ASP.NET from scratch only serves to frustrate everyone involved with it. Not worth my time.
+<br><h2>A Developer’s Journey from Object Oriented to Functional Programming</h2>
+<br>This talk was basically an intro to F#, which I've played with before. I wish the author had spent more time describing the good parts of functional programming because he spent a lot of time just talking about object oriented design. I guess there's no substitute for reading a good textbook functional programming, but I don't think any minds were changed in the audience.
+<br>
+<br>Having said that, it is definitely possible to go overboard with pure functions or LISP-style macros that later make the code unreadable and unmaintainable. It's hard to find the sweet spot of a functional language that doesn't require extra deployment dependencies, and it is still possible to debug it without going insane (haskell is too pure to debug without going insane), and it has enough popularity with other programmers and businesses to not destroy anyone's career and/or code base.
+<br>
+<br>Or you could just keep writing in a common language (like C# but with more lambdas and linq) and wait for this fad to pass, much like every attempt to popularize functional programming in the past.
+<br><h2>Cure What Ails You With This Rx: An Intro To Reactive Extensions</h2>
+<br>I love the idea of Reactive Extensions. It's async plus events as an enumerable, which should be a winning combination. If there's one subject I should really spend more time doing and less time just thinking about, it is this one. I don't like how some of the transformation functions have opaque internal state (distinct when changed), and it's all really just for loops under the covers (i.e., iterators), and some of the operands cause every result to be loaded into memory simultaneously (sorting, order by), and some of it looks like a bad SQL optimizer, but the final result looks so clean and simple that I'm left convinced that I should do it anyway.
+<br>
+<br>This talk was presented well, and I wish the author the best of luck with his crazy beehives and temperature measuring circuits, whatever they were.
+<br>
+<br>Side note: maybe Stephen Cleary will finally update Nito Sockets to use Rx, and then I'll be set for life. :)
+<br><h2>Software Development Lessons Learned from Industrial Failures in the 1980s</h2>
+<br>This was the worst talk because it was entirely plagiarized from <a href="http://www.thisamericanlife.org/radio-archives/episode/403/nummi">an NPR story about NUMMI</a>. It didn't even have programming. I think that NUMMI and the Toyota Production System are very important subjects in the automotive industry, but the author of this talk spent most of her time giving out prizes and stealing photos from websites and books without attribution. It was at this time that the downsides of CodeMash became apparent to me: there are no published proceedings, so you can't cite work in the conference or hold anyone accountable for the content of their talks. The turnover in technology is so fast that trying to find the signal from the noise in the abstracts is going to be almost impossible anyway.
+<br>
+<br>Oh well, I got plenty of value out of the other talks at CodeMash.
+<br><h2>Great Galloping Cuckoos: Algorithms Faster than log(n)</h2>
+<br>I love to learn new algorithms, and this talk covered a few of them:
+<br><ul>
+<br>	<li><a href="https://en.wikipedia.org/wiki/Exponential_search" target="_blank">https://en.wikipedia.org/wiki/<wbr />Exponential_search - </a>used when an upper bound is not known a prioiri on the array</li>
+<br>	<li><a href="https://en.wikipedia.org/wiki/Interpolation_search" target="_blank">https://en.wikipedia.org/wiki/<wbr />Interpolation_search</a> - assumes data is uniformly distributed, O(N) worst case.</li>
+<br>	<li><a href="https://en.wikipedia.org/wiki/Cuckoo_hashing" target="_blank">https://en.wikipedia.org/wiki/<wbr />Cuckoo_hashing</a> - or Peacock hash - uses many hash tables, avoids buckets. I still think using a bigger table and a good hash function is better than using multiple hash functions, but obviously this conclusion is dependent on the distribution of the hash keys</li>
+<br></ul>
+<br>This talk made me realize that the majority of programmers in the room had not gotten a CS degree in college, and they did not know the basics of analyzing algorithms in operations performed or memory usage. It worries me to think about how much code must be written without coming close to the harder topics, theoretical or practical. (Heck, I've seen lots of buggy implicit FSMs and bad network socket code, so I shouldn't be surprised.)
+<br><div>The author was trying to do something weird with his Raspberry Pi cluster and full text searches of billions of chemical formulas, which is exactly the kind of madness that CodeMash should encourage.</div>
+<br><h2>Cross-Platform Desktop Apps with Electron</h2>
+<br>Somehow I ended the conference back on node.js, but this time for desktop apps, not for servers. It does sound much easier to go cross platform with javascript and Chrome than with Xamarin. Too bad the GUI looks uniformly bland, much like Java desktop apps from 15 years ago. It still might be worth a shot anyway.
+<br><h2>Closing Ceremony</h2>
+<br>Wow, this was not worthwhile at all. I should have gone home early because the odds of getting anything in the lottery were very bad (mostly because I didn't know you had to put your ticket into the lottery bowl on Friday morning, but not sooner than that, or else you couldn't win).
+<br>
+<br>Final thoughts: I was pretty tired at the end, but I was glad that I went. It so rare for me to get to talk with any other programmers, let alone experts, and I easily got the value I'd hoped for out of informal discussions about SQL Broker and linq and async. Here's to next year's abstract submission going better.
+                    </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

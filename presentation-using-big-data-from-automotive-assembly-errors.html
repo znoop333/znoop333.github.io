@@ -2,7 +2,7 @@
 <html lang="english">
 <head>
         <meta charset="utf-8" />
-        <title>Power digit sum</title>
+        <title>Presentation - Using Big Data from Automotive Assembly Errors</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -21,40 +21,31 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/power-digit-sum.html" rel="bookmark"
-           title="Permalink to Power digit sum">Power digit sum</a></h1>
+        <a href="/presentation-using-big-data-from-automotive-assembly-errors.html" rel="bookmark"
+           title="Permalink to Presentation - Using Big Data from Automotive Assembly Errors">Presentation - Using Big Data from Automotive Assembly Errors</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-06-28T17:39:24-04:00">
-                Published: Sat 28 June 2014
+        <abbr class="published" title="2018-01-27T13:09:13-05:00">
+                Published: Sat 27 January 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-<p>tags: <a href="/tag/42.html">42</a> </p>
+<p>tags: <a href="/tag/236.html">236</a> </p>
 </footer><!-- /.post-info -->      
-    The Project Euler website appears to have died, so I'm writing a post as a tribute to its memory. An old but fun problem goes like this:
+    Here is a link to the slides (<a href="https://docs.google.com/presentation/d/1w3nDW61PHT1FMIiVjEIpNYHYvJ9M8jJm4r2Q8wTdE40/edit?usp=sharing">Google slides</a>)
 <br>
-<br>2^15 = 32768, and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+<br>Presented at FoxCon Toledo Software Developers Conference, Toledo, OH, on 1/27/2018.
 <br>
-<br><strong>What is the sum of the digits of the number 2^1000?</strong>
+<br>Abstract:
 <br>
-<br>The simplest way to approach this problem is to brute force it in a programming language with big integer support, e.g., Python:
-<br><pre>N=<span class="Constant">2</span>**<span class="Constant">1000</span>
+<br>Electronic torque tools used in automobile production produce a large amount of data as workers and robots physically assemble a vehicle. This data includes alarms and errors for various potential defects such as rehit bolts, cross-threaded bolts, incorrectly removed bolts, failure to achieve torque within engineering specifications, etc. In his presentation David will reveal how an analysis of this data can yield new insights into the causes of operator errors and solutions in new quality auditing systems, both on and off the production line.
 <br>
-<br>mysum=<span class="Constant">0</span>
-<br><span class="Statement">while</span> N&gt;<span class="Constant">0</span>:
-<br>    N, r = <span class="Identifier">divmod</span>(N,<span class="Constant">10</span>)
-<br>    mysum += r
-<br>
-<br><span class="Identifier">print</span> mysum
-<br></pre>
-<br>
-<br>RIP, Project Euler.
+<br>&nbsp;
     
     </div><!-- /.entry-content -->
 
