@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CPlotSettingsDialog members</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>CPlotSettingsDialog members</b>
+</font>
+</center>
+</h2>
+<hr>
+CPlotSettingsDialog is derived from CDialog. It can be called simply from within CXYChart as follows:
+<pre>
+CPlotSettingsDialog		dialog( NULL, this );
+
+if( dialog.DoModal() == IDOK )
+{
+	// Need to update chart
+}
+</pre>
+Although the class is public, it is better to call the <a href="../CXYChart/CXYChart.PlotSettings.htm">Plot settings</a> function of CXYChart directly.
+<p>
+CPlotSettingsDialog requires that the dialog resource with id <b>IDD_XY_SETTINGS</b> exist in the current file. See the <a href="../Tutorial/Tutorial.0index.htm">tutorial</a> for more information on copying resources.
+<p>
+These are the members of CPlotSettingsDialog:
+<p>
+<b>Functions</b>
+<ul>
+	<li> CPlotSettingsDialog( CWnd* pParent, CXYChart *chart ) - The default constructor requires a pointer to an image chart object from which to obtain the current plot settings, and to copy the settings back into. The parent window can be NULL or point to the parent window.
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+
+</BODY>
+</HTML>

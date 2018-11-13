@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CXYChart::GetPlotRect</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::GetPlotRect</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	CRect	GetPlotRect( CDC *pDC, CRect clientRect );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> pDC - A pointer to a device contect
+	<li> clientRect - The entire plotting region
+</ul></p>
+<b>Returns</b>
+<p>
+A rectangle which encompasses only that portion of the chart where the data is displayed. This does not include axes, etc.
+<p>
+<b>Description</b>
+<p>
+This function calculates the plotting rectangle, taking into account the existence of axes and the title of the plot.
+<p>
+<hr>
+<a href="CXYChart.0index.htm">CXYChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

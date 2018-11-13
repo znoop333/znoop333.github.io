@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CXYChart::AddDataPopupMenus</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::AddDataPopupMenus</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::AddChartTypePopup</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::AddLineSizePopup</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::AddMarkerPopup</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	void	AddDataPopupMenus( int whichDataSet, CMenu *menu, int startVal );
+<br>
+	void	AddChartTypePopup( CMenu *addMenu, LPCSTR titleString, long compare, int startVal );
+<br>
+	void	AddLineSizePopup( CMenu *addMenu, LPCSTR titleString, int dataID, int startVal );
+<br>
+	void	AddMarkerPopup( CMenu *addMenu, LPCSTR titleString, int dataID, int startVal );
+
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> whichDataSet - The index of the data set in question
+	<li> addMenu - A pointer to the menu to add the sub-menu to
+	<li> titleString - A string to set the title of the sub-menu to
+	<li> compare - A value to compare to (the current setting) to set the check mark correctly
+	<li> dataID - The dataID of the data set in question
+	<li> startVal - The starting menu item number of the sub-menu
+</ul></p>
+<b>Description</b>
+<p>
+These various utility functions add sub-menus that may be created several different times. They are just time and code savers.
+<p>
+<hr>
+<a href="CXYChart.0index.htm">CXYChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+

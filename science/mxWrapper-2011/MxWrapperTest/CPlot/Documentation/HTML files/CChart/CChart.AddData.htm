@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::AddData</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::AddData</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+int		AddData( T *data, int nDims, int *dimArray );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> data - An array of any data type to store into the current chart
+	<li> nDims - The number of dimensions in data
+	<li> dimArray - An array with the size of each of the dimensions in data
+</ul></p>
+<b>Returns</b>
+<p>
+A number representing the data ID of the added data set. If this number is negative, the data set was not created. Use the data ID for any further function calls to alter the data set.
+<p>
+<b>Description</b>
+<p>
+This function adds data of any type to a chart. The data is converted to double-precision floating point for internal storage, but this function handles any type of input data.
+<p>
+For details on data sets, see <a href="../CChartData/CChartData.SetData.htm">CChartData::SetData</a>.
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+

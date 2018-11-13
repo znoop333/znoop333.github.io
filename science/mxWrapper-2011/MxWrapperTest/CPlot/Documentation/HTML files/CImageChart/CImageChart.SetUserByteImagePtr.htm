@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart::SetUserByteImagePtr</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::SetUserByteImagePtr</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::GetUserByteImagePtr</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	void	SetUserByteImagePtr( BYTE *imagePtr );
+<br>
+	BYTE	*GetUserByteImagePtr( void );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> imagePtr - A pointer to a word-aligned byte image of the same size as the current image
+</ul><p>
+<b>Description</b>
+<p>
+This function allows the user to set a temporary byte image to draw from. This can be useful in situations where the data is changing frequently, or when the data is easier kept by the application than by CImageChart. In the case of a program I was writing, this was true since the data was modified frequently, and it would have been slow to keep calling SetData and having to copy the data over and over again.
+<p>
+Use this function sparingly, however, since it is best to store the image data with CImageChart. This way the serialization and other such things work.
+<p>
+<hr>
+<a href="CImageChart.0index.htm">CImageChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

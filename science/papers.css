@@ -1,0 +1,60 @@
+BODY { 
+	background: #333;
+}
+
+#outerContainer {
+	width: 90%;
+	background: #FFF;
+	border: 4px #000 solid;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+#mymenu {
+	width: 100%;
+	border: 0px solid #000;
+	margin-top: 10px;
+	padding: 0px;
+	background: transparent;
+	font-family: Helvetica, arial, sans-serif;
+}
+
+.MyMenuItem {
+	display: inline;
+	margin: 0;
+	padding: 10px;
+	color: #ff2e8b;
+	font-weight: bold;
+	background: #00CCFF;
+}
+
+.MyMenuItem a {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.MyMenuItem a:link { color: #000066; }
+.MyMenuItem a:visited { color: #FFFF00; }
+.MyMenuItem a:hover { text-decoration: underline  }
+
+#body {
+	padding: 10px;
+}
+
+
+.figure {width: 700px; border-radius: 3px; border: 1px outset rgba(50,50,50,.5); 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.subfigure {float: left; position: relative; margin-left:auto; margin-right:auto}
+.figureTextLabel {position: absolute; top: 5px; left: 5px; font-weight:bold; }
+.figureTextLabelWhite {position: absolute; top: 5px; left: 5px; font-weight:bold; color:#FFFFFF}
+.figureCaption { clear:both }
+.figureName { font-weight:bold; }
+.refText {}
+.Title { font-weight:bold; }
+
+.Question { font-weight:bold; }
+.Answer {  }
+

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart::GetPlotRect</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CImageChart::GetPlotRect</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	CRect	GetPlotRect( CDC *pDC, CRect clientRect );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> pDC - A pointer to a device contect
+	<li> clientRect - The entire plotting region
+</ul></p>
+<b>Returns</b>
+<p>
+A rectangle which encompasses only that portion of the chart where the image is displayed. This does not include axes, etc.
+<p>
+<b>Description</b>
+<p>
+This function calculates the bounding rectangle of the image. It takes into account the current scaling mode as given by the <a href="CImageChart.m_Variables.htm">scaling variables</a>.
+<p>
+<hr>
+<a href="CImageChart.0index.htm">CImageChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

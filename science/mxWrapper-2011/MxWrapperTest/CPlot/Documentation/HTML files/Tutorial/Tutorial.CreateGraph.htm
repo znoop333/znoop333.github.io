@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Tutorial: Create chart data</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>Create chart data</b>
+</font>
+</center>
+</h2>
+We now have data in our graph, but we want to make the graph a little more desirable, and so we will add left and bottom axes, and a title. We'll do this still inside the OnInitialUpdate member of our view class. Setting the title of the chart is simple. 
+<pre><font color="#770000">	m_Chart.SetTitle( "A parabola" );</font></pre>
+OK, so let's set up some axes. We need a pointer to a <a href="../CAxis/CAxis.0index.htm">CAxis</a> object, and then we call the <a href="../CChart/CChart.AddAxis.htm">CChart::AddAxis</a> member function:
+<pre><font color="#770000">	CAxis	*axis;
+	axis = m_Chart.AddAxis( kLocationLeft );
+</font></pre>
+This adds a left hand axis, but we still need to set the title. That's why we have the axis pointer:
+<pre><font color="#770000">	axis->SetTitle( "Parabola Y Value" );</font></pre>
+Now we'll add a bottom axis, and set its title:
+<pre><font color="#770000">	axis = m_Chart.AddAxis( kLocationBottom );
+	axis->SetTitle( "X Value" );
+</font></pre>
+What if we want to change something about the data set, such as markers or line thickness? You may recall that when we set the data, we used the function:
+<pre><font color="#770000">	dataID = m_Chart.AddData( data, nDims, dims );</font></pre>
+which returns dataID. We use this dataID in order to change anything about the data set. Let's add some markers, and make them display every other data point:
+<pre><font color="#770000">	m_Chart.SetMarkerType( dataID, kXYMarkerSquare );
+	m_Chart.SetMarkerFrequency( dataID, 2 );</font></pre>
+With all of these lines added, your OnInitialUpdate function will look something like the following:
+
+<pre><font color="#770000">#define kDataSize 26
+void CTestProjectView::OnInitialUpdate() 
+{
+	CView::OnInitialUpdate();
+
+	int		data[2*kDataSize], i;
+	int		nDims, dims[2];
+	int		dataID;
+	CAxis	*axis;
+	
+	for( i = 0; i < kDataSize; i++ )
+	{
+		// The X data
+		data[i] = i - kDataSize/2;
+		// The Y Data
+		data[i  + kDataSize] = data[i]*data[i];
+	}
+	nDims = 2;
+	dims[0] = 2; // Two dimensions along the first axis
+	dims[1] = kDataSize; // kDataSize dimensions along the second
+	dataID = m_Chart.AddData( data, nDims, dims );
+	
+	m_Chart.SetTitle( "A parabola" );
+	axis = m_Chart.AddAxis( kLocationLeft );
+	axis->SetTitle( "Parabola Y Value" );
+	axis = m_Chart.AddAxis( kLocationBottom );
+	axis->SetTitle( "X Value" );
+
+	m_Chart.SetMarkerType( dataID, kXYMarkerSquare );
+	m_Chart.SetMarkerFrequency( dataID, 2 );
+}</font></pre>
+And now that we have the chart set up, we need to know how to <a href="Tutorial.DrawGraph.htm">display the chart.</a>
+<hr>
+<b>Tutorial:</b>
+<ul>
+	<li> <a href="Tutorial.AddFiles.htm">Add the CPlot files and resources to your project</a>
+	<li> <a href="Tutorial.AddView.htm">Add a chart object to your view</a>
+	<li> <a href="Tutorial.CreateData.htm">Create data for a chart</a>
+	<li> <a href="Tutorial.CreateGraph.htm">Create a chart and set up axes</a>
+	<li> <a href="Tutorial.DrawGraph.htm">Draw the chart</a>
+	<li> <a href="Tutorial.PrintGraph.htm">Print the graph</a>
+	<li> <a href="Tutorial.ContextMenu.htm">Add shortcut menu support</a>
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+</BODY>
+</HTML>
+
+

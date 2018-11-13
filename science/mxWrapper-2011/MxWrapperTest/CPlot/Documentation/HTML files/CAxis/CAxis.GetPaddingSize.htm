@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CAxis::GetPaddingSize</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CAxis::GetPaddingSize</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>CSize GetPaddingSize( CDC *pDC );</b>
+<p>
+<b>Parameters</b>
+<ul>
+	<li> pDC - A pointer to a device context
+</ul>
+<p>
+<b>Returns</b>
+<p>
+A CSize object representing the extent to which the axis tick labels will extend beyond the chart boundary. For a top or bottom axis, this is half the width of the left-most tick label plus half the width of the rightmost tick label, since those labels are aligned with the edge of the chart. For a left or right axis, this is the height of the text, since it will stick out half on top and half on bottom.
+<p>
+This function should be used to calculate the size of any chart such that the labels do not extend beyond the edge of the viewable area.
+<p>
+<hr>
+<a href="CAxis.0index.htm">CAxis Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+

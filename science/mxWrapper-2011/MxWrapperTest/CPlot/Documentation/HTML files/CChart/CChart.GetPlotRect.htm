@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::GetPlotRect</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::GetPlotRect</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	virtual CRect	GetPlotRect( CDC *pDC, CRect clientRect );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> pDC - A pointer to a device contect
+	<li> clientRect - The entire plotting region
+</ul></p>
+<b>Returns</b>
+<p>
+A rectangle which encompasses only that portion of the chart where the data is displayed. This does not include axes, etc.
+<p>
+<b>Description</b>
+<p>
+The default implementation of this function returns clientRect. It should be overridden by the child class (see <a href="../CXYChart/CXYChart.GetPlotRect.htm">CXYChart::GetPlotRect</a>).
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

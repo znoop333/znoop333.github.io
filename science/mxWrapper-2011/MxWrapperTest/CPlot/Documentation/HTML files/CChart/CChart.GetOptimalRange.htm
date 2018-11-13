@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CChart::GetOptimalRange</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::GetOptimalRange</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CChart::GetOptimalRangeExact</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	void	GetOptimalRange( double *inRange, double *outRange,  int *nTicks, int *nMinor, BOOL exactRange );
+<br>
+	void	GetOptimalRangeExact( double *inRange, double *outRange, int *nTicks, int *nMinor );
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> inRange - The range of the data
+	<li> outRange - The "optimal" range for plotting
+	<li> nTicks - Set to the optimal number of tick marks
+	<li> nMinor - Set to the optimal number of minor ticks
+	<li> exactRange - Set to TRUE if the range passed is an exact range and should not be changed
+</ul></p>
+<b>Returns</b>
+<p>
+outRange, nTicks and nMinor are changed by this function.
+<p>
+<b>Description</b>
+<p>
+This function uses the passed range to determine optimal tick intervals (both major and minor) for the given data. Also, GetOptimalRange will determine an optimal plotting interval which produces a nice number of tick marks.
+<p>
+For future work is to add the ability for each axis to not have the end points be tick marks. This way the data can have odd ranges, and good tick marks can still be made.
+<p>
+<hr>
+<a href="CChart.0index.htm">CChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+

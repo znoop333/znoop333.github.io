@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CImageChart Variables</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>m_PlotToWindowSize</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>m_MaintainAspectRatio</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+m_PlotToWindowSize
+<br>
+m_MaintainAspectRatio
+</b>
+<p>
+<b>Description</b>
+<p>
+These two variables control how the image is displayed on screen.
+<p>
+CImageChart by default attemps to display the image at full size (pixel for pixel). Thus, a 512x512 image would, most preferrably, be displayed at 512x512. The window obviously needs to be larger than 512x512 for that to occur, with the addition of axes and labels and titles. Sometimes that doesn't happen. And I wanted an image processing program that would faithfully reproduce the image in that circumstance.
+<p>
+It is faithful that requires definition. For me, it was OK to lose a little bit of data, but not OK for that data to be distorted. That was a faithful reproduction. So, CImageChart was originally set up to try and plot the image at 512x512, if possible. If the window was too small, it would see whether half the data could be plotted, i.e. 256x256. If this was the case, it would calculate an image, removing every other row and every other column. In this way, data would be lost, but not distorted. It also means that a small change in window size can suddenly turn into a large change in plot size, which can be confusing for the user (but I have my needs, so those are still programmed in!)
+<p>
+So I added the ability to scale the image to the size of the window, by setting m_PlotToWindowSize = TRUE. In this case, StretchDIBits is used to copy the window to any size destination rectangle. In the case where the destination rectangle is smaller than the image, there is significant distortion (depending on the image), but it scales "more naturally."
+<p>
+It wasn't too much of a leap to add functionality for not preserving the aspect ratio of the image. Thus if you have an image that is 512x512 and a window that supports an image of 215x628, the image will draw to that window, stretching and shrinking as necessary, again using StretchDIBits.
+<p>
+So the following combinations are possible for the two variables
+<table border="1">
+<tr>
+<td></td>
+<th>m_PlotToWindowSize == TRUE</th>
+<th>m_PlotToWindowSize == FALSE</th>
+</tr>
+<tr>
+<th>m_MaintainAspectRatio == TRUE</th>
+<td>Plot to size of window, scaling as necessary, and maintaining aspect ratio</td>
+<td>Plot undistorted image, scaling by 2 as necessary, and maintaining aspect ratio</td>
+</tr>
+<tr>
+<th>m_MaintainAspectRatio == FALSE</th>
+<td>Plot to size of window, scaling and stretching as necessary to fill the whole window</td>
+<td>Plot undistorted image, scaling by 2 as necessary, and maintaining aspect ratio</td>
+</tr>
+</table>
+<p>
+As you can see, if m_PlotToWindowSize == FALSE, the setting of m_MaintainAspectRatio is unused.
+<p>
+This is all well and good in theory, but sometimes it helps to see it. So here is the same plot, in the same window, with the three different possibilities.
+<p>
+<b>m_PlotToWindowSize == FALSE</b>
+<br>
+Notice that the image takes up much less than the client area. However, stretching the client area
+by a few pixels in the y direction would cause the image to be plotted at the next size up.
+<img src="images/CImageChart.NoScale.png">
+<hr>
+<p>
+<b>m_PlotToWindowSize == TRUE, m_MaintainAspectRatio == TRUE</b>
+<br>
+Notice the banding that occurs in the image around the edge of the blue and the edge of the red.
+<img src="images/CImageChart.Scale.png">
+<hr>
+<p>
+<b>m_PlotToWindowSize == TRUE, m_MaintainAspectRatio == FALSE</b>
+<br>
+Notice the banding that occurs in the image around the edge of the blue and the edge of the red.
+<img src="images/CImageChart.NoAspect.png">
+<p>
+<hr>
+<a href="CImageChart.0index.htm">CImageChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

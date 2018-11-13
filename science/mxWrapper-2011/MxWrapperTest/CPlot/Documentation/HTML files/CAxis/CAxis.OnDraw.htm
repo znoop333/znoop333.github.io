@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CAxis::OnDraw</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CAxis::OnDraw</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+void		OnDraw( CDC *pDC, CRect clientRect, CRect chartRect );
+<br>
+void		OnDraw( CDC *pDC, CRect clientRect, CRect chartRect, CRect updateRect );</b>
+<p>
+<b>Parameters</b>
+<ul>
+	<li> pDC - Pointer to a device contect
+	<li> clientRect - The destination rectangle for the entire chart
+	<li> chartRect - That portion of the client rectangle reserved for the data area of the chart
+	<li> updateRect - The clipping region of the client rectangle. If this value is not passed, the entire client rectangle is assumed to be the updateRect
+</ul>
+<b>Description</b>
+<p>
+This function draws the current axis. The coordinates of clientRect, chartRect and updateRect should be LOMETRIC.
+<p>
+<hr>
+<a href="CAxis.0index.htm">CAxis Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CColorControl member functions</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>CColorControl member functions</b>
+</font>
+</center>
+</h2>
+<hr>
+<!--
+COLORREF	GetColor( void );
+void		SetColor( COLORREF color );
+static void	CColorControl::SetColorControlColor( CDialog *dialog, UINT control, COLORREF color )
+static COLORREF	CColorControl::GetColorControlColor( CDialog *dialog, UINT control )
+-->
+CColorControl is a simple class, derived from CWnd, that will display a color inside its bounding rectangle. It is useful for color display in dialog boxes.
+<p>
+The static functions can be called outside of an instance of CColorControl, and are useful functions for getting and setting the control color in a dialog box without getting the control, casting it to a CColorControl and using GetColor or SetColor.
+<p>
+These are the member functions of CColorControl:
+<p>
+<b>Construction/Destruction</b>
+<ul>
+	<li> <a href="CColorControl.Constructor.htm">CColorControl</a> - Default constructor
+	<li> <a href="CColorControl.Constructor.htm">~CColorControl</a> - Default destructor
+</ul>
+<b>Getting/Setting color</b>
+<ul>
+	<li> <a href="CColorControl.GetColor.htm">GetColor</a> - Get the current color
+	<li> <a href="CColorControl.GetColor.htm">SetColor</a> - Set the current color
+</ul>
+<b>Static</b>
+<ul>
+	<li> <a href="CColorControl.GetColorControlColor.htm">SetColorControlColor</a> - Set the color from a dialog ID
+	<li> <a href="CColorControl.GetColorControlColor.htm">GetColorControlColor</a> - Get the color from a dialog ID
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+
+</BODY>
+</HTML>

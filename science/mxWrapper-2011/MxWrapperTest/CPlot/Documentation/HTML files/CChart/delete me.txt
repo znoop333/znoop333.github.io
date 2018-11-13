@@ -1,0 +1,73 @@
+	virtual BOOL	WriteTextFile( CString pathName );
+
+	inline void		SetTitle( CString title ) { m_Title = title; }
+	inline void		SetBackgroundColor( COLORREF color ) { m_BackgroundColor = color; }
+	inline void		SetLineColor( COLORREF color ) { m_LineColor = color; }
+	inline int		GetAxisCount( void ) { return m_AxisCount; }
+	inline int		GetMajorGridLineSize( void ) { return m_MajorGridLineSize; }
+	inline int		GetMinorGridLineSize( void ) { return m_MinorGridLineSize; }
+	inline COLORREF	GetMajorGridColor( void ) { return m_MajorGridColor; }
+	inline COLORREF	GetMinorGridColor( void ) { return m_MinorGridColor; }
+
+
+	CAxis			*GetAxis( int which ) { if( which >= 0 && which < m_AxisCount ) return m_Axes[which]; else return NULL; }
+	CAxis			*GetAxisByLocation( int location );
+
+	inline CString	GetTitle( void ) { return m_Title; }
+	inline	COLORREF	GetBackgroundColor( void ) { return m_BackgroundColor; }
+	inline	COLORREF	GetLineColor( void ) { return m_LineColor; }
+	inline	void	SetEraseBackground( BOOL how ) { m_EraseBackground = how; }
+	inline	BOOL	GetEraseBackground( void ) { return m_EraseBackground; }
+	void			SetMajorGridLineSize( int lineSize ) { if( lineSize > 0 ) m_MajorGridLineSize = lineSize; }
+	void			SetMinorGridLineSize( int lineSize ) { if( lineSize > 0 ) m_MinorGridLineSize = lineSize; }
+	void			SetMajorGridColor( COLORREF color ) { m_MajorGridColor = color; }
+	void			SetMinorGridColor( COLORREF color ) { m_MinorGridColor = color; }
+
+
+	virtual void	OnDraw( CDC *pDC, CRect destRect );
+	virtual	void	OnDraw( CDC *pDC, CRect destRect, CRect updateRect );
+	virtual CRect	GetPlotRect( CDC *pDC, CRect clientRect );
+
+	virtual BOOL	DeleteData( int dataRef );
+	virtual void	DeleteAllData( void );
+
+	virtual BOOL	AxisSettings( void );
+	virtual BOOL	AxisSettings( int whichAxis );
+	virtual BOOL	DataSettings( int whichDataSet );
+	virtual BOOL	DataSettings( void );
+	virtual BOOL	PlotSettings( void );
+
+	virtual int		ShowPopupMenu( CWnd *window, UINT nFlags, CPoint point );
+	virtual int		ShowPopupMenu( CMenu *passedMenu, CWnd *window, UINT nFlags, CPoint point );
+
+	CChartData		*GetDataSet( int which );
+	inline int		GetDataSetCount( void ) { return m_DataSetCount; }
+	CAxis			*AddAxis( short location );
+	void	GetOptimalRange( double *inRange, double *outRange,
+								int *nTicks, int *nMinor, BOOL exactRange );
+	void	GetOptimalRangePrivate( double *inRange, double *outRange,
+								int *nTicks, int *nMinor, double margin, double wasted );
+	void	GetOptimalRangeExact( double *inRange, double *outRange,
+								int *nTicks, int *nMinor );
+	double		GetTickOptimalTickInterval( double lower, double upper );
+
+	CRect	AdjustPlotSizeForAxes( CDC *pDC, CRect plotRect );
+	CRect	AdjustPlotSizeForTitle( CDC *pDC, CRect plotRect );
+	void	DrawPlotTitle( CDC *pDC, CRect destRect, CRect plotRect );
+	void	EraseBackground( CDC *pDC, CRect destRect );
+	void	DrawMajorMinorGrids( CDC *pDC, CRect plotRect );
+	void	DrawFrame( CDC *pDC, CRect plotRect );
+
+	void	SetRange( BOOL setX, double low, double high );
+	void	SetXRange( double low, double high );
+	void	SetYRange( double low, double high );
+
+	void	IsAutoRange( BOOL &haveXRange, BOOL &haveYRange );
+	BOOL	IsXAutoRange( void );
+	BOOL	IsYAutoRange( void );
+	void	SetAutoRange( BOOL setX );
+	void	SetXAutoRange( void );
+	void	SetYAutoRange( void );
+int		AddData( T *data, int nDims, int *dimArray )
+int		SetData( int dataID, T *data, int nDims, int *dimArray )
+	int		GetIndex( int dataID );

@@ -1,0 +1,12 @@
+pre { font-family: monospace; color: #000000; background-color: #ffffff; }
+.PreProc { color: #a020f0; }
+.Identifier { color: #008080; }
+.Statement { color: #804040; font-weight: bold; }
+.Constant { color: #ff00ff; }
+.Comment { color: #0000ff; }
+.Special { color: #6a5acd; }
+
+.FoxconAuthor { color: #0000ff; }
+.FoxconTown { color: #00ff00; }
+.FoxconTitle { color: #ff00ff; }
+

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CXYChart::GetMarkerFrequency</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::GetMarkerFrequency</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::SetMarkerFrequency</b>
+</font>
+</center>
+</h3><hr>
+<b>
+	void	SetMarkerFrequency( int dataID, int freq );
+<br>
+	int		GetMarkerFrequency( int dataID );
+</b>
+<p>
+<b>Description</b>
+<p>
+These functions set or return the frequency of the markers plotted for a specific data set.
+<p>
+A positive value of marker frequency means to plot every "freq" data points. Thus, a value of 10 would mean plot a marker every 10 data points. To mark every data point, set freq to 1. To mark no data points, set freq to 0 (or set the <a href="CXYChart.GetMarkerType.htm">marker type</a> to none.)
+<p>
+A negative value of marker frequency means plot a total of "freq" markers. Thus, a value of -10 would mean plot a total of 10 markers.
+<p>
+The data ID is that returned by <a href="CXYChart.AddData.htm">AddData</a> or <a href="CXYChart.SetData.htm">SetData</a>.
+<p>
+<hr>
+<a href="CXYChart.0index.htm">CXYChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+
+
+
+

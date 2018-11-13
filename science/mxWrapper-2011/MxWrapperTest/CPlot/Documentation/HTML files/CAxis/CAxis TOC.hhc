@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="Auto Generated" value="Yes">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CAxis member functions">
+		<param name="Local" value="CAxis.0index.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CAxis::AddAxisPopupMenus">
+			<param name="Local" value="CAxis.AddAxisPopupMenus.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::AddNumberOfTicksPopup">
+				<param name="Local" value="CAxis.AddNumberOfTicksPopup.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::CAxis">
+				<param name="Local" value="CAxis.Constructor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::CopyAxis">
+				<param name="Local" value="CAxis.CopyAxis.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetColor">
+				<param name="Local" value="CAxis.GetColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetLineSize">
+				<param name="Local" value="CAxis.GetLineSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetLocation">
+				<param name="Local" value="CAxis.GetLocation.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetLowerRange">
+				<param name="Local" value="CAxis.GetLowerRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetMinorTickCount">
+				<param name="Local" value="CAxis.GetMinorTickCount.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetMinDisplaySize">
+				<param name="Local" value="CAxis.GetMinSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetPaddingSize">
+				<param name="Local" value="CAxis.GetPaddingSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetRange">
+				<param name="Local" value="CAxis.GetRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::SetRange">
+				<param name="Local" value="CAxis.GetRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTickCount">
+				<param name="Local" value="CAxis.GetTickCount.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::SetTickCount">
+				<param name="Local" value="CAxis.GetTickCount.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTickLabel">
+				<param name="Local" value="CAxis.GetTickLabel.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTickPosition">
+				<param name="Local" value="CAxis.GetTickPosition.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTitle">
+				<param name="Local" value="CAxis.GetTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::SetTitle">
+				<param name="Local" value="CAxis.GetTitle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetTitleColor">
+				<param name="Local" value="CAxis.GetTitleColor.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::GetUpperRange">
+				<param name="Local" value="CAxis.GetUpperRange.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::InterpretAxisPopupMenuItem">
+				<param name="Local" value="CAxis.InterpretAxisPopupMenuItem.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::IsRangeSet">
+				<param name="Local" value="CAxis.IsRangeSet.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::IsVisible">
+				<param name="Local" value="CAxis.IsVisible.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::OnDraw">
+				<param name="Local" value="CAxis.OnDraw.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::Serialize">
+				<param name="Local" value="CAxis.Serialize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CAxis::SetDefaults">
+				<param name="Local" value="CAxis.SetDefaults.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CPlot Class Library Reference">
+		<param name="Local" value="index.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

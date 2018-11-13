@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="mxW"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="&quot;$(MatlabDir)\extern\include&quot;;&quot;$(CPlotDir)&quot;"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="libmx.lib libut.lib libeng.lib libmat.lib"
+		AdditionalLibraryDirectories="$(MatlabDir)\extern\lib\win32\microsoft"
+	/>
+	<UserMacro
+		Name="MatlabDir"
+		Value="D:\Program Files (x86)\MATLAB\R2009a"
+	/>
+	<UserMacro
+		Name="CPlotDir"
+		Value="..\CPlot\CPlot Sources"
+	/>
+</VisualStudioPropertySheet>

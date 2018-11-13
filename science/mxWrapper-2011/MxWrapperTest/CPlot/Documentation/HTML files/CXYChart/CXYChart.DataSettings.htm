@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CXYChart::DataSettings</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CXYChart::DataSettings</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+	virtual BOOL	DataSettings( void );
+<br>
+	virtual BOOL	DataSettings( int whichDataSet );
+</b>
+<p>
+<b>Parameters</b>
+<ul>
+	<li> whichDataSet - The number of the data set the dialog box should default to (zero-based) (NOT the data ID!)
+</ul>
+<p>
+<b>Returns</b>
+<p>
+TRUE if the user clicked OK in the settings dialog box, FALSE otherwise.
+<p>
+<b>Description</b>
+<p>s
+The function displays a dialog box which allows the user to change the settings of each of the data sets within the current chart. This includes plot style, markers (type and frequency), color, etc. It sets up a <a href="../CPlotSettingsDialog/CPlotSettingsDialog.0index.htm">CPlotSettingsDialog</a> box.
+<p>
+<hr>
+<a href="CXYChart.0index.htm">CXYChart Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>

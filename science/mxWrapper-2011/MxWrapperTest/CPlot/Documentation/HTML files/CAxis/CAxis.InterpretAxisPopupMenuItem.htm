@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CAxis::InterpretAxisPopupMenuItem</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CAxis::InterpretAxisPopupMenuItem</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>	int			InterpretAxisPopupMenuItem( int which );
+</b>
+<p>
+<b>Parameters</b>
+<ul>
+	<li> which - The menu item number for the axis popup. See description for more details.
+</ul>
+<b>Returns</b>
+<p>
+Returns a <a href="../CChart/PopupConstants.htm">constant</a> representing what action was taken.
+<p>
+<b>Description</b>
+<p>
+This function attempts to interpret a selection from a popup menu item as one for changing axis parameters. If it finds a valid menu item, it changes the property of the axis accordingly, and returns <a href="../CChart/PopupConstants.htm">kPopupUpdate</a>.
+<p>
+The value of which should be 0 for the first element in the axis popup menu. Thus, the calling function needs to determine for which axis popup menu the selection was made, and ensure a zero-based start for the present axis.
+<p>
+<hr>
+<a href="CAxis.0index.htm">CAxis Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+

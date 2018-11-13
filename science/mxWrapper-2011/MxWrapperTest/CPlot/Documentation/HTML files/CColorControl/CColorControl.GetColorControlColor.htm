@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CColorControl::GetColorControlColor</Title>
+</HEAD>
+<BODY>
+<h3>
+<font color="#990000">
+<center>
+<b>CColorControl::GetColorControlColor</b>
+</font>
+</center>
+</h3>
+<h3>
+<font color="#990000">
+<center>
+<b>CColorControl::SetColorControlColor</b>
+</font>
+</center>
+</h3>
+<hr>
+<b>
+static void	CColorControl::SetColorControlColor( CDialog *dialog, UINT control, COLORREF color );
+<p>
+static COLORREF	CColorControl::GetColorControlColor( CDialog *dialog, UINT control )
+</b>
+<p>
+<b>Parameters</b>
+<p><ul>
+	<li> dialog - A pointer to a dialog
+	<li> control - The ID of the color control
+	<li> color - The color to set the control to display
+</ul><p>
+<B>Description</B>
+<p>
+These utility functions can be called outside of an instance of CColorControl and are just to make it easier to set or retrieve the color. For example, within an InitDialog of a CDialog derived class, one might write:
+<pre>
+SetColorControlColor( this, IDC_COLOR_1, RGB( 255, 0, 0) );
+</pre>
+<p>
+<hr>
+<a href="CColorControl.0index.htm">CColorControl Reference</a> | <a href="../index.htm">CPlot Reference</a>
+</BODY>
+</HTML>
+
+
+

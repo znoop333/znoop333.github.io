@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Tutorial: Create chart axes</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>Create chart axes</b>
+</font>
+</center>
+</h2>
+At this stage, we have added files, and we have a <a href="../CXYChart/CXYChart.0index.htm">CXYChart</a> object among the variables in our view.
+<p>
+Now we need to make some data to put in our chart. <a href="../CChartData/CChartData.SetData.htm">CChartData::SetData</a> talks some about the format of data in an XY chart. In review, all the data is stored in a one-dimensional array, and all the X elements are stored followed by all the Y elements. So, if we want to make an array, say of a parabola, we might do something like the following:
+<pre><font color="#770000">#define kDataSize 26
+int		data[2*kDataSize], i;
+int		nDims, dims[2];
+int		dataID;
+
+for( i = 0; i < kDataSize; i++ )
+{
+	// The X data
+	data[i] = i - kDataSize/2;
+	// The Y Data
+	data[i  + kDataSize] = data[i]*data[i];
+}
+</font></pre>
+We need to set up the dimensions of our arrays, as well, since when we set up the data, we need to know this:
+<pre><font color="#770000">nDims = 2;
+dims[0] = 2; // Two dimensions along the first axis
+dims[1] = kDataSize; // kDataSize dimensions along the second
+</font></pre>
+Finally, we add this data to our chart. We might do this inside the OnInitialUpdate member of the View (in a real application it would be done elsewhere, probably)
+<pre><font color="#770000">dataID = m_Chart.AddData( data, nDims, dims );
+</font></pre>
+At the end, our OnInitialUpdate function might look something like the following:
+<pre><font color="#770000">#define kDataSize 26
+void CTestProjectView::OnInitialUpdate() 
+{
+	CView::OnInitialUpdate();
+
+	int		data[2*kDataSize], i;
+	int		nDims, dims[2];
+	int		dataID;
+	
+	for( i = 0; i < kDataSize; i++ )
+	{
+		// The X data
+		data[i] = i - kDataSize/2;
+		// The Y Data
+		data[i  + kDataSize] = data[i]*data[i];
+	}
+	nDims = 2;
+	dims[0] = 2; // Two dimensions along the first axis
+	dims[1] = kDataSize; // kDataSize dimensions along the second
+	dataID = m_Chart.AddData( data, nDims, dims );
+}
+</font></pre>
+But we aren't finished. Although the chart will draw just fine like this, it will not have any axes, or titles, or anything on it. We will want to add those in the <a href="Tutorial.CreateGraph.htm">next step.</a>
+<hr>
+<b>Tutorial:</b>
+<ul>
+	<li> <a href="Tutorial.AddFiles.htm">Add the CPlot files and resources to your project</a>
+	<li> <a href="Tutorial.AddView.htm">Add a chart object to your view</a>
+	<li> <a href="Tutorial.CreateData.htm">Create data for a chart</a>
+	<li> <a href="Tutorial.CreateGraph.htm">Create a chart and set up axes</a>
+	<li> <a href="Tutorial.DrawGraph.htm">Draw the chart</a>
+	<li> <a href="Tutorial.PrintGraph.htm">Print the graph</a>
+	<li> <a href="Tutorial.ContextMenu.htm">Add shortcut menu support</a>
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+</BODY>
+</HTML>
+

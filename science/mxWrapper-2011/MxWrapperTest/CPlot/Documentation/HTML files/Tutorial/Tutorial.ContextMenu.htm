@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Tutorial: Add shortcut menus</Title>
+</HEAD>
+<BODY>
+<h2>
+<font color="#990000">
+<center>
+<b>Add shortcut menu support</b>
+</font>
+</center>
+</h2>
+The last item in the tutorial is, perhaps, the easiest, and still one of the coolest. CPlot has built in shortcut menu support. First thing to do is add a member function for WM_RBUTTONDOWN in your view class using the Class Wizard.
+<p>
+Then just call the <a href="../CXYChart/CXYChart.ShowPopupMenu.htm">ShowPopupMenu</a> member function of CXYChart. It takes care of ALL of the work for you except for updating the chart. If you're so inclined, you can also pass it a pointer to a CMenu to add itself to if you already have a shortcut menu for your program.
+
+<pre><font color="#770000">void CTestProjectView::OnRButtonDown(UINT nFlags, CPoint point) 
+{
+	ClientToScreen( &point );
+	if( m_Chart.ShowPopupMenu( this, nFlags, point ) == kPopupUpdate )
+		Invalidate();
+}</font></pre>
+That's all that is needed. Play around with the contextual menu. I was able to make all the changes to the below plot using the contextual menu.
+<br>
+<img src="images/xy_context.png">
+<br>
+<hr>
+<b>Tutorial:</b>
+<ul>
+	<li> <a href="Tutorial.AddFiles.htm">Add the CPlot files and resources to your project</a>
+	<li> <a href="Tutorial.AddView.htm">Add a chart object to your view</a>
+	<li> <a href="Tutorial.CreateData.htm">Create data for a chart</a>
+	<li> <a href="Tutorial.CreateGraph.htm">Create a chart and set up axes</a>
+	<li> <a href="Tutorial.DrawGraph.htm">Draw the chart</a>
+	<li> <a href="Tutorial.PrintGraph.htm">Print the graph</a>
+	<li> <a href="Tutorial.ContextMenu.htm">Add shortcut menu support</a>
+</ul>
+<p>
+<hr>
+<a href="../index.htm">CPlot Reference</a>
+
+</BODY>
+</HTML>
+
+
+
