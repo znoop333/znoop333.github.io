@@ -20,110 +20,20 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/living-in-the-past-with-vim-for-fun-and-profit.html">Living in the past with Vim, for fun and profit</a></h1>
+                    <h1 class="entry-title"><a href="/migration-to-github-pages.html">Migration to GitHub Pages</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2015-05-09T20:50:00-04:00">
-                Published: Sat 09 May 2015
+        <abbr class="published" title="2018-11-13T07:14:00-05:00">
+                Published: Tue 13 November 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-
+<p>tags: <a href="/tag/migration.html">migration</a> </p>
 </footer><!-- /.post-info -->
-A recent news article on HN (HN: <a href="https://news.ycombinator.com/item?id=8084359" target="_blank">Emacs and Vim</a>, <a href="http://www.martinklepsch.org/posts/emacs-and-vim.html" target="_blank">original article here</a>) caused me to pause to reflect on my choice of editors. I use the <a href="http://www.vim.org/download.php#pc" target="_blank">GUI version of Vim</a> for most of my serious editing, but I will also use Eclipse for editing Java, HTML, and JSPs and MS Visual Studio for C++/C#. Why so many different editors?<br>
-<br>
-Each one is good at different things, which is why I use them all. But I keep coming back to Vim when I have to do something harder. For example, regular expression support in Vim is way better than in the other editors. Let's say I need to extract the servlet names in a Tomcat access_log file like this:<br>
-<pre>127.0.0.1 - - [18/Oct/2014:15:29:53 -0400] "GET /examples/servlets HTTP/1.1" 302 -<br>
-127.0.0.1 - - [18/Oct/2014:15:29:53 -0400] "GET /examples/servlets/ HTTP/1.1" 200 5343<br>
-127.0.0.1 - - [18/Oct/2014:15:29:53 -0400] "GET /examples/servlets/images/code.gif HTTP/1.1" 200 292<br>
-127.0.0.1 - - [18/Oct/2014:15:29:53 -0400] "GET /examples/servlets/images/return.gif HTTP/1.1" 200 1231<br>
-127.0.0.1 - - [18/Oct/2014:15:29:53 -0400] "GET /examples/servlets/images/execute.gif HTTP/1.1" 200 1242<br>
-127.0.0.1 - - [18/Oct/2014:15:30:08 -0400] "GET /examples/servlets/servlet/HelloWorldExample HTTP/1.1" 200 359<br>
-127.0.0.1 - - [18/Oct/2014:15:30:11 -0400] "GET /examples/servlets/helloworld.html HTTP/1.1" 200 2612<br>
-127.0.0.1 - - [18/Oct/2014:15:30:25 -0400] "GET /examples/servlets/servlet/RequestInfoExample HTTP/1.1" 200 693<br>
-127.0.0.1 - - [18/Oct/2014:15:30:27 -0400] "GET /examples/servlets/reqinfo.html HTTP/1.1" 200 3674<br>
-127.0.0.1 - - [18/Oct/2014:15:30:51 -0400] "GET /examples/servlets/reqheaders.html HTTP/1.1" 200 2304<br>
-127.0.0.1 - - [18/Oct/2014:15:30:56 -0400] "GET /examples/servlets/servlet/RequestHeaderExample HTTP/1.1" 200 1067<br>
-127.0.0.1 - - [18/Oct/2014:15:31:04 -0400] "GET /examples/servlets/reqparams.html HTTP/1.1" 200 4650<br>
-127.0.0.1 - - [18/Oct/2014:15:31:35 -0400] "GET /examples/servlets/servlet/RequestParamExample HTTP/1.1" 200 657<br>
-127.0.0.1 - - [18/Oct/2014:15:31:56 -0400] "GET /examples/servlets/cookies.html HTTP/1.1" 200 2741<br>
-127.0.0.1 - - [18/Oct/2014:15:31:59 -0400] "GET /examples/servlets/servlet/CookieExample HTTP/1.1" 200 637<br>
-127.0.0.1 - - [18/Oct/2014:15:32:02 -0400] "GET /examples/servlets/sessions.html HTTP/1.1" 200 3267<br>
-</pre><br>
-So I don't care about most of the content except the timestamp and the servlet name. The following regex solves the problem: <strong>s/^.*[\(.*\)]\.*servlets\(.*\) H.*$/\1 \2/</strong><br>
-<br>
-I know that looks like gibberish to someone who hasn't used regexes much, but here is what it produces:<br>
-<pre>18/Oct/2014:15:29:53 -0400 <br>
-18/Oct/2014:15:29:53 -0400 /<br>
-18/Oct/2014:15:29:53 -0400 /images/code.gif<br>
-18/Oct/2014:15:29:53 -0400 /images/return.gif<br>
-18/Oct/2014:15:29:53 -0400 /images/execute.gif<br>
-18/Oct/2014:15:30:08 -0400 /servlet/HelloWorldExample<br>
-18/Oct/2014:15:30:11 -0400 /helloworld.html<br>
-18/Oct/2014:15:30:25 -0400 /servlet/RequestInfoExample<br>
-18/Oct/2014:15:30:27 -0400 /reqinfo.html<br>
-18/Oct/2014:15:30:51 -0400 /reqheaders.html<br>
-18/Oct/2014:15:30:56 -0400 /servlet/RequestHeaderExample<br>
-18/Oct/2014:15:31:04 -0400 /reqparams.html<br>
-18/Oct/2014:15:31:35 -0400 /servlet/RequestParamExample<br>
-18/Oct/2014:15:31:56 -0400 /cookies.html<br>
-18/Oct/2014:15:31:59 -0400 /servlet/CookieExample<br>
-18/Oct/2014:15:32:02 -0400 /sessions.html<br>
-</pre><br>
-That's exactly what I want! It only took one command in Vim. I'm sure you can get your favorite editor to do it too, but Vim has always worked well for me.<br>
-<br>
-Another example: Let's say I need to generate some repetitious code because SQL Server's tsql language doesn't really support arrays, and someone else generated column names with numbers at the end.<br>
-<pre><span class="Statement">INSERT</span> <span class="Special">INTO</span> dbo.BadTable (NAME, ADDR, ZIP)<br>
-        <span class="Statement">SELECT</span> NAME01, ADDR01, ZIP01<br>
-        <span class="Special">FROM</span> dbo.OtherBadTable<br>
-        <span class="Special">WHERE</span> ID=<span class="Constant">'01'</span><br>
-<br>
-<span class="Statement">INSERT</span> <span class="Special">INTO</span> dbo.BadTable (NAME, ADDR, ZIP)<br>
-        <span class="Statement">SELECT</span> NAME02, ADDR02, ZIP02<br>
-        <span class="Special">FROM</span> dbo.OtherBadTable<br>
-        <span class="Special">WHERE</span> ID=<span class="Constant">'02'</span><br>
-</pre><br>
-The task at hand is to copy data from OtherBadTable to BadTable (for IDs 01 to 09). Yes, I know this table has a terrible design, but it wasn't my choice, and I cannot change it. I could use dynamic SQL, but the column names are fixed, and there are only 9 of them.<br>
-<br>
-Here's a VIM solution. Start with the template below:<br>
-<pre><span class="Statement">INSERT</span> <span class="Special">INTO</span> dbo.BadTable (NAME, ADDR, ZIP)<br>
-        <span class="Statement">SELECT</span> NAMEXX, ADDRXX, ZIPXX<br>
-        <span class="Special">FROM</span> dbo.OtherBadTable<br>
-        <span class="Special">WHERE</span> ID=<span class="Constant">'YY'</span><br>
-</pre><br>
-Next, make 9 more copies with <strong>ggVGy</strong> (select all lines) and then pasting 9 times with <strong>9P</strong>:<br>
-<pre><span class="Statement">INSERT</span> <span class="Special">INTO</span> dbo.BadTable (NAME, ADDR, ZIP)<br>
-        <span class="Statement">SELECT</span> NAMEXX, ADDRXX, ZIPXX<br>
-        <span class="Special">FROM</span> dbo.OtherBadTable<br>
-        <span class="Special">WHERE</span> ID=<span class="Constant">'YY'</span><br>
-<br>
-<span class="Statement">INSERT</span> <span class="Special">INTO</span> dbo.BadTable (NAME, ADDR, ZIP)<br>
-        <span class="Statement">SELECT</span> NAMEXX, ADDRXX, ZIPXX<br>
-        <span class="Special">FROM</span> dbo.OtherBadTable<br>
-        <span class="Special">WHERE</span> ID=<span class="Constant">'YY'</span><br>
-<br>
-(etc.)<br>
-</pre><br>
-Finally, use <a href="http://vim.wikia.com/wiki/Making_a_list_of_numbers">these commands to make a list</a>: <strong>let i=1 | g/XX/s//\='0'.i/g | let i=i+1 </strong>and then <strong>let i=1 | g/YY/s//\='0'.i/g | let i=i+1 </strong>. The final output is:<br>
-<pre><span class="Statement">INSERT</span> <span class="Special">INTO</span> dbo.BadTable (NAME, ADDR, ZIP)<br>
-        <span class="Statement">SELECT</span> NAME01, ADDR01, ZIP01<br>
-        <span class="Special">FROM</span> dbo.OtherBadTable<br>
-        <span class="Special">WHERE</span> ID=<span class="Constant">'01'</span><br>
-<br>
-<span class="Statement">INSERT</span> <span class="Special">INTO</span> dbo.BadTable (NAME, ADDR, ZIP)<br>
-        <span class="Statement">SELECT</span> NAME02, ADDR02, ZIP02<br>
-        <span class="Special">FROM</span> dbo.OtherBadTable<br>
-        <span class="Special">WHERE</span> ID=<span class="Constant">'02'</span><br>
-<br>
-(etc.)<br>
-</pre><br>
-There! 50 lines of code generated with only 4 Vim commands. Obviously, it's easy to extend this method to as many column names as you need. My point is just that this is a thankless, boring typing task, which can be automated easily in Vim.<br>
-<br>
-I saved the best for my next post, but here's an introduction. Macros in Vim are very powerful. You can record a macro from almost any set of Vim commands and then replay the macro to make a huge number of changes to file painlessly.<br>
-<br>
-<a href="http://www.vim.org/download.php#pc">Download Vim today and give it a try</a>!
+GitHub Pages provides free hosting for static sites, and it's annoying to keep WordPress updated so that it doesn't get hacked. I don't really need a mysql database instance, either. So it's time to start using Pelican and Jinja to maintain this website.
+<br>&nbsp;
                     </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
@@ -133,122 +43,206 @@ I saved the best for my next post, but here's an introduction. Macros in Vim are
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/input.html" rel="bookmark"
-                           title="Permalink to Input">Input</a></h1>
+                    <h1><a href="/extending-wonderware-with-rabbitmq.html" rel="bookmark"
+                           title="Permalink to Extending Wonderware with RabbitMQ">Extending Wonderware with RabbitMQ</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-09-14T18:26:00-04:00">
-                Published: Sun 14 September 2014
-        </abbr>
-		<br />
-        <abbr class="modified" title="2014-09-14T18:26:00-04:00">
-                Updated: Sun 14 September 2014
+        <abbr class="published" title="2018-05-14T10:16:58-04:00">
+                Published: Mon 14 May 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-
+<p>tags: <a href="/tag/240.html">240</a> </p>
 </footer><!-- /.post-info -->                
-                <a class="readmore" href="/input.html">read more</a>
+                <a class="readmore" href="/extending-wonderware-with-rabbitmq.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/inputoutput-completion-ports-iocp-for-fun-and-profit.html" rel="bookmark"
-                           title="Permalink to Input/Output Completion Ports (IOCP) for fun and profit">Input/Output Completion Ports (IOCP) for fun and profit</a></h1>
+                    <h1><a href="/presentation-using-big-data-from-automotive-assembly-errors.html" rel="bookmark"
+                           title="Permalink to Presentation - Using Big Data from Automotive Assembly Errors">Presentation - Using Big Data from Automotive Assembly Errors</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-09-14T18:26:00-04:00">
-                Published: Sun 14 September 2014
-        </abbr>
-		<br />
-        <abbr class="modified" title="2014-09-14T18:26:00-04:00">
-                Updated: Sun 14 September 2014
+        <abbr class="published" title="2018-01-27T13:09:13-05:00">
+                Published: Sat 27 January 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-<p>tags: <a href="/tag/mfc.html">MFC</a> </p>
-</footer><!-- /.post-info -->                asynchronous I/O is hard
-                <a class="readmore" href="/inputoutput-completion-ports-iocp-for-fun-and-profit.html">read more</a>
+<p>tags: <a href="/tag/236.html">236</a> </p>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/presentation-using-big-data-from-automotive-assembly-errors.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/power-digit-sum.html" rel="bookmark"
-                           title="Permalink to Power digit sum">Power digit sum</a></h1>
+                    <h1><a href="/foxcon-toledo-2018-abstracts.html" rel="bookmark"
+                           title="Permalink to FoxCon Toledo 2018 Abstracts">FoxCon Toledo 2018 Abstracts</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-06-28T17:39:00-04:00">
-                Published: Sat 28 June 2014
+        <abbr class="published" title="2018-01-26T11:23:54-05:00">
+                Published: Fri 26 January 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-
+<p>tags: <a href="/tag/234.html">234</a> </p>
 </footer><!-- /.post-info -->                
-                <a class="readmore" href="/power-digit-sum.html">read more</a>
+                <a class="readmore" href="/foxcon-toledo-2018-abstracts.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/happy-cube-numbers.html" rel="bookmark"
-                           title="Permalink to Happy Cube Numbers">Happy Cube Numbers</a></h1>
+                    <h1><a href="/foxcon-toledo-2018-schedule.html" rel="bookmark"
+                           title="Permalink to FoxCon Toledo 2018 Schedule">FoxCon Toledo 2018 Schedule</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-05-10T18:13:00-04:00">
-                Published: Sat 10 May 2014
+        <abbr class="published" title="2018-01-21T20:30:54-05:00">
+                Published: Sun 21 January 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-
+<p>tags: <a href="/tag/227.html">227</a> </p>
 </footer><!-- /.post-info -->                
-                <a class="readmore" href="/happy-cube-numbers.html">read more</a>
+                <a class="readmore" href="/foxcon-toledo-2018-schedule.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/big-data-the-old-new-thing.html" rel="bookmark"
-                           title="Permalink to Big data: the old new thing">Big data: the old new thing</a></h1>
+                    <h1><a href="/codemash-2018-reviews.html" rel="bookmark"
+                           title="Permalink to Codemash 2018 reviews">Codemash 2018 reviews</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-04-07T01:41:00-04:00">
-                Published: Mon 07 April 2014
+        <abbr class="published" title="2018-01-13T14:05:09-05:00">
+                Published: Sat 13 January 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-
+<p>tags: <a href="/tag/222.html">222</a> </p>
 </footer><!-- /.post-info -->                
-                <a class="readmore" href="/big-data-the-old-new-thing.html">read more</a>
+                <a class="readmore" href="/codemash-2018-reviews.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/.html" rel="bookmark"
+                           title="Permalink to "></a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-01-01T16:19:18-05:00">
+                Published: Mon 01 January 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/220.html">220</a> </p>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/presentations-list.html" rel="bookmark"
+                           title="Permalink to Presentations List">Presentations List</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-01-01T16:17:16-05:00">
+                Published: Mon 01 January 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/216.html">216</a> </p>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/presentations-list.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/presentation-building-your-own-collaborative-editing-web-forms-for-free.html" rel="bookmark"
+                           title="Permalink to Presentation - Building Your Own Collaborative Editing Web Forms For Free">Presentation - Building Your Own Collaborative Editing Web Forms For Free</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-11-07T11:10:33-05:00">
+                Published: Tue 07 November 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/211.html">211</a> </p>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/presentation-building-your-own-collaborative-editing-web-forms-for-free.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/presentation-idea-using-columnstore-indexes-to-store-and-analyze-billions-of-torques.html" rel="bookmark"
+                           title="Permalink to Presentation idea - Using Columnstore Indexes to Store and Analyze Billions of Torques">Presentation idea - Using Columnstore Indexes to Store and Analyze Billions of Torques</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-07-22T20:40:28-04:00">
+                Published: Sat 22 July 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/208.html">208</a> </p>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/presentation-idea-using-columnstore-indexes-to-store-and-analyze-billions-of-torques.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 5
+        <a href="/index2.html">&raquo;</a>
+</p>
                 </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">

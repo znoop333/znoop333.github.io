@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Amazon Web Services is amazing</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/amazon-web-services-is-amazing.html" rel="bookmark"
+           title="Permalink to Amazon Web Services is amazing">Amazon Web Services is amazing</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-11-30T21:20:32-05:00">
+                Published: Sun 30 November 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/64.html">64</a> </p>
+</footer><!-- /.post-info -->      
+    I needed to convert some very large (40,000 x 40,000 pixel) images from one format to another, and I ran into a problem. My desktop PC just couldn't handle the memory requirements despite having 8 GB RAM and a 64-bit OS. Even at 8-bits per pixel, <a href="http://www.imagemagick.org/index.php">imagemagick </a>was failing on the JPEG2000 encoding part of my pipeline. (Details later.)
+<br>
+<br>So I finally decided to try out this whole cloud computing thing for real. I'm very familiar with using other people's virtual machines, but for the first time, I rented my own -- <a href="https://aws.amazon.com/ec2/">an instance with 244 GB RAM and 8x 800 GB SSD hard drives ("i2.8xlarge")</a>. I chose RedHat Enterprise Linux 7 and recompiled imagemagick for the best performance for my situation using one of their free instances. Then I upgraded to the real instance and started processing images.
+<br>
+<br>Three hours on EC later, imagemagick finally finished processing all of the images. The final compressed files were only about 1 GB, but the intermediate files hit hundreds of GB, which would have been very annoying on traditional hard drives. The computations had simultaneously used up to 120 GB RAM and a lotta GHz of processor time. I was very happy with how relatively painless the process was, given that I already knew how to use Linux and I had worked out the bugs on the free instance.
+<br>
+<br>How much did this endeavor cost? $22 and change. I couldn't have even bought a motherboard capable of handling 128 GB RAM, let alone the RAM or CPU necessary to do this job. While I could have downsampled the source images and trivialized the computations, that would have sacrificed the accuracy of the final result. Plus, I didn't really want to own or maintain that hardware in the long term; I just needed to get through some computations right now.
+<br>
+<br>So anyway, here's a hearty endorsement of Amazon Web Services and EC2. It worked great. (They paid me nothing to say this or write this; in fact, I doubt they even noticed the brief spikes in load on their clusters.)
+<br>
+<br><strong>Image processing details:</strong>
+<br>
+<br>The input image was a set of histology images with about 10 um x 10 um resolution.
+<br>
+<br>&gt;<strong>identify</strong> <strong>heart.jpg</strong>
+<br>heart.jpg JPEG<span style="color: #0000ff;"><strong> 45717x38257</strong></span> 45717x38257+0+0 8-bit sRGB 155.9MB 0.000u 0:00.001
+<br>
+<br>My desktop PC was not even close to up to the task:
+<br>
+<br><strong>&gt;identify -list resource</strong>
+<br>File       Area     <span style="color: #0000ff;">Memory       </span> Map       Disk   Thread  Throttle       Time
+<br>--------------------------------------------------------------------------------
+<br>1536   16.525GB   <span style="color: #0000ff;">7.695GiB</span>   15.39GiB  unlimited        4         0  unlimited
+<br>
+<br>The goal was to eventually get the images into JPEG2000 format, which is really a big problem because the wavelet transform isn't cheap. Anyway, the commands looked something like this:
+<br>
+<br><strong>&gt;convert -monitor -rotate -45 -crop 33000x10630+24580+10630 -resize 50%  heart.mpc heart.jp2</strong>
+<br>
+<br>&nbsp;
+    
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="english">
 <head>
         <meta charset="utf-8" />
-        <title>Power digit sum</title>
+        <title>Wonderware Training</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -21,40 +21,27 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/power-digit-sum.html" rel="bookmark"
-           title="Permalink to Power digit sum">Power digit sum</a></h1>
+        <a href="/wonderware-training.html" rel="bookmark"
+           title="Permalink to Wonderware Training">Wonderware Training</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-06-28T17:39:24-04:00">
-                Published: Sat 28 June 2014
+        <abbr class="published" title="2015-05-23T19:57:04-04:00">
+                Published: Sat 23 May 2015
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/dj.html">DJ</a>
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
-<p>tags: <a href="/tag/42.html">42</a> </p>
+<p>tags: <a href="/tag/97.html">97</a> </p>
 </footer><!-- /.post-info -->      
-    The Project Euler website appears to have died, so I'm writing a post as a tribute to its memory. An old but fun problem goes like this:
+    I took the <a href="http://wonderwarenorth.com/certified-training/">Wonderware System Platform 1 (Wonderware Application Server) training course</a>, which I thought was excellent. I had learned some <a href="http://software.invensys.com/wonderware/">Wonderware</a> scripting at my current job, but that turned out to be a skewed perspective on what Wonderware is actually intended to do. We use just <a href="https://en.wikipedia.org/wiki/Wonderware">the Manufacturing Execution Systems (MES) aspect of Wonderware</a>, which is a shame. It's a deep and powerful product with many great SCADA features (data acquisition, alarming, HMI).
 <br>
-<br>2^15 = 32768, and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+<br>Unfortunately, the price of additional licensing is probably going to prevent me from using it for its intended role of creating HMI displays on a production floor. I can already imagine my boss comparing the price of those licenses against the price of continuing to use MFC/C++ (effectively free, if you ignore time and opportunity costs). There are also other risks and expenses to changing the architecture of an existing, productive plant -- downtime, retraining, computer upgrades, etc. Still, it's fun to imagine redoing everything the "right" way from the start.
 <br>
-<br><strong>What is the sum of the digits of the number 2^1000?</strong>
-<br>
-<br>The simplest way to approach this problem is to brute force it in a programming language with big integer support, e.g., Python:
-<br><pre>N=<span class="Constant">2</span>**<span class="Constant">1000</span>
-<br>
-<br>mysum=<span class="Constant">0</span>
-<br><span class="Statement">while</span> N&gt;<span class="Constant">0</span>:
-<br>    N, r = <span class="Identifier">divmod</span>(N,<span class="Constant">10</span>)
-<br>    mysum += r
-<br>
-<br><span class="Identifier">print</span> mysum
-<br></pre>
-<br>
-<br>RIP, Project Euler.
+<br>One project I could still do: we really should be <a href="https://opcfoundation.org/">using OPC </a>to communicate with devices on our plant floor. I'll see if we can move away from our existing ad hoc communication methods. <a href="https://en.wikipedia.org/wiki/Open_Platform_Communications#Design">OPC is way better </a>than what we're doing right now. Maybe I can make a business case for improved productivity or reduced integration costs. OPC classic uses Component Object Model (COM), which is an old and somewhat frustrating core component of the WIN32 API which has given me lots of headaches over the years, but <a href="https://en.wikipedia.org/wiki/OPC_Unified_Architecture">the new flavor of OPC UA</a> is just web services, which are much easier to understand (albeit more verbose). Too bad the OPC foundation wants thousands of dollars per year for membership; maybe I'll <a href="http://www.omnidssi.com/html/why_omniserver.htm">use OmniServer</a> instead.
     
     </div><!-- /.entry-content -->
 

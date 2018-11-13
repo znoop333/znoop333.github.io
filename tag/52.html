@@ -2,7 +2,7 @@
 <html lang="english">
 <head>
         <meta charset="utf-8" />
-        <title>Input/Output Completion Ports (IOCP) for fun and profit</title>
+        <title>djohn89.com - 52</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -14,18 +14,13 @@
         <header id="banner" class="body">
                 <h1><a href="/">djohn89.com </a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/programming.html">programming</a></li>
+                    <li><a href="/category/programming.html">programming</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/inputoutput-completion-ports-iocp-for-fun-and-profit.html" rel="bookmark"
-           title="Permalink to Input/Output Completion Ports (IOCP) for fun and profit">Input/Output Completion Ports (IOCP) for fun and profit</a></h1>
-    </header>
 
-    <div class="entry-content">
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/inputoutput-completion-ports-iocp-for-fun-and-profit.html">Input/Output Completion Ports (IOCP) for fun and profit</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2014-09-14T18:26:19-04:00">
                 Published: Sun 14 September 2014
@@ -36,7 +31,7 @@
         </address>
 <p>In <a href="/category/programming.html">programming</a>.</p>
 <p>tags: <a href="/tag/52.html">52</a> </p>
-</footer><!-- /.post-info -->      
+</footer><!-- /.post-info -->
     I've written a number of C++/MFC programs using the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa365683%28v=vs.85%29.aspx">overlapped I/O approach</a>, and it has always been a real pain. Even MSDN doesn't really seem to like it:
 <br>
 <br><img src="https://msdn.microsoft.com/dynimg/IC12128.png" alt="" />
@@ -53,11 +48,8 @@
 <br>That last point was the hardest for me to realize that I absolutely have to deal with synchronous, immediate completion of the I/O (not just asynchronous completion from the IOCP). So you really do have to check the return value from ReadFile and also GetLastError() == ERROR_IO_PENDING.
 <br>
 <br>IOCP is so good that it is <a href="http://blog.stephencleary.com/2013/11/there-is-no-thread.html">the basis for C#'s multi-threading I/O</a>. The designers of C# must not have even cared about the old ways to do I/O (e.g., waiting on events, alertable callbacks with APCs, OVERLAPPED callback functions, etc.).
-    
-    </div><!-- /.entry-content -->
-
-  </article>
-</section>
+                    </article>
+            </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

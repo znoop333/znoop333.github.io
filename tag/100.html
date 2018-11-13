@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - 100</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/mandatory-knowledge-for-programming-interviews.html">Mandatory knowledge for programming interviews</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-05-29T10:31:28-04:00">
+                Published: Fri 29 May 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/100.html">100</a> </p>
+</footer><!-- /.post-info -->
+    (This is a "kids of today" complaint, so skip it unless you're willing to hear complaints about job interviews.)
+<br>
+<br>Public service announcement to job applicants: <strong>you must know what <a href="https://en.wikipedia.org/wiki/Big_O_notation">O(N) notation</a> is for the code you write for both runtime operations and memory usage</strong>. I don't care if you have a computer science degree or not, but you cannot write good implementations of algorithms if you don't have a clue about it. Your "8 years of experience" on your resume is garbage if you can't tell me why an O(N) array search is slower than an O(log N) search in almost every case. Also, you need to know how much memory you allocated, even if you don't have to explicitly free it because the garbage collector cleaned up your mess.
+<br>
+<br>No, the programming language doesn't matter. No, your favorite library does not matter. No, there is no magic speedup to be found in Linq, inlined functions, lambda functions, or whatever other garbage you googled. Kids of today! Geez, get offa my lawn.
+<br>
+<br>And while I'm at it, you must know <a href="http://www.flounder.com/workerthreads.htm">the fundamental rule of multi-threaded programming in Windows</a>: <strong>there is only one UI thread, it owns all UI objects, and you cannot access any UI objects from any other thread.</strong> Not ever! Your program will crash and burn with some cryptic errors the next time your callback in the thread pool tries to change the text displayed on screen. <a href="http://www.flounder.com/badprogram.htm">If you don't know how to transition from background threads to the UI thread, that is your fault.</a> No, you can't get away with it because there was no compiler warning message. No, you can't catch every multi-threading exception and silently discard them. No, the operating system will not help you to fix this error. No, your favorite programming language does not absolve you of this responsibility, even if it does have a billion ways to manage threads (C#, I'm looking at you).
+<br>
+<br><strong>Does nobody learn these concepts anymore in college?</strong> There are so many excellent textbooks available, and it is your responsibility as a professional programmer to read at least some of them. Reading "Sams Teach Yourself C# in 24 Hours" and writing garbage code for a few years does not make you a professional.
+<br><h2>Please read some or all of these before applying to a job and sending me an 8 page resume with glowing but vacuous recommendations:</h2>
+<br><a href="http://i.stanford.edu/%7Eullman/focs.html" target="_blank">Foundations of Computer Science</a>, which is the Stanford textbook used in programming and CS classes. Specifically, Ch 3. The Running Time of Programs.
+<br><p class="r"><a href="http://mitpress.mit.edu/books/introduction-algorithms">Introduction to Algorithms</a>, the MIT standard textbook. Please dear lord tell me you know what a hash function is and what it does. (Or map, dictionary, associative array, or whatever other name your favorite language is now using; the name doesn't matter as long as you know when to use it.)</p>
+<br><a href="http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X">Cracking the Coding Interview: 150 Programming Questions</a>. If you can't write code without an IDE (i.e., by hand on a whiteboard or on paper), you're not going to pass an interview.
+<br>
+<br><a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html">The Art of Computer Programming</a> by Don Knuth. Any volume. Really, anything written by Knuth. If you don't know what a regex or Turing Machine is, you've got a lot of catching up to do. No, seeing "<a href="http://www.imdb.com/title/tt2084970/">The Imitation Game</a>" does not count.
+<br>
+<br><a href="http://minix1.woodhull.com/osdi2/">Operating Systems: Design and Implementation</a> by Tanenbaum et al. You must know what a mutex is and why you'd need to use it. No, you cannot google it during the interview. No, you cannot avoid learning about how the OS schedules and manages threads inside your process, even if you never explicitly control it.
+<br>
+<br>Kids of today! Geez. Now please excuse me, I have to mow my lawn.
+                    </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

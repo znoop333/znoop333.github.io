@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - 66</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/rolling-dice-for-king-of-tokyo.html">Rolling dice for King of Tokyo</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-01-02T16:43:26-05:00">
+                Published: Fri 02 January 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/66.html">66</a> </p>
+</footer><!-- /.post-info -->
+    <strong>Edit 1/18/2015</strong>: I forgot to provide a link to a spreadsheet I made for saved games (<a href="http://www.djohn89.com/blog/wp-content/uploads/2015/01/King-of-Tokyo-Saved-Game-Template.xlsx">King of Tokyo Saved Game -  Excel Template</a>, <a href="http://www.djohn89.com/blog/wp-content/uploads/2015/01/King-of-Tokyo-Saved-Game-Template-Sheet1.pdf">King of Tokyo Saved Game - PDF</a> format).
+<br>
+<br>Over the winter break, I had some time to play a really great board game, King of Tokyo, with my friends and family.  (<a href="http://www.iellogames.com/KingOfTokyo.html">Creator's website</a>, <a href="http://boardgamegeek.com/boardgame/70323/king-tokyo">BGG link</a>, <a href="http://www.amazon.com/IELLO-IEL-51032-King-Tokyo/dp/B004U5R5BI">Amazon link</a>). King of Tokyo shares a dice mechanic similar to Yahtzee:
+<br><p style="padding-left: 30px;"><em>At your turn, you get <strong>three successive throws after each of which you choose whether to keep or discard each of the six special dice</strong>. Your final combination will enable you to win destruction points, hoard energy, restore your health or whack other players into understanding Tokyo is your territory.</em></p>
+<br>There are some questions that came up about the optimal strategies and expected outcomes of the 3-roll, six-dice mechanic. Since Yahtzee is so well known, I borrowed a <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo analysis</a> from it to analyze King of Tokyo. For example, the <a href="https://en.wikipedia.org/wiki/Yahtzee#Probabilities">chance of rolling a Yahtzee (all five dice the same in a 3-roll turn) is about 0.046</a> according to Wikipedia.
+<br>
+<br>Anyway, this inspired me to write some Python code to evaluate King of Tokyo.  Note that King of Tokyo uses 6 dice instead of the 5 in Yahtzee, and I arbitrarily assigned damage to be "six" on the dice, energy is "five", and hearts are "four". Here are the questions that came up during our King of Tokyo games.
+<br><h3>Q1: I'm in Tokyo with 4 HP. What are the chances that my next opponent kills my monster if by only keeping damage dice and rerolling everything else?</h3>
+<br>This is an excellent question because it determines whether you should leave Tokyo or not. First, here are the possible outcomes:
+<br><pre>Damage dealt(d)     P(X&gt;=d)
+<br>0                   1.000
+<br>1                   0.962
+<br>2                   0.798
+<br>3                   0.501
+<br><strong>4                   0.212</strong>
+<br>5                   0.052
+<br>6                   0.005</pre>
+<br><h5>Table 1. Outcomes for six dice rolled three times with best results kept.</h5>
+<br>The attacking monster has a 21.2% chance of dealing at least 4 damage (d is damage dealt, X is a random variable which models the rerolling process), assuming 6 dice are rolled up to 3 times, and only damage dice are kept.
+<br>
+<br>I generated this table using the following Python code:
+<br><pre><span class="PreProc">import</span> numpy <span class="Statement">as</span> np
+<br>
+<br><span class="Statement">def</span> <span class="Identifier">rollSixes</span>(NRerolls=<span class="Constant">3</span>) :
+<br><span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">xrange</span>(<span class="Constant">0</span>,NRerolls):
+<br><span class="Statement">    if</span> <span class="Constant">6</span> == randint(<span class="Constant">1</span>,<span class="Constant">6</span>) :
+<br><span class="Statement">        return</span> <span class="Constant">1</span>
+<br><span class="Statement">    return</span> <span class="Constant">0</span>
+<br>
+<br><span class="Statement">def</span> <span class="Identifier">rollHand</span>(NDice=<span class="Constant">6</span>,Cutoff=<span class="Constant">1</span>,NRerolls=<span class="Constant">3</span>) :
+<br>    hand = [ rollSixes(NRerolls) <span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">xrange</span>(<span class="Constant">0</span>,NDice) ]
+<br><span class="Statement">    return</span> hand.count(<span class="Constant">1</span>) &gt;= Cutoff
+<br>
+<br>N=<span class="Constant">100000</span>
+<br>NDice=<span class="Constant">6</span>
+<br>NRerolls=<span class="Constant">3</span>
+<br>Cutoff=<span class="Constant">4</span>
+<br>
+<br>tests2 = [ rollHand(NDice,Cutoff,NRerolls) <span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">xrange</span>(<span class="Constant">0</span>,N) ]
+<br>
+<br><span class="Identifier">print</span> np.mean(tests2), np.std(tests2)
+<br></pre>
+<br>Table 1 is also has the answers to the following questions:
+<br>
+<br>On average, how much damage is dealt to the monster in Tokyo each turn? (Answer: 3 from the table, but 2.53 is the exact number because E[X]=0.421)
+<br>
+<br>Suppose I to heal at least 2 hearts in the next turn, or else my monster will be eliminated. What are the chances that I can roll at least 2 hearts? (Answer: 79.8%)
+<br><h3>Q2. How valuable is the "Extra Head" card?</h3>
+<br>The "Extra Head" card allows a monster to roll one extra die (so, 7 dice instead of 6). It's a really expensive and desirable card. Re-running the simulation with NDice=7 gives:
+<br><pre>Damage dealt(d)     P(X&gt;=d)
+<br>0                   1.000
+<br>1                   0.978
+<br>2                   0.865
+<br>3                   0.627
+<br>4                   0.332
+<br>5                   0.117
+<br>6                   0.025
+<br>7                   0.002</pre>
+<br><h5>Table 2. Seven dice, 3 rerolls, keeping only the best outcomes.</h5>
+<br>The extra die may feel really useful, but it makes only a relatively small difference in the statistical outcomes. Instead of a 21.2% chance of dealing at least 4 damage, there is a 33.2% chance of dealing at least 4 damage. Not a huge increase, in my opinion.
+<br>
+<br>The expected value of one die is still 0.421 damage (or energy or hearts), but the expected damage from one turn in Tokyo increases from 2.53 to 2.94. That might be enough to persuade some players to yield Tokyo.
+<br><h3>Q3. How valuable is the "Giant Brain" card?</h3>
+<br>"Giant Brain" allows one more reroll each turn (so 4 rerolls instead of 3). Rerunning the simulation with six dice and 4 rerolls:
+<br><pre>Damage dealt(d)     P(X&gt;=d)
+<br>0                   1.000
+<br>1                   0.987
+<br>2                   0.907
+<br>3                   0.688
+<br>4                   0.376
+<br>5                   0.129
+<br>6                   0.020</pre>
+<br><h5>Table 3. Six dice, up to 4 rerolls, keeping only the best outcomes.</h5>
+<br>I feel like "Giant Brain" is a more powerful card than "Extra Head". The expected value of one die increases from 0.421 damage to 0.518 damage, and the variance of the outcomes also narrows. The improvement in damage (or energy or hearts) is almost the same with each of these cards, but "Giant Brain" is cheaper and not as hotly contested among players.
+<br><h3> Conclusion</h3>
+<br>King of Tokyo is a fun game. If you like dice games with more skill than Yahtzee (almost pure chance), but you want them to end more quickly than Monopoly (which can go on for many hours with no progress even for perfectly skilled players), King of Tokyo is an excellent choice because the dice mechanic virtually guarantees that the game will be done in under 20 rounds. It's got most of the fun of a computer dice game like <a href="https://en.wikipedia.org/wiki/XCOM:_Enemy_Unknown">XCOM: Enemy Unknown</a> without needing as much bookkeeping. Congratulations are due to the creators for making a balanced and fun game.
+                    </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

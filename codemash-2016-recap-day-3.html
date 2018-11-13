@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>CodeMash 2016 Recap - Day 3</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/codemash-2016-recap-day-3.html" rel="bookmark"
+           title="Permalink to CodeMash 2016 Recap - Day 3">CodeMash 2016 Recap - Day 3</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-10T20:04:06-05:00">
+                Published: Sun 10 January 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/122.html">122</a> </p>
+</footer><!-- /.post-info -->      
+    CodeMash was great. I had a good time, and I learned about several important new programming languages and libraries. I'm writing up my notes here about the talks I attended to motivate myself to follow up on them.
+<br>
+<br>The point of going to a conference like CodeMash is to keep learning new technologies. The relentless rate of change in programming can be overwhelming, but it is important to keep learning anyway, even when the latest fads appear to be reinventions of old ideas. (E.g., slack is just IRC on mobile devices, but it seems to be replacing email.) Anyway, to the talks from Day 3:
+<br><h2>Node.js Crash Course</h2>
+<br>The bottom line I got from this was that when people talk about microservices, they probably mean node.js. It's appealingly simple: service side javascript with isolated databases are fairly easy to develop and deploy, and the js single event loop structure encourages you to simplify your architecture. Best use: websockets, push notifications in real time.
+<br>
+<br>Overall: an excellent talk about a popular subject.
+<br><h2>Get Some REST –On Practical RESTful API Design</h2>
+<br>This talk was overly academic, being pedantic about how URLs should identify objects, not actions. Sure, if you buy into the whole REST architecture for everything, then it is a good idea to have some standards, but I didn't learn any new practical parts of this subject.
+<br><h2>Microservices – Beyond the Hype</h2>
+<br>I'm not sure that this talk really got beyond the hype, but it was a rare instance where the abstract perfectly matched the presentation, and I can't really add much beyond what the original author wrote:
+<br>
+<br><em>"Microservices are all the rage these days. Everyone is trying to sell their vision of SOA as microservices. You know it has reached the mainstream, because the backlash has started, too. When you boil it down, Microservices trade business domain complexity for infrastructure complexity. If you have a lot of business domains, this can help keep your software from turning into a big ball of mud. If you don’t, it’s just building complexity for complexity’s sake. In this talk, we will look at why and when you would want to build microservices, how you would do so, and what to avoid. We won’t fixate on the size of services, but on how to split things apart. After this talk, you will know if you should consider using microservices."</em>
+<br>
+<br>My favorite part of this talk was the discussion of "<a href="http://blog.fogcreek.com/eight-fallacies-of-distributed-computing-tech-talk/">The Eight Fallacies of Distributed Computing.</a>"
+<br><h2>Async Everywhere!</h2>
+<br>I love Stephen Cleary's work, and multi-threaded programming is one of my favorite areas to work in (regardless of language). The main point of this talk that driving the adoption of async is being driven by mobile first development (required by app stores) and by cloud first development (scalable server utilization). I couldn't agree more with this message.
+<br>
+<br>Having said that, async/await is just a compiler trick. It's really powerful in some scenarios, and it's helpful to have the compiler create a FSM automatically, but I don't think it really makes the hard problems any easier. How would you use it to solve the dining philosopher's problem or multiple producers multiple consumers problem? I think actors and message passing are required to tackle the hardest problems, and I hope that more programming languages add first class support for those techniques. Async/await is progress, but I'm still "await"ing the techniques which will want to make me forget about mutexes forever.
+<br>
+<br>Anyway, I really loved this talk, and I hope Stephen Cleary keeps raising awareness of this topic.
+<br><h2>A Deep Dive Into Modern Crypto</h2>
+<br>Wow, rarely does a presentation make me worry as much as this one did. It's scary to list all of the broken techniques still in popular use: DES, 3DES, RC4, MD5, SHA1. I guess I'd heard most of the flaws before from Bruce Schneier's blog and books, but I haven't seen it all laid bare before. Especially worrisome is the thought of general purpose quantum computers in only 15 years, which could cut the strength of all crypto in half (256-bit ECC RSA down to 128-bit equivalent security) while providing no easy path forward except to massively increase key size.
+<br>
+<br>It's a thought-provoking and deeply worrying topic with implications for online commerce and national security.
+<br><h2>Intelligently Extracting Data from PDFs</h2>
+<br>Well, what can you expect from a product pitch? I agree that PDFs lose a lot of information present in the original document (e.g., semantic organization between lines and pages), but I really doubt that OCR'ed text can really be as good as the originals.
+<br>
+<br>The author is an expert on the subject matter, and if this is the most important problem facing your business, I guess I would agree with buying the product he was selling (despite the lack of comparison to other products).
+<br><h2>Everything you wanted to know about writing async, high-concurrency HTTP applications in Java, but were afraid to ask</h2>
+<br>I felt this talk was overly specific to the author's product and implementation of HTTP downloads, but he had a lot of entertaining pictures and metaphors. My favorite: CLOSE_WAIT socket errors are like hiding in a grocery store after the business has closed.
+<br>
+<br>&nbsp;
+    
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

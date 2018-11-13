@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>C# network sockets vs C++ Win32 IOCP</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/c-network-sockets-vs-c-win32-iocp.html" rel="bookmark"
+           title="Permalink to C# network sockets vs C++ Win32 IOCP">C# network sockets vs C++ Win32 IOCP</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-06-20T13:56:12-04:00">
+                Published: Sat 20 June 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/103.html">103</a> </p>
+</footer><!-- /.post-info -->      
+    I spend a lot of time working on low level network protocols for proprietary hardware, and <a href="http://www.djohn89.com/blog/?p=52">I normally use Win32 IOCP in C++</a>. But a few projects must be implemented in C# for business reasons, and so I've spent a some time implementing nearly equivalent code in the .NET Framework. I figured it's time to write up my favorite C# solutions so far.
+<br>
+<br>Option 1: <strong>EVAP (event-based asynchronous pattern)</strong> with <a href="https://nitoasync.codeplex.com/">Nito Async Sockets</a>. I had <a href="http://blog.stephencleary.com/2014/04/announcement-book.html">an excellent discussion with Stephen Cleary last year</a> about asynchronous socket operations last year, and he convinced me <a href="http://blog.stephencleary.com/2009/01/announcing-release-of-nitoasync.html">to try his library</a>. I've used it on several large projects now, and I really like it. It makes callbacks painless because Nito automatically marshalls into the original (i.e. GUI) thread.
+<br>
+<br>Having said that, I can do the same thing in C++ with only a little more effort using IOCP. Using a background thread to call <span class="st"><em>GetQueuedCompletionStatus </em>and then using<em> PostMessage</em> to get to the GUI thread via a standard window message queue isn't really that hard. I agree that it requires more code, which means more opportunities for errors, but it's almost equivalent to what the the .NET Framework is doing, which requires more overhead. <a href="https://stackoverflow.com/questions/8465615/net-sockets-vs-c-sockets-at-high-performance">Some people have complained about slower speed for high throughput servers with the C# approach</a>, and my experience supports the fact that even the best practices in C# will always be slower than the C++ options. </span>
+<br>
+<br>Option 2: <strong>await</strong> <em>NetworkStream.ReadAsync</em> and <em>WriteAsync</em> (only in .NET 4.5 or newer). I really like this solution for some specific network protocols. These methods allow all the benefits of simple async / await implementations <a href="http://blogs.msdn.com/b/pfxteam/archive/2011/12/15/10248293.aspx">without having to write a Task-based wrapper</a> and handle a bunch of edge cases with Exceptions. If you can't target .NET 4.5, then you're stuck with writing wrappers for Socket.BeginReceive and Socket.BeginWrite and related methods. I'd go back to using EVAP before using the Begin/End pairs because it's easy to leak kernel resources if you don't catch all the Exceptions in EndReceive.
+<br>
+<br>In C++, there isn't anything like async / await, but you can fake it. If you read up on <a href="http://blogs.msdn.com/b/lucian/archive/2013/11/12/talk-async-codegen.aspx">how async is implemented</a>, it is just an <a href="http://codeblog.jonskeet.uk/2012/01/11/eduasync-part-18-changes-between-the-async-ctp-and-the-visual-studio-11-preview/">automatically generated finite state machine</a> applied to a transformed version of the original C# code. It's a really powerful compiler trick, but I have to write FSMs anyway for my programs, so I incorporate the socket events into a larger FSM for the other state transitions in the program. I'll grant that it's <a href="http://blogs.msdn.com/b/oldnewthing/archive/2010/10/08/10073039.aspx">a pain to handle both synchronous</a> and <a href="http://blogs.msdn.com/b/oldnewthing/archive/2011/09/23/10215586.aspx">asynchronous completions</a> of WSARecv because it doubles the number of state transitions (must check for WSA_IO_PENDING, must <a href="http://blogs.msdn.com/b/oldnewthing/archive/2010/12/17/10106259.aspx">free the OVERLAPPED structure</a> only after <a href="http://blogs.msdn.com/b/oldnewthing/archive/2011/02/02/10123392.aspx">the IO has posted on the IOCP</a>, etc.). But it's still doable. <a href="http://www.flounder.com/iocompletion.htm">I've done worse. Don't judge me!</a> :P
+<br>
+<br>Option 3: <strong>Rxx</strong> (<a href="https://rxx.codeplex.com/">Extensions for Reactive Extensions</a>) with
+<br>FromAsyncPattern. OK, I admit I haven't actually tried this approach yet, and I've found a lot of skeptical discussion about it. <a href="http://rxwiki.wikidot.com/101samples">It looks like it might work</a>, but it's as convoluted as anything else I've ever seen with EVAP or await based code. I'm not convinced that I can debug it yet (<a href="http://quotes.cat-v.org/programming/">debugging is twice as hard as writing the code in the first place</a>).
+<br>
+<br>In conclusion: I'm sticking with EVAP until Stephen Cleary finds a way to make Rx with sockets tolerable or until I can install .NET 4.5 on more of my target machines at work.
+    
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

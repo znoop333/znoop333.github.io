@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - 182</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/linear-algebra-review.html">Linear algebra review</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-02-24T14:48:57-05:00">
+                Published: Fri 24 February 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/182.html">182</a> </p>
+</footer><!-- /.post-info -->
+    <script type="text/x-mathjax-config">
+<br>MathJax.Hub.Config({
+<br>  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+<br>});
+<br></script>
+<br>
+<br>It's been a while since I tried to solve a system of equations without
+<br>using a numerical library, so I figured it was time to do a linear
+<br>algebra review.
+<br>
+<br>\[
+<br>A=\left[\begin{array}{cc}
+<br>1 & 2\\
+<br>3 & 4
+<br>\end{array}\right]=\left[\begin{array}{c}
+<br>r_{1}^{T}\\
+<br>r_{2}^{T}
+<br>\end{array}\right]=\left[\begin{array}{cc}
+<br>c_{1} & c_{2}\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>This should be the easiest matrix to work with: small size, nice integer values, non-colinear columns and rows, non-zero determinant, full rank, etc. Let's go through the basic definitions, just because it's been a while. $A$ is 2x2 (MxN), which is small and square. Let's check the column space of $A$ for colinearity by reducing to row echelon form by adding $-3r_{1}^{T}$ to row 2:
+<br>
+<br>\[
+<br>\left[\begin{array}{cc}
+<br>1 & 2\\
+<br>0 & -2
+<br>\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>Then adding $r_{2}^{T}$ to row 1:
+<br>
+<br>\[
+<br>\left[\begin{array}{cc}
+<br>1 & 0\\
+<br>0 & -2
+<br>\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>So the good news is that the column space of $A$ has linearly independent columns, $\left[\begin{array}{c}
+<br>1\\
+<br>3
+<br>\end{array}\right]$ and $\left[\begin{array}{c}
+<br>2\\
+<br>4
+<br>\end{array}\right]$, which form a basis for $\mathbb{R^{\mathrm{2}}}$, and rank($A$) is 2. So the null space of $A$ is empty. That's the best possible outcome for a matrix because it means that an inverse exists. 
+<br>
+<br>But before exploring that, let's think about the row space of $A$. Using the same row reductions as above, we can conclude that $A$ has linearly independent rows, $\left[\begin{array}{cc} 1 & 2\end{array}\right]$ and $\left[\begin{array}{cc} 3 & 4\end{array}\right]$, which form a basis for $\mathbb{R^{\mathrm{2}}}$, and rank($A^{T}$) is 2. So the left null space of $A$ is also empty. The row space of $A$ is isomorphic to the column space of $A^{T}$ by definition, and $A$ happens to have full rank, so an inverse exists. Let's use Gauss-Jordan elimination to find it:
+<br>
+<br>\[
+<br>\left[\begin{array}{ccccc}
+<br>1 & 2 & | & 1 & 0\\
+<br>3 & 4 & | & 0 & 1
+<br>\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>Starting with an augmented matrix $\left[\begin{array}{ccc}
+<br>A & | & I\end{array}\right]$, we can use row operations to find $\left[\begin{array}{ccc}
+<br>I & | & A^{-1}\end{array}\right]$. Add $-3r_{1}^{T}$ to row 2:
+<br>
+<br>\[
+<br>\left[\begin{array}{ccccc}
+<br>1 & 2 & | & 1 & 0\\
+<br>0 & -2 & | & -3 & 1
+<br>\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>Then add $r_{2}^{T}$ to row 1:
+<br>
+<br>\[
+<br>\left[\begin{array}{ccccc}
+<br>1 & 0 & | & -2 & 1\\
+<br>0 & 2 & | & -3 & 1
+<br>\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>Finally rescale row 2:
+<br>
+<br>\[
+<br>\left[\begin{array}{ccccc}
+<br>1 & 0 & | & -2 & 1\\
+<br>0 & 1 & | & -\frac{3}{2} & \frac{1}{2}
+<br>\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>Therefore: 
+<br>
+<br>\[
+<br>A^{-1}=\left[\begin{array}{cc}
+<br>-2 & 1\\
+<br>-\frac{3}{2} & \frac{1}{2}
+<br>\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>Now we need to check that $A^{-1}A=I$:
+<br>\begin{eqnarray*}
+<br>\left[\begin{array}{cc}
+<br>2 & 1\\
+<br>-\frac{3}{2} & \frac{1}{2}
+<br>\end{array}\right]\left[\begin{array}{cc}
+<br>1 & 2\\
+<br>3 & 4
+<br>\end{array}\right] & = & \left[\begin{array}{cc}
+<br>1 & 0\\
+<br>0 & 1
+<br>\end{array}\right]
+<br>\end{eqnarray*}
+<br>
+<br>
+<br>Of course, there is an explicit formula for the inverse of a 2x2 matrix:
+<br>
+<br>\[
+<br>\left[\begin{array}{cc}
+<br>a & b\\
+<br>c & d
+<br>\end{array}\right]^{-1}=\frac{1}{\det A}\left[\begin{array}{cc}
+<br>d & -b\\
+<br>-c & a
+<br>\end{array}\right]
+<br>\]
+<br>
+<br>
+<br>For our $A$, $\det A=ad-bc=-2$. Unfortunately, analytical inverses don't exist for larger matrices, or they are so long and complex as to be of limited utility. But there is at least one important idea to take away from the inverse: it can only exist if the determinant is non-zero. This becomes a very important fact for the eigenvalue problem. 
+<br>
+<br>One last thing I wanted to write about for now: the L2 norm (or Euclidean norm) of a vector $x=\left[\begin{array}{cccc}
+<br>x_{1} & x_{2} & \cdots & x_{n}\end{array}\right]^{T}$ is defined as:
+<br>
+<br>\[
+<br>\left\Vert x\right\Vert _{2}^{2}=\sum_{i=1}^{n}x_{i}^{2}
+<br>\]
+<br>
+<br>
+<br>Suppose that we're fitting data $\left(a_{ij},y_{i}\right)$ to a known linear model$A$ and we want to determine the unknown coefficients $x$ that best fit the data using ordinary least squares:
+<br>
+<br>\begin{eqnarray*}
+<br>\left[\begin{array}{c}
+<br>y_{1}\\
+<br>y_{2}\\
+<br>\vdots\\
+<br>y_{m}
+<br>\end{array}\right] & = & \left[\begin{array}{cccc}
+<br>a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+<br>a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+<br>\vdots & \vdots & \ddots & \vdots\\
+<br>a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+<br>\end{array}\right]\left[\begin{array}{c}
+<br>x_{1}\\
+<br>x_{2}\\
+<br>\vdots\\
+<br>x_{n}
+<br>\end{array}\right]\\
+<br>y & = & Ax
+<br>\end{eqnarray*}
+<br>
+<br>
+<br>And we want to choose the $x$ which minimizes the L2 norm of the residuals because we assume them to be Gaussian:
+<br>
+<br>\[
+<br>J\left(x\right)=\left\Vert Ax-y\right\Vert _{2}^{2}
+<br>\]
+<br>
+<br>
+<br>Then $J\left(x\right)$ can be expanded:
+<br>
+<br>\begin{eqnarray*}
+<br>\left\Vert Ax-y\right\Vert _{2}^{2} & = & \left(Ax-y\right)^{T}\left(Ax-y\right)\\
+<br> & = & \left(x^{T}A^{T}-y^{T}\right)\left(Ax-y\right)\\
+<br> & = & x^{T}A^{T}Ax-x^{T}A^{T}y-y^{T}Ax+y^{T}y
+<br>\end{eqnarray*}
+<br>
+<br>
+<br>However, $x^{T}A^{T}y$ is a scalar that can be computed as $y^{T}Ax$ by reversing the order of the multiplications, so the last expression can be further simplied:
+<br>
+<br>\begin{eqnarray*}
+<br>x^{T}A^{T}Ax-x^{T}A^{T}y-y^{T}Ax+y^{T}y & = & x^{T}A^{T}Ax-2y^{T}Ax+y^{T}y
+<br>\end{eqnarray*}
+<br>
+<br>
+<br>This might look ugly, but we can now minimize $J\left(x\right)$ by
+<br>taking the derivative with respect to $x$:
+<br>
+<br>\begin{eqnarray*}
+<br>\frac{dJ\left(x\right)}{dx} & = & 2x^{T}A^{T}A-2y^{T}A\\
+<br> & = & 2A^{T}Ax-2A^{T}y
+<br>\end{eqnarray*}
+<br>
+<br>
+<br>Where we used the fact that $x^{T}A^{T}A=A^{T}Ax$ and $y^{T}A=A^{T}y$ because it's just changing the order of the multiplications again.
+<br>
+<br>Now we can derive the celebrated pseudo-inverse of $A$ by setting the derivative to zero:
+<br>
+<br>\begin{eqnarray*}
+<br>2A^{T}Ax-2A^{T}y & = & 0\\
+<br>A^{T}Ax & = & A^{T}y\\
+<br>x & = & \left(A^{T}A\right)^{-1}A^{T}y
+<br>\end{eqnarray*}
+<br>
+<br>
+<br>However, the inverse of $A^{T}A$ may not exist, or it may be very hard to compute (due to numerical instability). An alternative solution is to use gradient descent. Since we already have $\frac{dJ\left(x\right)}{dx}$ in a nice form:
+<br>
+<br>\begin{eqnarray*}
+<br>\frac{dJ\left(x\right)}{dx} & = & 2A^{T}\left(Ax-y\right)
+<br>\end{eqnarray*}
+<br>
+<br>
+<br>We can start at any point $x=x_{0}$ and take a step along the direction given by the derivative, $x_{1}=x_{0}-\gamma\frac{dJ\left(x\right)}{dx}$. The problem is how big of a step to take. Despite the existence of a global minimum and an analytical form for the derivative, the steps could either be too small (taking forever to converge) or too large (diverging even when starting near the global minimum). This is where I wrote a paper about bracketing the minimum using a priori constraints (i.e., Golden section search and Brent's method), but variations on line search minimization are also possible. 
+<br>
+<br>I've read that the conjugate gradient method is the more popular solution to this problem now. Gradient descent searches strictly along the derivative, whereas the conjugate gradient method chooses a different search direction every time. The Grahm-Schmidt procedure is used to orthogonalize the gradient vectors, and then the conjugate gradient method moves along that new basis. This can be much faster than gradient descent, but it can become slow if the condition number of $A$ is too large. But it's still a good choice because it doesn't require the Hessian matrix to be calculated or inverted (as per Newton's method). 
+<br>
+<br>If you've got lots of memory and $M,N$ are small-ish, the Levenberg-Marquardt algorithm can converge even faster because it approximates the Hessian with the Jacobian matrix and chooses directions either along the derivative or the Hessian, whichever is better. Unfortunately, it doesn't work with regularization, and it has a few more internal parameters, and it usually runs out of memory when computing $\left(J^{T}J+\lambda I\right)^{-1}$. So I usually end up using the conjugate gradient method anyway because it can be regularized and doesn't require crazy amounts of memory.
+<br>
+<br>At CodeMash 2017 I heard a presentation about artificial neural networks where the presenter complained bitterly about how his L2 minimization (``backtracking'') in the neural network was converging very slowly. I thought to suggest an improved algorithm (conjugate gradient), but his talk was focused on a high level introduction with no math, so it didn't seem appropriate at the time. That inspired me to write this post. Then I saw that someone else already did conjugate gradients with artificial neural networks in 1992. :P
+<br>
+                    </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

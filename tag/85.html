@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - 85</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/happy-pi-day.html">Happy Pi Day!</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-03-14T13:23:04-04:00">
+                Published: Sat 14 March 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/dj.html">DJ</a>
+        </address>
+<p>In <a href="/category/programming.html">programming</a>.</p>
+<p>tags: <a href="/tag/85.html">85</a> </p>
+</footer><!-- /.post-info -->
+    To celebrate Pi Day, I wrote a Python program for my Raspberry Pi. It's a simple demonstration of <a href="https://en.wikipedia.org/wiki/Pi#Polygon_approximation_era">Archimedes's method for calculating upper and lower bounds on Pi</a>. Of course, there are much faster ways to calculate Pi now, but Archimedes's method is visual and easy to understand.
+<br>
+<br>Download the python program here: <a href="http://www.djohn89.com/blog/wp-content/uploads/2015/03/piday-inscribed-circles.py_.txt">piday-inscribed-circles.py</a> (Works well on any version of Windows or Linux with python 2.7 or newer and pyqt4. The Raspberry Pi is optional, but it adds to the pun, and thus the fun.)
+<br>
+<br>Here's an overview of the program: you can inscribe a hexagon and also circumscribe a hexagon around a circle. If the circle has a radius of 2, then the perimeter of the hexagons provide lower and upper bounds on Pi, respectively:
+<br>
+<br><a href="http://www.djohn89.com/blog/wp-content/uploads/2015/03/inscribed-6.jpg"><img class="alignnone size-medium wp-image-87" src="http://www.djohn89.com/blog/wp-content/uploads/2015/03/inscribed-6-288x300.jpg" alt="inscribed-6" width="288" height="300" /></a>
+<br>
+<br>Increasing to 10 sides (decagon) improves the bounds:
+<br>
+<br><a href="http://www.djohn89.com/blog/wp-content/uploads/2015/03/inscribed-10.jpg"><img class="alignnone size-medium wp-image-88" src="http://www.djohn89.com/blog/wp-content/uploads/2015/03/inscribed-10-289x300.jpg" alt="inscribed-10" width="289" height="300" /></a>
+<br>
+<br>Pushing it to the limit of N=100,000,000 sided n-gons, the bounds on Pi reach the limits of double precision floating point numbers (about 16 digits of Pi):
+<br>
+<br><a href="http://www.djohn89.com/blog/wp-content/uploads/2015/03/inscribed-100000000.jpg"><img class="alignnone  wp-image-89" src="http://www.djohn89.com/blog/wp-content/uploads/2015/03/inscribed-100000000-300x190.jpg" alt="inscribed-100000000" width="634" height="401" /></a>
+<br>
+<br>This method isn't efficient because the regular n-gons are not a very tight boundary on the circle. Other mathematicians proved that even billions of sides in an n-gon provide a worse boundary than simpler arctangent-based series. Of course, <a href="https://en.wikipedia.org/wiki/Pi#Computer_era_and_iterative_algorithms">Wikipedia has the whole story here</a>.
+<br>
+<br>Maybe next year I'll have time to combine the puns with Monty Python: <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method#Introduction">a Monte Carlo simulation for calculating Pi</a>, written in Python, running on a Raspberry Pi, drawing part of a Monty Python cartoon.
+<br>
+<br>Anyway, eat some pie and have a happy Pi Day!
+                    </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
