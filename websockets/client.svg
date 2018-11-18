@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="240" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+
+ <title>TCP</title>
+ <g>
+  <title>Layer 1</title>
+  <rect fill="#4c4c4c" stroke="#000000" stroke-width="5" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="30.999998" y="26.899993" width="187.000003" height="146.000008" id="svg_4"/>
+  <polygon id="svg_11" fill="none"/>
+  <rect fill="#ffaaaa" stroke="#000000" stroke-width="5" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="40" y="36.899994" width="168" height="128" id="svg_15"/>
+  <text transform="matrix(0.923203, 0, 0, 0.928571, 10.6389, 15.35)" fill="#000000" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="119" y="206.899994" id="svg_16" font-size="24" font-family="Monospace" text-anchor="middle" xml:space="preserve" font-weight="bold">192.168.1.15:5807</text>
+  <text style="cursor: move;" fill="#000000" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="111.942029" y="81.672867" id="svg_17" font-size="24" font-family="Monospace" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="matrix(1.72344, 0, 0, 3.93151, -66.9935, -195.512)">Client</text>
+ </g>
+</svg>

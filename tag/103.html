@@ -32,7 +32,7 @@
 <p>In <a href="/category/programming.html">programming</a>.</p>
 <p>tags: <a href="/tag/103.html">103</a> </p>
 </footer><!-- /.post-info -->
-    I spend a lot of time working on low level network protocols for proprietary hardware, and <a href="http://www.djohn89.com/blog/?p=52">I normally use Win32 IOCP in C++</a>. But a few projects must be implemented in C# for business reasons, and so I've spent a some time implementing nearly equivalent code in the .NET Framework. I figured it's time to write up my favorite C# solutions so far.
+    I spend a lot of time working on low level network protocols for proprietary hardware, and I normally use Win32 IOCP in C++. But a few projects must be implemented in C# for business reasons, and so I've spent a some time implementing nearly equivalent code in the .NET Framework. I figured it's time to write up my favorite C# solutions so far.
 <br>
 <br>Option 1: <strong>EVAP (event-based asynchronous pattern)</strong> with <a href="https://nitoasync.codeplex.com/">Nito Async Sockets</a>. I had <a href="http://blog.stephencleary.com/2014/04/announcement-book.html">an excellent discussion with Stephen Cleary last year</a> about asynchronous socket operations last year, and he convinced me <a href="http://blog.stephencleary.com/2009/01/announcing-release-of-nitoasync.html">to try his library</a>. I've used it on several large projects now, and I really like it. It makes callbacks painless because Nito automatically marshalls into the original (i.e. GUI) thread.
 <br>

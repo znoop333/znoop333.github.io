@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Real-time Messaging to Webapps from a Production Database</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+
+<style>
+.plain {
+	background-color: white !important;
+}
+
+.emph {
+	text-decoration: underline;
+	font-weight: bold !important;
+}
+
+.winner {
+    color: red !important;
+    background-color: yellow !important;
+	text-decoration: underline;
+	font-weight: bold !important;
+}
+
+.notWinner {
+    border: 1px solid red;
+}
+
+</style>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/Chart.bundle.js"></script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<section id="Title" >
+<h3>Real-time Messaging to Webapps from a Production Database</h3>
+
+<p>David Johnson, djohnson@ommc.com, www.djohn89.com</p>
+</section>
+
+<section id="Outline" >
+<h3>Outline</h3>
+
+<ul>
+<li class="fragment" >Automotive Assembly Line</li>
+<li class="fragment" >Break</li>
+<li class="fragment" >TCP Sockets Review</li>
+<li class="fragment" >Websockets</li>
+</ul>
+
+<p>The goal of this talk is to describe an automotive assembly line and to encourage web developers to use websockets in their web applications. See <a href="https://tools.ietf.org/html/rfc6455">RFC 6455</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">Websocket API</a> for more details.</p>
+
+</section>
+
+
+<section id="IntroAutomotive" >
+<h3>Automotive Assembly Line</h3>
+
+<ul>
+<li class="fragment" >Electric nutrunners/bolt runners</li>
+<li class="fragment" >Barcode scanners</li>
+<li class="fragment" >RFID</li>
+<li class="fragment" >Alarms</li>
+</ul>
+</section>
+
+<section id="Torque" >
+<h3>Electric nutrunners/bolt runners</h3>
+
+<img src="img/torque tool.jpg" />
+
+<ul>
+<li class="fragment" >Nuts and bolts are assembled <a href="https://en.wikipedia.org/wiki/Electric_torque_wrench">using torque tools</a></li>
+<li class="fragment" >Popular manufacturers: <a href="http://www.stanleyengineeredfastening.com/brands/stanley-assembly-technologies/products/threaded-fastening/electric">Stanley</a>, <a href="http://www.atlascopco.us/usus/products/assembly-tools/1401319/">Atlas CopCo</a></li>
+<li class="fragment" >Ethernet communication module records exact torque, angle, rundown count, etc. per engineering specs</li>
+</ul>
+
+</section>
+
+<section id="Barcodes" >
+<h3>Barcode scanners</h3>
+
+<img src="img/serial.jpg" />
+<img src="img/scanner.png" class="fragment" style="height: 150px;"/>
+
+<ul>
+<li class="fragment" >Before attaching a part, the part number must be scanned to make sure the right part was picked</li>
+<li class="fragment" >The serial number must be scanned for billing and inventory management</li>
+<li class="fragment" >A computer program records these scans into a database</li>
+</ul>
+
+</section>
+
+<section id="LineProcess" >
+<h3>Error Proofing</h3>
+
+<img src="img/ENG-1 LineProcess.jpg" style="height: 550px;"/>
+
+</section>
+
+
+<section id="RFID" >
+<h3>RFID</h3>
+
+<img src="img/skillet.jpg" />
+<img src="img/passive RFID tag.png" class="fragment"/>
+<img src="img/RFID antenna.jpg" class="fragment" style="height: 267px;"/>
+
+<ul>
+<li class="fragment" ><a href="http://centralconveyor.com/automotive/skillet-conveyor/">Skillets</a> ride on a <a href="http://www.dmwcc.com/skillet-systems">conveyor system</a> tracked by RFID tags and antennas</li>
+<li class="fragment" >Real-time tracking is critical for correctly building vehicles</li>
+<li class="fragment" >A computer program records the RFID events into a database</li>
+</ul>
+
+</section>
+
+<section id="Alarms" >
+
+<h3>How Alarms Work</h3>
+<ol>
+<li class="fragment" >The <a href="https://en.wikipedia.org/wiki/Programmable_logic_controller">PLC detects an error condition</a> (e.g., a vehicle presses a limit switch before the torques are done), stops the production line, and turns a bit on</li>
+<li class="fragment" >A communication program sees the bit turns on and logs it into a database</li>
+<li class="fragment" >The cell leader sees the alarm and helps the operator to finish their job, and the error condition is removed</li>
+<li class="fragment" >The PLC turns off the bit and allows the line to resume moving</li>
+<ol>
+
+</section>
+
+<section id="AssemblyLine" >
+<h3>Theoretical Assembly Line</h3>
+
+<img src="img/theoretical assy line.jpg" />
+
+<ul>
+<li class="fragment" >Automotive assembly lines are primarily composed of torque tools, barcode scanners, RFID, and alarms</li>
+<li class="fragment" >Operators must complete their jobs inside the workstation defined by the RFID antennas or else alarms will be activated</li>
+<li class="fragment" >The events from these systems comprise the Manufacturing Execution System (MES), a type of supervisory control and data acquisition (<a href="https://en.wikipedia.org/wiki/SCADA">SCADA</a>)</li>
+</ul>
+
+</section>
+
+<section id="VideoTSAP" >
+<h1>Video: TSAP assembly</h1>
+<img src="img/MOBIS outside.jpg" />
+</section>
+
+<section id="VideoSummary" >
+
+<h3>Summary of video</h3>
+<ul>
+<li class="fragment" >Multiple assembly lines (frame, axle, ML1, ASRS, ENG, ML2)</li>
+<li class="fragment" >RFID used in each line to track skillets</li>
+<li class="fragment" >Problems are located using alarms </li>
+</ul>
+
+</section>
+
+<section id="Decking" >
+<h3>Decking</h3>
+<img src="img/decking.jpg" style="height: 650px;"/>
+</section>
+
+<section id="PostDecking" >
+<h3>Finished Product</h3>
+<img src="img/assembled jeep.jpg" />
+</section>
+
+<section id="Examples" >
+<h3>Examples of applied websockets</h3>
+<ul>
+<li class="fragment" >Andon Board Upgrade (alarms, productivity calculations)</li>
+<li class="fragment" >Broadcast Elimination (paperless production)</li>
+<li class="fragment" >RFID Tracking (faster internal messaging)</li>
+<li class="fragment" >RepairTech webapp</li>
+</ul>
+
+</section>
+
+<section id="OldAndonBoard" >
+<h3>Old Andon Board</h3>
+<img src="img/old andon boards.jpg" style="height: 550px;" />
+<ul>
+<li class="fragment" >Light bulbs on a stadium-style scoreboard</li>
+<li class="fragment" >Shows 2 alarms (ML1, ML2)</li>
+<li class="fragment" >Limited to simple statistics</li>
+</ul>
+</section>
+
+<section id="AndonBoard" >
+<h3>New Andon Board Webapp</h3>
+<img src="img/andon boards.jpg" style="height: 550px;" />
+<ul>
+<li class="fragment" >New 80" TVs with JSP/Tomcat and CometD servlets</li>
+<li class="fragment" >Shows up to 8 alarms</li>
+<li class="fragment" >Calculates detailed statistics</li>
+</ul>
+</section>
+
+<section id="AndonBoardMessages" >
+<h3>Andon Board Messages</h3>
+
+<ul>
+<li class="fragment" >PLC turns bit on (conveyor stopped due to no torque at station 6)</li>
+<li class="fragment" >Communication program sees bit, logs to database and sends CometD message to Andon Board servlet: {type: Alarm, Line: ML1, Station: 6, Message: Torque Overrun DC Tool}</li>
+<li class="fragment" >Andon Board javascript receives message, displays alarm to alert supervisor</li>
+</ul>
+</section>
+
+<section id="AndonBoardExample" >
+<h3>Andon Board Example</h3>
+<img src="img/andon board example.jpg" style="height: 550px;" />
+
+</section>
+
+<section id="BroadcastElimination" >
+<h3>Broadcast Elimination</h3>
+
+<img src="img/FCA broadcast.jpg" style="height: 450px;" />
+<p class="fragment" >Printed broadcasts were wasteful ($50,000+ per year) </p>
+
+<ul>
+<li class="fragment" >... and became unnecessary (computer error proofing, barcode scanners, digital displays).</li>
+<li class="fragment" >So we replaced them with tablet PCs displaying a webpage</p></li>
+</ul>
+
+</section>
+
+<section id="NewBCWebapp" >
+<h3>Broadcast Display Webapp</h3>
+<img src="img/BC Elimination-LHDDOM.jpg" style="height: 450px;" />
+<p class="fragment" >Broadcast Display webapp receives messages from RFID system: {type: Arrival, Line: ML2, Station: 4, SKID: A053, VIN: 1C4... } </p>
+
+<ul>
+<li class="fragment" >It receives messages as new vehicle orders come in (for materials tracking)</li>
+<li class="fragment" >It sends messages to the RepairTech webapp (to request repairs)</li>
+</ul>
+</section>
+
+<section id="RepairTech1" >
+<h3>RepairTech Webapp</h3>
+<img src="img/rt1.jpg" style="height: 550px;" />
+<p class="fragment" >This webapp tracks vehicles that need repairs</p>
+
+<ul>
+<li class="fragment" >Repair Technicians physically fix the vehicle and then fill out a form</li>
+<li class="fragment" >Quality Inspectors double-check the repairs</li>
+<li class="fragment" >Internal statistics are calculated (FTC, MTTF)</li>
+</ul>
+</section>
+
+<section id="RepairTech2" >
+<img src="img/rt2.jpg" style="height: 750px;" />
+</section>
+
+<section id="RepairTech3" >
+<img src="img/rt3.jpg" style="height: 750px;" />
+</section>
+
+<section id="RepairTech4" >
+<img src="img/rt4.jpg" style="height: 750px;" />
+</section>
+
+<section id="MessagingOverview" >
+<h3>Messaging Overview</h3>
+
+<img src="img/skillet conveyor system.jpg"  />
+
+<ul>
+<li class="fragment" >Using webapps has been very helpful for efficient communication of events in MES (Alarms, RFID, etc.)</li>
+<li class="fragment" >Websockets are a natural fit for this system</li>
+<li class="fragment" >CometD integrated easily with existing Java infrastructure and internal websites</li>
+</ul>
+</section>
+
+<section id="ConclusionsAutomotive" >
+<h3>Conclusions - Automotive Assembly Line</h3>
+<ul>
+<li class="fragment" >Torque tools, barcode scanners, RFID, and alarms comprise the Manufacturing Execution System</li>
+<li class="fragment" >Messaging patterns vary based on physical design and engineering constraints</li>
+<li class="fragment" >Andon boards, Broadcast Display, and RepairTech use Websockets to display information to production team</li>
+</ul>
+</section>
+
+<section id="Break">
+<h2>Break</h2>
+<img src="img/wrangler-intro.jpg" />
+</section>
+
+
+<section id="TCP Sockets Review">
+<h1>TCP Sockets Review</h1>
+
+<p>TCP connects two endpoints (defined by IP addresses and port numbers) and allows symmetric, byte-oriented data transmission over a socket (as if reading from and writing to a file). </p>
+
+<img class="fragment plain" style="background-color: white;" src="img/server.svg"/>
+<img class="fragment plain" src="img/client.svg"/>
+
+<ul>
+<li class="fragment" >Think of the socket as a file.</li>
+<li class="fragment" >You have to define a message format!</li>
+<li class="fragment" >The server listens on a port; the client connects. Afterward, transmission is symmetric.</li>
+</ul>
+
+</section>
+
+<section id="Poll1" >
+
+<h2>How many bytes can you read if you request to read 1000 bytes?</h2>
+<form id="BytesReadPoll" name="BytesReadPoll" pollid="1" action="">
+<input type="radio" name="radio1_" id="radio1_1" value="0" /><label for="radio1_1">0</label><br/>
+<input type="radio" name="radio1_" id="radio1_2" value="10" /><label for="radio1_2">10</label><br/>
+<input type="radio" name="radio1_" id="radio1_3" value="1000" /><label for="radio1_3">1000</label><br/>
+<input type="radio" name="radio1_" id="radio1_4" value="2000" /><label for="radio1_4">2000</label>
+</form>
+<input type="button" id="BytesReadPoll_Button" value="Show Results" style="display: none;"></input>
+
+<div id="BytesReadPoll_Results" style="margin: auto; width: 25%; display: none;" >
+        <canvas id="BytesReadPoll_Chart" width="100" height="100" />
+</div>
+
+</section>
+
+<section id="TCPSocketFile" >
+<h1>TCP Sockets as File IO</h1>
+<ul>
+<li class="fragment" >Disk file operations: open, close, read, write, seek. File format is defined by application</li>
+<li class="fragment" >Socket operations: open, close, read, write. No seek. Network format is defined by application</li>
+<li class="fragment" >Asynchronous vs. synchronous operations: framing, latency, reliability, complexity</li>
+</ul>
+<p class="fragment" >Sockets are very similar to disk files, but the reliability is much worse.</p>
+<p class="fragment" >How much data did you actually read or write? How do you know if the other party is still there? Can your program block forever?</p>
+</section>
+
+<section id="TCPSocketProblemPartBuff" >
+<h3>Classic Socket Problems - Partial buffer reads</h3>
+<p class="fragment" >You request to read 100 bytes (a complete message) from the socket. You receive 30 bytes.</p>
+
+<p class="fragment" ><span class="emph">Message Framing</span> fixes this problem. Messages must have a length prefix or specific bytes at the beginning and end. Continue reading 70 bytes.</p>
+
+<p class="fragment" >You read 170 bytes. The 70 bytes are for the first message; the next 100 bytes are for a subsequent message. </p>
+
+<p class="fragment" >TCP guarantees the <span class="emph">order of data</span> is preserved, but it doesn't guarantee the size of any individual operations. </p>
+
+</section>
+
+<section id="TCPSocketProblemKeepalive" >
+<h3>Classic Socket Problems - Connection silently drops</h3>
+<p class="fragment" >You request to read 100 bytes, but you never receive any data. How do you know if the other party is still there?</p>
+
+<p class="fragment" ><span class="emph">Keepalive messages</span> fix this problem. Every 15 seconds, you write a dummy message to the server, which echoes another dummy message (ping/pong). No Keepalive means the connection dropped.</p>
+
+<p class="fragment" >TCP can only detect network failures by <span class="emph">writing data to the socket</span>. Reading is a silent operation. </p>
+
+</section>
+
+<section id="TCPSocketProblemsSynchronousOp" >
+<h3>Classic Socket Problems - Asynchronous Operations</h3>
+
+<p class="fragment" >Can your program block forever? You request to write 10,000 bytes (100 messages), but the OS only writes up to 1,000 bytes in each data frame.</p>
+
+<p class="fragment" >The write() calls begin to block, waiting for acknowledgement because the receiver has a finite buffer size (the TCP window). </p>
+
+<p class="fragment" >TCP cannot guarantee that a read or write operation completes by any specific time, so your program must be asynchronous to remain responsive to the user. Use <span class="emph">callbacks</span>, events, threads, or queues.</p>
+
+</section>
+
+<section id="TCPSocketProblemsSummary" >
+<h3>Solutions to Classic Socket Problems</h3>
+
+<ul>
+<li class="fragment" >Any TCP-based protocol must use <span class="emph">Message Framing</span>, <span class="emph">Keepalive Messages</span>, and <span class="emph">Asynchronous Operations</span>.</li>
+<li class="fragment" >A good protocol and library will fix these problems for you, but <span class="emph">your application must be aware of them</span></li>
+<li class="fragment" >Websockets includes free Message Framing, but your library still needs to provide Keepalive Messages, and your program must still use Asynchronous Operations.</li>
+</ul>
+
+
+</section>
+
+<section id="TCPView">
+<h2>TCPView demo</h2>
+<img src="img/tcpview-ss.jpg" />
+<p>Download <a href="https://technet.microsoft.com/en-us/sysinternals/tcpview.aspx">TCPView here (free!)</a></p>
+</section>
+
+<section id="LongPolling" >
+
+<h2>Long Polling</h2>
+<p>Long Polling is an older alternative to websockets. Think of an HTTP request that doesn't end.</p>
+<p>Every request with long polling must resend all headers (~800 bytes out of a 1500 byte MTU). Cookies can eat up a lot of bandwidth. Most headers don't change, anyway.</p>
+
+<pre>
+GET /servlets/SomeServlet HTTP/1.1
+Host: www.somehost.com
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.5) Gecko/20091102 Firefox/3.5.5 (.NET CLR 3.5.30729)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Cookie: JSESSIONID=j0Uto+XV00fds-qZCfTUNA__.h422a
+Pragma: no-cache
+Cache-Control: no-cache
+</pre>
+
+</section>
+<section id="WebSocketIntro">
+<h2>Websockets</h2>
+<ul>
+<li class="fragment" >A websocket is an Upgraded HTTP connection (from HTTP/1.1 to WS/WSS)</li>
+<li class="fragment" >Minimal message framing; no headers; server can push data to client.</li>
+<li class="fragment" >All TCP Caveats apply to websockets</li>
+</ul>
+</section>
+
+<section id="WebsocketFormat" >
+
+<h3>Websocket data frame</h3>
+<pre><code>
+ 0                   1                   2                   3
+ 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-------+-+-------------+-------------------------------+
+|F|R|R|R| opcode|M| Payload len |    Extended payload length    |
+|I|S|S|S|  (4)  |A|     (7)     |             (16/64)           |
+|N|V|V|V|       |S|             |   (if payload len==126/127)   |
+| |1|2|3|       |K|             |                               |
++-+-+-+-+-------+-+-------------+ - - - - - - - - - - - - - - - +
+|     Extended payload length continued, if payload len == 127  |
++ - - - - - - - - - - - - - - - +-------------------------------+
+|                               |Masking-key, if MASK set to 1  |
++-------------------------------+-------------------------------+
+| Masking-key (continued)       |          Payload Data         |
++-------------------------------- - - - - - - - - - - - - - - - +
+:                     Payload Data continued ...                :
++ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+|                     Payload Data continued ...                |
++---------------------------------------------------------------+
+</code></pre>
+
+</section>
+
+<section id="WSServer">
+<h2>Websocket Server</h2>
+
+<ul>
+<li class="fragment" >A HTTP server supporting websockets is required. E.g., node, tomcat</li>
+<li class="fragment" >SSL is strongly recommended because the websocket security is very weak, and TCP packet checksums are not immune to collisions</li>
+<li class="fragment" >Also, some deep packet inspecting routers and mobile data carriers will drop websocket traffic</li>
+<li class="fragment" >Your library should provide a fallback to long polling for these situations</li>
+</ul>
+</section>
+
+<section id="WSBaseAPI">
+<h2>Websocket API Example</h2>
+<pre>
+<code>
+function testWebSocket()
+{
+  var websocket = new WebSocket("ws://localhost:8080/", "echo-protocol");
+  websocket.onopen = function(evt) { 
+    document.write("Connected!");  
+    websocket.send("Hello world!");
+  };
+  websocket.onmessage = function(evt) { document.write("Received " + evt.data); };
+}
+</code>
+</pre>
+
+<p>Launch <a href="echo/demo.html" target="_blank" >echo demo</a></p>
+
+</section>
+
+<section id="NodeJSCode">
+
+<h2>Node js server code</h2>
+<pre>
+<code>
+var WebSocketServer = require('websocket').server;
+var http = require('http');
+var server = http.createServer();
+server.listen(8080, function() { ...  });
+wsServer = new WebSocketServer({ httpServer: server });
+wsServer.on('request', function(request) { ... } );
+</code>
+</pre>
+
+</section>
+
+<section id="MessageQueues">
+
+<h2>Message Queues</h2>
+
+<ul>
+<li class="fragment" >Additional message queue functionality you'll need: more detailed message format, client identification, channels, publish and subscribe, at least once delivery, idempotent messages</li>
+<li class="fragment" >If you don't do these things, be prepared to deal with <a href="https://en.wikipedia.org/wiki/Fallacies_of_Distributed_Computing">Fallacies of distributed computing</a>, the <a href="https://en.wikipedia.org/wiki/Byzantine_Generals">Byzantine Generals' Problem</a>, and <a href="https://en.wikipedia.org/wiki/CAP_theorem">CAP Theorem</a></li>
+</ul>
+
+</section>
+
+<section id="MessageQueueProperties">
+
+<h2>Message Queue Properties</h2>
+
+<ul>
+<li class="fragment" ><b>client identification</b>: a unique identifier is assigned to each client </li>
+<li class="fragment" ><b>message identification</b>: a unique identifier is assigned to each message (by application ID, timestamps, sequence numbers, etc.)</li>
+<li class="fragment" ><b>message channels</b>: messages are sent on a channel, which segments clients</li>
+<li class="fragment" ><b>publish and subscribe</b>: clients can publish messages to a channel, which relays them to some number of subscribing clients</li>
+<li class="fragment" ><b>at least once delivery</b>: the server takes ownership of a message and resends it to clients until they acknowledge receiving it, then sends a confirmation to the originator</li>
+<li class="fragment" ><b>idempotent messages</b>: receiving the same message more than once has no effect. </li>
+</ul>
+
+<h2 class="fragment" >Additional Properties</h2>
+<ul>
+<li class="fragment" ><b>message persistance</b>: if you need persistance, use a real message queue system (not just websockets)</li>
+<li class="fragment" >Atomicity, Consistency, Isolation, Durability: if you need these, use a database</li>
+</ul>
+
+</section>
+
+<section id="RealWorldSystems">
+
+<h2>Examples of real world libraries</h2>
+
+<ul>
+<li class="fragment" >Javascript: <a href="http://socket.io/">Socket.IO</a>, <a href="https://github.com/sockjs/sockjs-client">SockJS</a>, and <a href="https://stackoverflow.com/questions/16392260/which-websocket-library-to-use-with-node-js">many others</a>  </li>
+<li class="fragment" >Java: <a href="https://cometd.org/">CometD</a>, <a href="https://eclipse.org/jetty/">Jetty</a>, <a href="http://www.caucho.com/resin-4.0/admin/websocket.xtp">Resin</a> </li>
+<li class="fragment" >ASP.NET: <a href="https://www.asp.net/signalr">SignalR</a></li>
+<li class="fragment" >Various Message Queues: <a href="https://www.rabbitmq.com/stomp.html">RabbitMQ with STOMP</a>, <a href="http://activemq.apache.org/">Apache ActiveMQ</a>, <a href="https://www-03.ibm.com/software/products/en/ibm-mq">IBM MQ Series</a></li>
+<li class="fragment" >Now you can finally build an application and solve a business problem!</li>
+</ul>
+
+</section>
+
+<section id="CometD" >
+
+<h3>CometD servlets and Node JS</h3>
+ 
+<p><a href="https://cometd.org/">CometD</a>(Java) and <a href="http://socket.io/">socket-io</a>(node.js) provide:</p>
+
+<ul>
+<li class="fragment" >message framing (start, stop, length)</li>
+<li class="fragment" >keepalives (aka. heartbeats, to detect communication loss)</li>
+<li class="fragment" >client identification</li>
+<li class="fragment" >channels (segmented clients) with publish and subscribe</li>
+<li class="fragment" >fallback to long polling (IE8 and older, mobile data providers, etc.)</li>
+</ul>
+
+<p>They do NOT provide:</p>
+
+<ul>
+<li class="fragment" >message persistance</li>
+<li class="fragment" >at least once delivery guarantee</li>
+<li class="fragment" >Atomicity, Consistency, Isolation, Durability</li>
+</ul>
+
+</section>
+
+<section id="ConclusionsSockets" >
+<h3>Conclusions - Websockets</h3>
+<ul>
+<li class="fragment" >Websockets are fast and efficient, but be aware of limitations of all TCP sockets </li>
+<li class="fragment" >Some message queue functionality is available </li>
+<li class="fragment" >Choose a client and server library with these limitations in mind</li>
+</ul>
+</section>
+
+<section id="End" >
+<h3>End</h3>
+<img src="img/jeep-montage.jpg" style="height: 450px;" />
+</section>
+
+<section id="Prizes" >
+<h3>Prizes</h3>
+<input type="button" id="ChooseWinner_Button" value="Choose a winner!" style="display: none;  clear: both;"></input>
+<br/>
+<input type="button" id="Reset_Button" value="Reset Data" style="display: none;  clear: both;"></input>
+
+<div id="myrobotdiv" style="float:left; width: 40%;">
+    <img src="" id="robotimg" style="height:150px;" />
+    <p>Your IP: <span id="clientIp"></span></p>
+    <p>Your SID: <span id="clientSID"></span></p>
+    <p>Outcome: <span id="Outcome"></span></p>
+</div>
+
+<div id="winnerrobotdiv" style="float:right; width: 40%;">
+    <img src="" id="WinnerRobotImg" style="height:150px;" />
+    <p>Prize ID: <span id="currentPrizeId"></span></p>
+    <p>Winner SID: <span id="winnerSID"></span></p>
+    <p>Outcome: <span id="HistoryOutcomes"></span></p>
+
+</div>
+
+
+</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/serverconfig.js"></script>
+
+		<script>
+
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}
+
+function testURL(name) {
+  return ((new RegExp(name).exec(location)) != null);
+}
+
+//var isClient=false;
+//var isClient=true;
+var isClient = !testURL('master');
+
+//localStorage.debug = isClient ? 'socket.io-client:socket' : 'socket.io:socket';
+localStorage.debug = 'socket.io-client:*';
+
+// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+	width: '1260',
+	height: '870',
+	history: true,
+    slideNumber: 'c/t',
+    transitionSpeed: 'fast',
+
+	// More info https://github.com/hakimel/reveal.js#dependencies
+	dependencies: [
+		{ src: 'js/socket.io/socket.io.js', async: true },
+		{ src: 'plugin/markdown/marked.js' },
+		{ src: 'plugin/markdown/markdown.js' },
+		{ src: 'plugin/notes/notes.js', async: true },
+		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		{ src: (isClient ? 'plugin/multiplex/client.js' : 'plugin/multiplex/master.js'), async: true },
+		{ src: 'js/vote.js', async: true, callback: function() { Vote.init(); } },
+	],
+
+	multiplex: {
+		// load the socket.io server, then go to http://127.0.0.1:1948/token to get these values
+		secret: (isClient ? null : socketIOsecret), // Obtained from the socket.io server. Gives this (the master) control of the presentation
+		id: socketIOtokenID, // Obtained from socket.io server
+		url: socketIOserverURL // Location of socket.io server
+	},
+
+	voting: {
+		client_id: new Date(),
+		isClient: isClient
+	},
+
+
+});
+
+
+
+
+		</script>
+	</body>
+</html>
