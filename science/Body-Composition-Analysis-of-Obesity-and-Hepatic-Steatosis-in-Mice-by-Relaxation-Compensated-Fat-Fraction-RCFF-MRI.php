@@ -11,7 +11,16 @@
 <div id="outerContainer">
 
 <!-- Site Navigation Menu -->
-<?php include_once("menu.html") ?>
+<div id="MyMenu">
+<ul>
+<li class="MyMenuItem"><a href="index.php">Home</a></li>
+<li class="MyMenuItem"><a href="papers.php">Papers</a></li>
+<li class="MyMenuItem"><a href="license.php">License</a></li>
+<li class="MyMenuItem"><a href="faq.php">FAQ</a></li>
+<li class="MyMenuItem"><a href="code.php">Software</a></li>
+<li class="MyMenuItem"><a href="links.php">Links</a></li>
+</ul>
+</div>
 
 <div id="body">
 
@@ -545,6 +554,18 @@
 </div>
 
 <!-- Google Analytics -->
-<?php include_once("analyticstracking.php") ?>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40728104-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 
 </body></html>
