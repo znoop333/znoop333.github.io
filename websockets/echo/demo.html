@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>WS Test</title>
+<link rel="stylesheet" href="style/bingosheet.css">
+
+<script type="text/javascript" src="jquery-3.1.0.slim.js"></script>
+<script type="text/javascript">
+
+var wsUri = "ws://192.168.1.184:8080/";
+var wsSubProtocol = "echo-protocol";
+var output;
+var websocket;
+
+function init()
+{
+	output = document.getElementById("output1");
+	testWebSocket();
+	$('#senddata').click(onSubmit);
+}
+
+function testWebSocket()
+{
+	websocket = new WebSocket(wsUri, wsSubProtocol);
+	websocket.onopen = function(evt) { onOpen(evt) };
+	websocket.onclose = function(evt) { onClose(evt) };
+	websocket.onmessage = function(evt) { onMessage(evt) };
+	websocket.onerror = function(evt) { onError(evt) };
+}
+
+function onOpen(evt)
+{
+	writeToScreen("CONNECTED");
+	doSend("WebSocket rocks");
+}
+
+function onClose(evt)
+{
+	writeToScreen("DISCONNECTED");
+}
+
+function onMessage(evt)
+{
+	writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+	//websocket.close();
+}
+
+function onError(evt)
+{
+	writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+}
+
+function doSend(message)
+{
+	writeToScreen("SENT: " + message);
+	websocket.send(message);
+}
+
+function writeToScreen(message)
+{
+	var pre = document.createElement("p");
+	pre.style.wordWrap = "break-word";
+
+	var d = new Date();
+
+	pre.innerHTML = d + ' ' + message;
+	output.appendChild(pre);
+}
+
+function onSubmit()
+{
+	//e.preventDefault();
+
+	var text = $('#input1').val();
+	doSend(text);
+
+	return false;
+}
+
+
+$( document ).ready( init );
+
+</script>
+</head>
+
+<body style="overflow-x:hidden;">
+
+<div id="div1" style="width: 80%; margin: auto;">
+<textarea name="input1" id="input1" rows="4" cols="100" style="width: 80%; margin: auto" ></textarea> <br/>
+<button id="senddata" style="width: 80%; margin: auto" >Send</button>
+</div>
+
+<p id="output1" >Log:</p>
+
+</body>
+</html>
+

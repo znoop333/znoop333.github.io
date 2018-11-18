@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="640" height="240" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:se="http://svg-edit.googlecode.com">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <title>Websockets-1</title>
+ <defs>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_5">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_5">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <polyline marker-end="url(#se_marker_end_svg_5)" marker-start="url(#se_marker_start_svg_5)" se:connector="svg_1 svg_3" fill="none" stroke-width="5" stroke="#000000" points="223,129.61 322.5,129.75 422,129.89" id="svg_5"/>
+  <ellipse ry="61.500001" rx="63" id="svg_1" cy="129.500001" cx="145" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+  <text transform="matrix(1.04792, 0, 0, 1, 37.5495, 0)" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_2" y="134" x="100.628033" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">Server 1</text>
+  <ellipse id="svg_3" ry="61.500001" rx="63" cy="130.000001" cx="500" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+  <text style="cursor: move;" id="svg_4" transform="matrix(1.04792, 0, 0, 1, 37.5495, 0)" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="134.5" x="440.348742" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">Server 2</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_6" y="119" x="313" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">HTTP/1.1</text>
+  <text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Monospace" font-size="24" id="svg_7" y="48" x="319" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">Websockets</text>
+ </g>
+</svg>
