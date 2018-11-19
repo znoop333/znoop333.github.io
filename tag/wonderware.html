@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>djohn89.com - Wonderware</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">djohn89.com </a></h1>
+                <nav><ul>
+                    <li><a href="presentations-list.html">Presentations</a></li>
+                    <li><a href="/science">Publications (old)</a></li>
+                    <li><a href="/category/presentations.html">presentations</a></li>
+                    <li><a href="/category/programming.html">programming</a></li>
+                </ul>
+                </nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/extending-wonderware-with-rabbitmq.html">Extending Wonderware with RabbitMQ</a></h1>
+<footer class="post-info">
+        <span>Mon 14 May 2018</span>
+<span>| tags: <a href="/tag/wonderware.html">Wonderware</a></span>
+</footer><!-- /.post-info -->
+    Wonderware makes excellent HMIs (computer displays in an industrial environment), but what if you have a large legacy C# application that you want to use with Wonderware without paying for more licenses? I ran into this situation recently, and I came up with the following solution: create an "adapter" program that provides <a href="https://www.rabbitmq.com/">RabbitMQ</a> functionality inside the Wonderware galaxy.
+<br>
+<br>Specifically, load the <a href="https://www.wonderware.com/hmi-scada/toolkits/">MX Access Toolkit</a> DLL and the RabbitMQ.NET client, and translate messages in between them. So if you get a RabbitMQ message that says "change Wonderware attribute X to a new value Y", then the adapter does the equivalent operation in the Galaxy using the MX Access Toolkit. If a Wonderware attribute changes value (using MX Access subscribe()), then post a RabbitMQ message indicating the updated value to non-Wonderware clients who read messages from RabbitMQ. I used JSON for the message format because it's simple, universally supported, and not too big.
+<br>
+<br>This approach provides bi-directional communication between everything in Wonderware and everything outside Wonderware, using RabbitMQ as the universal platform for exchanging messages. RabbitMQ is free (but commercial support is available from Pivotal), fast, and very reliable. RabbitMQ can also reach web applications using WebSTOMP (i.e., Javascript) and non-C# applications using the other client libraries (Java, C++, Python, etc.).
+<br>
+<br>Limitations of this approach: Wonderware is expensive, so if you just want a PLC communication library, you should use Kepware. Obviously, you're not going get tech support for extending Wonderware in this way, and since you're avoiding a lot of license fees per computer (Platform, ArchestrA license), you won't get any help from the sales department either. Also, Wonderware now includes its own webserver, so you could just use that for your web applications.
+<br>
+<br>For more details, see the source code at <a href="https://github.com/znoop333/RMQWonderwareAdapter">https://github.com/znoop333/RMQWonderwareAdapter</a>
+<br>
+<br>&nbsp;
+                    </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="/science">Publications (until 2013)</a></li>
+                            <li><a href="presentations-list.html">Presentation List (since 2013)</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40728104-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>
