@@ -16,6 +16,7 @@
                 <nav><ul>
                     <li><a href="/presentations-list.html">Presentations</a></li>
                     <li><a href="/science">Publications (old)</a></li>
+                    <li><a href="/category/conferences.html">conferences</a></li>
                     <li><a href="/category/presentations.html">presentations</a></li>
                     <li class="active"><a href="/category/programming.html">programming</a></li>
                 </ul>
@@ -24,18 +25,54 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/migration-to-github-pages.html">Migration to GitHub Pages</a></h1>
+                    <h1 class="entry-title"><a href="/research-triangle-analysts-analytics-forward-2019.html">Research Triangle Analysts Analytics&gt; Forward 2019</a></h1>
 <footer class="post-info">
-        <span>Tue 13 November 2018</span>
-<span>| tags: <a href="/tag/migration.html">migration</a></span>
+        <span>Sat 09 March 2019</span>
+<span>| tags: <a href="/tag/conferences.html">conferences</a></span>
 </footer><!-- /.post-info -->
-GitHub Pages provides free hosting for static sites, and it's annoying to keep WordPress updated so that it doesn't get hacked. I don't really need a mysql database instance, either. So it's time to start using Pelican and Jinja to maintain this website.
-<br>&nbsp;
+    <h2>Research Triangle Analysts Analytics&gt; Forward 2019</h2>
+<br>
+<p>According to their website, <a href="https://www.meetup.com/Research-Triangle-Analysts/">Research Triangle Analysts (RTA)</a> is a "math user" group for data enthusiasts in the Research Triangle. Their annual bar camp-style conference (<a href="https://www.meetup.com/Research-Triangle-Analysts/events/258165094/">Analytics&gt; Forward 2019</a>) was great. I didn't find out about it soon enough to prepare a talk, but I learned some useful things from attending presentations at it. There was minimal organization: no set schedule, no abstract reviews, no published proceedings, no website, etc. However, for only $12 and a short drive, it's really hard to argue with the efficiency of this type of conference. Also, since the attendees directly voted on the 1-minute pitches, it's also a more democratic form of reviewing than abstract commitees (albeit maybe less effective at identifying the best or worst ones, since the pitches didn't necessarily reflect the contents of the full 50-minute presentation).</p>
+<h3>Federated Machine Learning</h3>
+<p>Ian Cook, employed by Cloudera, presented an neat idea for federated ML models, as applicable to IoT devices, industrial equipment maintenance, and medical devices. By sending only the models from a centralized server to many devices, less bandwidth is required, and less personal data needs to be sent back (only model parameters, not all of the data). He presented a prototype developed by his coworkers, <a href="https://blog.fastforwardlabs.com/2018/12/06/designing-turbofan-tycoon.html">TurboFan Tycoon</a>, which compared different types of maintenance: corrective (post-failure), preventative (fixed schedule), predictive (local modeling), federated (global shared modeling).
+<p>I previously worked on a torque tool project that evaluated fixed schedule maintenance vs. predictive maintenance, so I thought this was a pretty cool idea. However, I strongly discounted the privacy claims because the potential for re-identifying patients in (supposedly anonymized) medical trials has been shown repeatedly. There's just too much information left in the model, especially high entropy models like CNNs, for me to believe that there is any real privacy gained by sending coefficients instead of all the data. Another person suggested looking into 2010 Dobra and Feinberg's Generalized Shuffle Algorithm for examples of how anonymity is very hard to establish in ML models.</p>
+<p></p>
+<h3>Introduction to Autoencoders &amp; IoT Analytics</h3>
+<p>Scott N. Gerard presented an elder care application of Autoencoders - compressing the data from 30 sensors in an assited care living facility down into 10 bits. It was a decent review of autoencoders, which I've used before.</p>
+<p></p>
+<h3>Statistical inference with Buzz and Doris</h3>
+<p><a href="http://www.bradthiessen.com/html5/stats/m300/1.pdf">A famous study from the 1960s (PDF)</a> explored whether two dolphins (Doris and Buzz) could communicate abstract ideas. It was really just an intro to statistics lecture recycled from a university class, but it was still nice to review the basics and hear about how p-hacking could be addressed (pre-registration of clinical trials, commitment to publish regardless of outcome, reporting more statistics than just a P value).</p>
+<p></p>
+<h3>Keynote: Kaggle in the Real World</h3>
+<p>The winner of a Zillow mortgage contest explained some of his best ideas for how to win at Kaggle: use Docker containers to make your work re-useable and reproducible, throw away outliers at any stage including pre-processing, use cross-validation aggressively, discard unnecessary features (as determined by feeding bad data into a parameter to see if there is any ill effect on the model; if not, discard it), use mean encoding for categorical data (instead of one-hot or label encoding) to avoid curse of dimensionality problems, blend several models to create an ensemble of specialists (see "Stacking Made Easy").</p>
+<p></p>
+<h3>Flood data from Hurrican Florence</h3>
+<p>James McManus showed some overlays of flood data on real estate parcels.</p>
+<p>Note to myself: look up GISCafe newsletter.</p>
+<p></p>
+<h3>NCDOT Drone response for emergencies</h3>
+<p>Note to myself: look up NC Drone Summit &amp; Flight Expo (annual conference).</p>
+<p></p>
                     </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/migration-to-github-pages.html" rel="bookmark"
+                           title="Permalink to Migration to GitHub Pages">Migration to GitHub Pages</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Tue 13 November 2018</span>
+<span>| tags: <a href="/tag/migration.html">migration</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/migration-to-github-pages.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -49,51 +86,6 @@ GitHub Pages provides free hosting for static sites, and it's annoying to keep W
 <span>| tags: <a href="/tag/wonderware.html">Wonderware</a></span>
 </footer><!-- /.post-info -->                It's possible to use Wonderware for PLC I/O and custom C# applications on the side, if you're willing to use RabbitMQ to communicate between them.
                 <a class="readmore" href="/extending-wonderware-with-rabbitmq.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/foxcon-toledo-2018-abstracts.html" rel="bookmark"
-                           title="Permalink to FoxCon Toledo 2018 Abstracts">FoxCon Toledo 2018 Abstracts</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Fri 26 January 2018</span>
-<span>| tags: <a href="/tag/conferences.html">conferences</a></span>
-</footer><!-- /.post-info -->                Abstracts list from the FoxCon Toledo 2018 conference
-                <a class="readmore" href="/foxcon-toledo-2018-abstracts.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/foxcon-toledo-2018-schedule.html" rel="bookmark"
-                           title="Permalink to FoxCon Toledo 2018 Schedule">FoxCon Toledo 2018 Schedule</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Sun 21 January 2018</span>
-<span>| tags: <a href="/tag/conferences.html">conferences</a></span>
-</footer><!-- /.post-info -->                Schedule (as emailed) from the FoxCon Toledo 2018 conference
-                <a class="readmore" href="/foxcon-toledo-2018-schedule.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/codemash-2018-reviews.html" rel="bookmark"
-                           title="Permalink to Codemash 2018 reviews">Codemash 2018 reviews</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Sat 13 January 2018</span>
-<span>| tags: <a href="/tag/222.html">222</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/codemash-2018-reviews.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
@@ -174,96 +166,6 @@ GitHub Pages provides free hosting for static sites, and it's annoying to keep W
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/codemash-2017-fri.html" rel="bookmark"
-                           title="Permalink to CodeMash 2017 Fri">CodeMash 2017 Fri</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Tue 31 January 2017</span>
-<span>| tags: <a href="/tag/176.html">176</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/codemash-2017-fri.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/foxcon-toledo-2017-presentation-using-machine-learning-to-automatically-predict-and-identify-defects-in-automotive-assembly-processes.html" rel="bookmark"
-                           title="Permalink to FoxCon Toledo 2017 Presentation - Using Machine Learning to Automatically Predict and Identify Defects in Automotive Assembly Processes">FoxCon Toledo 2017 Presentation - Using Machine Learning to Automatically Predict and Identify Defects in Automotive Assembly Processes</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Sat 28 January 2017</span>
-<span>| tags: <a href="/tag/170.html">170</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/foxcon-toledo-2017-presentation-using-machine-learning-to-automatically-predict-and-identify-defects-in-automotive-assembly-processes.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/foxcon-toledo-2017-conference-presentation-schedule.html" rel="bookmark"
-                           title="Permalink to FoxCon Toledo 2017 Conference Presentation Schedule">FoxCon Toledo 2017 Conference Presentation Schedule</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Sat 28 January 2017</span>
-<span>| tags: <a href="/tag/167.html">167</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/foxcon-toledo-2017-conference-presentation-schedule.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/foxcon-toledo-2017-software-developers-conference-abstracts.html" rel="bookmark"
-                           title="Permalink to FoxCon Toledo 2017 Software Developers Conference - Abstracts">FoxCon Toledo 2017  Software Developers Conference - Abstracts</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Sun 22 January 2017</span>
-<span>| tags: <a href="/tag/162.html">162</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/foxcon-toledo-2017-software-developers-conference-abstracts.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/codemash-2017-thu.html" rel="bookmark"
-                           title="Permalink to CodeMash 2017 Thu">CodeMash 2017 Thu</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Mon 16 January 2017</span>
-<span>| tags: <a href="/tag/158.html">158</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/codemash-2017-thu.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/codemash-2017-plans.html" rel="bookmark"
-                           title="Permalink to CodeMash 2017 Plans">CodeMash 2017 Plans</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Sun 08 January 2017</span>
-<span>| tags: <a href="/tag/156.html">156</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/codemash-2017-plans.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
                     <h1><a href="/twp-presentation-real-time-messaging-to-webapps-from-a-production-database.html" rel="bookmark"
                            title="Permalink to TWP Presentation: Real-time Messaging to Webapps from a Production Database">TWP Presentation: Real-time Messaging to Webapps from a Production Database</a></h1>
                 </header>
@@ -294,36 +196,156 @@ GitHub Pages provides free hosting for static sites, and it's annoying to keep W
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/foxcon2016-presentation-and-handout.html" rel="bookmark"
-                           title="Permalink to FoxCon2016 – Presentation and handout">FoxCon2016 – Presentation and handout</a></h1>
+                    <h1><a href="/sql-server-users-group-presentation-nwo-pass.html" rel="bookmark"
+                           title="Permalink to SQL Server Users Group Presentation (NWO-PASS)">SQL Server Users Group Presentation (NWO-PASS)</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <span>Sat 05 March 2016</span>
-<span>| tags: <a href="/tag/135.html">135</a></span>
+        <span>Sun 13 September 2015</span>
+<span>| tags: <a href="/tag/118.html">118</a></span>
 </footer><!-- /.post-info -->                
-                <a class="readmore" href="/foxcon2016-presentation-and-handout.html">read more</a>
+                <a class="readmore" href="/sql-server-users-group-presentation-nwo-pass.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/foxcon2016-abstract-and-references.html" rel="bookmark"
-                           title="Permalink to FoxCon2016 - abstract and references">FoxCon2016 - abstract and references</a></h1>
+                    <h1><a href="/how-old-is-kitting-hint-very-old.html" rel="bookmark"
+                           title="Permalink to How old is kitting? Hint: very old.">How old is kitting? Hint: very old.</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <span>Sat 30 January 2016</span>
-<span>| tags: <a href="/tag/133.html">133</a></span>
+        <span>Sun 12 July 2015</span>
+<span>| tags: <a href="/tag/105.html">105</a></span>
 </footer><!-- /.post-info -->                
-                <a class="readmore" href="/foxcon2016-abstract-and-references.html">read more</a>
+                <a class="readmore" href="/how-old-is-kitting-hint-very-old.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/c-network-sockets-vs-c-win32-iocp.html" rel="bookmark"
+                           title="Permalink to C# network sockets vs C++ Win32 IOCP">C# network sockets vs C++ Win32 IOCP</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 20 June 2015</span>
+<span>| tags: <a href="/tag/103.html">103</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/c-network-sockets-vs-c-win32-iocp.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/mandatory-knowledge-for-programming-interviews.html" rel="bookmark"
+                           title="Permalink to Mandatory knowledge for programming interviews">Mandatory knowledge for programming interviews</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Fri 29 May 2015</span>
+<span>| tags: <a href="/tag/100.html">100</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/mandatory-knowledge-for-programming-interviews.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/wonderware-training.html" rel="bookmark"
+                           title="Permalink to Wonderware Training">Wonderware Training</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 23 May 2015</span>
+<span>| tags: <a href="/tag/97.html">97</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/wonderware-training.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/living-in-the-past-with-vim-for-fun-and-profit.html" rel="bookmark"
+                           title="Permalink to Living in the past with Vim, for fun and profit">Living in the past with Vim, for fun and profit</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 09 May 2015</span>
+<span>| tags: <a href="/tag/47.html">47</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/living-in-the-past-with-vim-for-fun-and-profit.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/happy-pi-day.html" rel="bookmark"
+                           title="Permalink to Happy Pi Day!">Happy Pi Day!</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 14 March 2015</span>
+<span>| tags: <a href="/tag/85.html">85</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/happy-pi-day.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/follow-up-fanug-presentation.html" rel="bookmark"
+                           title="Permalink to Follow up – FANUG presentation">Follow up – FANUG presentation</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 14 March 2015</span>
+<span>| tags: <a href="/tag/83.html">83</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/follow-up-fanug-presentation.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/follow-up-nwnug-presentation.html" rel="bookmark"
+                           title="Permalink to Follow up - NWNUG presentation">Follow up - NWNUG presentation</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Wed 18 February 2015</span>
+<span>| tags: <a href="/tag/80.html">80</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/follow-up-nwnug-presentation.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/follow-up-foxcon-2015.html" rel="bookmark"
+                           title="Permalink to Follow up - FoxCon 2015">Follow up - FoxCon 2015</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Mon 09 February 2015</span>
+<span>| tags: <a href="/tag/74.html">74</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/follow-up-foxcon-2015.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 3
+    Page 1 / 2
         <a href="/category/programming2.html">&raquo;</a>
 </p>
             </section><!-- /#content -->

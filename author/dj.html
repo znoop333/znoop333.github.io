@@ -16,6 +16,7 @@
                 <nav><ul>
                     <li><a href="/presentations-list.html">Presentations</a></li>
                     <li><a href="/science">Publications (old)</a></li>
+                    <li><a href="/category/conferences.html">conferences</a></li>
                     <li><a href="/category/presentations.html">presentations</a></li>
                     <li><a href="/category/programming.html">programming</a></li>
                 </ul>
@@ -24,18 +25,54 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/migration-to-github-pages.html">Migration to GitHub Pages</a></h1>
+                    <h1 class="entry-title"><a href="/research-triangle-analysts-analytics-forward-2019.html">Research Triangle Analysts Analytics&gt; Forward 2019</a></h1>
 <footer class="post-info">
-        <span>Tue 13 November 2018</span>
-<span>| tags: <a href="/tag/migration.html">migration</a></span>
+        <span>Sat 09 March 2019</span>
+<span>| tags: <a href="/tag/conferences.html">conferences</a></span>
 </footer><!-- /.post-info -->
-GitHub Pages provides free hosting for static sites, and it's annoying to keep WordPress updated so that it doesn't get hacked. I don't really need a mysql database instance, either. So it's time to start using Pelican and Jinja to maintain this website.
-<br>&nbsp;
+    <h2>Research Triangle Analysts Analytics&gt; Forward 2019</h2>
+<br>
+<p>According to their website, <a href="https://www.meetup.com/Research-Triangle-Analysts/">Research Triangle Analysts (RTA)</a> is a "math user" group for data enthusiasts in the Research Triangle. Their annual bar camp-style conference (<a href="https://www.meetup.com/Research-Triangle-Analysts/events/258165094/">Analytics&gt; Forward 2019</a>) was great. I didn't find out about it soon enough to prepare a talk, but I learned some useful things from attending presentations at it. There was minimal organization: no set schedule, no abstract reviews, no published proceedings, no website, etc. However, for only $12 and a short drive, it's really hard to argue with the efficiency of this type of conference. Also, since the attendees directly voted on the 1-minute pitches, it's also a more democratic form of reviewing than abstract commitees (albeit maybe less effective at identifying the best or worst ones, since the pitches didn't necessarily reflect the contents of the full 50-minute presentation).</p>
+<h3>Federated Machine Learning</h3>
+<p>Ian Cook, employed by Cloudera, presented an neat idea for federated ML models, as applicable to IoT devices, industrial equipment maintenance, and medical devices. By sending only the models from a centralized server to many devices, less bandwidth is required, and less personal data needs to be sent back (only model parameters, not all of the data). He presented a prototype developed by his coworkers, <a href="https://blog.fastforwardlabs.com/2018/12/06/designing-turbofan-tycoon.html">TurboFan Tycoon</a>, which compared different types of maintenance: corrective (post-failure), preventative (fixed schedule), predictive (local modeling), federated (global shared modeling).
+<p>I previously worked on a torque tool project that evaluated fixed schedule maintenance vs. predictive maintenance, so I thought this was a pretty cool idea. However, I strongly discounted the privacy claims because the potential for re-identifying patients in (supposedly anonymized) medical trials has been shown repeatedly. There's just too much information left in the model, especially high entropy models like CNNs, for me to believe that there is any real privacy gained by sending coefficients instead of all the data. Another person suggested looking into 2010 Dobra and Feinberg's Generalized Shuffle Algorithm for examples of how anonymity is very hard to establish in ML models.</p>
+<p></p>
+<h3>Introduction to Autoencoders &amp; IoT Analytics</h3>
+<p>Scott N. Gerard presented an elder care application of Autoencoders - compressing the data from 30 sensors in an assited care living facility down into 10 bits. It was a decent review of autoencoders, which I've used before.</p>
+<p></p>
+<h3>Statistical inference with Buzz and Doris</h3>
+<p><a href="http://www.bradthiessen.com/html5/stats/m300/1.pdf">A famous study from the 1960s (PDF)</a> explored whether two dolphins (Doris and Buzz) could communicate abstract ideas. It was really just an intro to statistics lecture recycled from a university class, but it was still nice to review the basics and hear about how p-hacking could be addressed (pre-registration of clinical trials, commitment to publish regardless of outcome, reporting more statistics than just a P value).</p>
+<p></p>
+<h3>Keynote: Kaggle in the Real World</h3>
+<p>The winner of a Zillow mortgage contest explained some of his best ideas for how to win at Kaggle: use Docker containers to make your work re-useable and reproducible, throw away outliers at any stage including pre-processing, use cross-validation aggressively, discard unnecessary features (as determined by feeding bad data into a parameter to see if there is any ill effect on the model; if not, discard it), use mean encoding for categorical data (instead of one-hot or label encoding) to avoid curse of dimensionality problems, blend several models to create an ensemble of specialists (see "Stacking Made Easy").</p>
+<p></p>
+<h3>Flood data from Hurrican Florence</h3>
+<p>James McManus showed some overlays of flood data on real estate parcels.</p>
+<p>Note to myself: look up GISCafe newsletter.</p>
+<p></p>
+<h3>NCDOT Drone response for emergencies</h3>
+<p>Note to myself: look up NC Drone Summit &amp; Flight Expo (annual conference).</p>
+<p></p>
                     </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/migration-to-github-pages.html" rel="bookmark"
+                           title="Permalink to Migration to GitHub Pages">Migration to GitHub Pages</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Tue 13 November 2018</span>
+<span>| tags: <a href="/tag/migration.html">migration</a></span>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/migration-to-github-pages.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -76,7 +113,7 @@ GitHub Pages provides free hosting for static sites, and it's annoying to keep W
                 <div class="entry-content">
 <footer class="post-info">
         <span>Fri 26 January 2018</span>
-<span>| tags: <a href="/tag/conferences.html">conferences</a></span>
+<span>| tags: <a href="/tag/programming.html">programming</a></span>
 </footer><!-- /.post-info -->                Abstracts list from the FoxCon Toledo 2018 conference
                 <a class="readmore" href="/foxcon-toledo-2018-abstracts.html">read more</a>
                 </div><!-- /.entry-content -->
@@ -91,7 +128,7 @@ GitHub Pages provides free hosting for static sites, and it's annoying to keep W
                 <div class="entry-content">
 <footer class="post-info">
         <span>Sun 21 January 2018</span>
-<span>| tags: <a href="/tag/conferences.html">conferences</a></span>
+<span>| tags: <a href="/tag/programming.html">programming</a></span>
 </footer><!-- /.post-info -->                Schedule (as emailed) from the FoxCon Toledo 2018 conference
                 <a class="readmore" href="/foxcon-toledo-2018-schedule.html">read more</a>
                 </div><!-- /.entry-content -->
@@ -304,21 +341,6 @@ GitHub Pages provides free hosting for static sites, and it's annoying to keep W
 <span>| tags: <a href="/tag/141.html">141</a></span>
 </footer><!-- /.post-info -->                
                 <a class="readmore" href="/happy-pi-day-2016-galperins-method.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/foxcon2016-presentation-and-handout.html" rel="bookmark"
-                           title="Permalink to FoxCon2016 – Presentation and handout">FoxCon2016 – Presentation and handout</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Sat 05 March 2016</span>
-<span>| tags: <a href="/tag/135.html">135</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/foxcon2016-presentation-and-handout.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
