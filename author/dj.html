@@ -16,6 +16,7 @@
                 <nav><ul>
                     <li><a href="/presentations-list.html">Presentations</a></li>
                     <li><a href="/science">Publications (old)</a></li>
+                    <li><a href="/category/books.html">books</a></li>
                     <li><a href="/category/conferences.html">conferences</a></li>
                     <li><a href="/category/presentations.html">presentations</a></li>
                     <li><a href="/category/programming.html">programming</a></li>
@@ -25,39 +26,39 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/research-triangle-analysts-analytics-forward-2019.html">Research Triangle Analysts Analytics&gt; Forward 2019</a></h1>
+                    <h1 class="entry-title"><a href="/book-review-never-lost-again.html">Book review - Never Lost Again</a></h1>
 <footer class="post-info">
-        <span>Sat 09 March 2019</span>
-<span>| tags: <a href="/tag/conferences.html">conferences</a></span>
+        <span>Thu 06 June 2019</span>
+<span>| tags: <a href="/tag/books.html">books</a></span>
 </footer><!-- /.post-info -->
-    <h2>Research Triangle Analysts Analytics&gt; Forward 2019</h2>
-<br>
-<p>According to their website, <a href="https://www.meetup.com/Research-Triangle-Analysts/">Research Triangle Analysts (RTA)</a> is a "math user" group for data enthusiasts in the Research Triangle. Their annual bar camp-style conference (<a href="https://www.meetup.com/Research-Triangle-Analysts/events/258165094/">Analytics&gt; Forward 2019</a>) was great. I didn't find out about it soon enough to prepare a talk, but I learned some useful things from attending presentations at it. There was minimal organization: no set schedule, no abstract reviews, no published proceedings, no website, etc. However, for only $12 and a short drive, it's really hard to argue with the efficiency of this type of conference. Also, since the attendees directly voted on the 1-minute pitches, it's also a more democratic form of reviewing than abstract commitees (albeit maybe less effective at identifying the best or worst ones, since the pitches didn't necessarily reflect the contents of the full 50-minute presentation).</p>
-<h3>Federated Machine Learning</h3>
-<p>Ian Cook, employed by Cloudera, presented an neat idea for federated ML models, as applicable to IoT devices, industrial equipment maintenance, and medical devices. By sending only the models from a centralized server to many devices, less bandwidth is required, and less personal data needs to be sent back (only model parameters, not all of the data). He presented a prototype developed by his coworkers, <a href="https://blog.fastforwardlabs.com/2018/12/06/designing-turbofan-tycoon.html">TurboFan Tycoon</a>, which compared different types of maintenance: corrective (post-failure), preventative (fixed schedule), predictive (local modeling), federated (global shared modeling).
-<p>I previously worked on a torque tool project that evaluated fixed schedule maintenance vs. predictive maintenance, so I thought this was a pretty cool idea. However, I strongly discounted the privacy claims because the potential for re-identifying patients in (supposedly anonymized) medical trials has been shown repeatedly. There's just too much information left in the model, especially high entropy models like CNNs, for me to believe that there is any real privacy gained by sending coefficients instead of all the data. Another person suggested looking into 2010 Dobra and Feinberg's Generalized Shuffle Algorithm for examples of how anonymity is very hard to establish in ML models.</p>
-<p></p>
-<h3>Introduction to Autoencoders &amp; IoT Analytics</h3>
-<p>Scott N. Gerard presented an elder care application of Autoencoders - compressing the data from 30 sensors in an assited care living facility down into 10 bits. It was a decent review of autoencoders, which I've used before.</p>
-<p></p>
-<h3>Statistical inference with Buzz and Doris</h3>
-<p><a href="http://www.bradthiessen.com/html5/stats/m300/1.pdf">A famous study from the 1960s (PDF)</a> explored whether two dolphins (Doris and Buzz) could communicate abstract ideas. It was really just an intro to statistics lecture recycled from a university class, but it was still nice to review the basics and hear about how p-hacking could be addressed (pre-registration of clinical trials, commitment to publish regardless of outcome, reporting more statistics than just a P value).</p>
-<p></p>
-<h3>Keynote: Kaggle in the Real World</h3>
-<p>The winner of a Zillow mortgage contest explained some of his best ideas for how to win at Kaggle: use Docker containers to make your work re-useable and reproducible, throw away outliers at any stage including pre-processing, use cross-validation aggressively, discard unnecessary features (as determined by feeding bad data into a parameter to see if there is any ill effect on the model; if not, discard it), use mean encoding for categorical data (instead of one-hot or label encoding) to avoid curse of dimensionality problems, blend several models to create an ensemble of specialists (see "Stacking Made Easy").</p>
-<p></p>
-<h3>Flood data from Hurrican Florence</h3>
-<p>James McManus showed some overlays of flood data on real estate parcels.</p>
-<p>Note to myself: look up GISCafe newsletter.</p>
-<p></p>
-<h3>NCDOT Drone response for emergencies</h3>
-<p>Note to myself: look up NC Drone Summit &amp; Flight Expo (annual conference).</p>
-<p></p>
-                    </article>
+    <h2>Book review - Never Lost Again</h2>
+<p>
+<a href="https://www.amazon.com/Never-Lost-Again-Revolution-Industries/dp/0062673041">Never lost again: the Google mapping revolution that sparked new industries and augmented our reality</a> by Bill Kilday (HarperBusiness, May 2018). ISBN: <a href="https://isbnsearch.org/isbn/9780062673046">9780062673046</a>.
+</p>
+<p>Summary: "Never Lost Again chronicles the evolution of mapping technology--the "overnight success twenty years in the making." Bill Kilday takes us behind the scenes of the tech's development, and introduces to the team that gave us not only Google Maps but Google Earth, and most recently, Pokemon GO.</p>
+<p>My take on this book is that the author had incredible courage to be so specific about the events of the book, including names of the key players, their actions under stressful situations (patent violation lawsuits, internal power struggles at Google, and heavy user demand on production servers). Since the book is about the people and not about the underlying technology, this makes sense, but obviously the author had to wait years after leaving Google (from CA in 2006 and then leaving Google entirely) before it was somewhat safe to discuss these subjects. The interpersonal conflict with Marissa Meyer in particular stands out, as the author describe not wanted to be fired from Google on the spot for trying to do his job and being confounded repeatedly by Meyer's interference. To then write a book about it, get it cleared, and still include these details shows the author's commitment to bold, Texas-style storytelling. It would have been far easier to cop out and censor the past or replace all of the names with vague descriptions of headwinds or other euphemisms.</p>
+<p>As the author primarily worked in marketing, he doesn't get involved with the technology throughout much of the story, but he provides enough names of the engineers and other key players to keep the narrative interesting. It's really amazing to see that the author got more inside information after 2006 so that he could provide credit to the engineers who made it all possible. Also, the struggles of John Hanke to keep the startup running and then navigate the internal politics of Google are also presented in brazen detail to warn any ambitious newcomers about the real struggles of managing a fledgling business. </p>
+<p>Anyway, I guess reviews are supposed to have scores, so I would say 4.5 out of 5 stars for a dramatic presentation of the human struggles to achieve mapping for the masses. I would have liked to see a little more discussion of the technology, but the human connection compensates for it.</p>
+                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/research-triangle-analysts-analytics-forward-2019.html" rel="bookmark"
+                           title="Permalink to Research Triangle Analysts Analytics> Forward 2019">Research Triangle Analysts Analytics&gt; Forward 2019</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 09 March 2019</span>
+<span>| tags: <a href="/tag/conferences.html">conferences</a></span>
+</footer><!-- /.post-info -->                Attending a local conference was great
+                <a class="readmore" href="/research-triangle-analysts-analytics-forward-2019.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -326,21 +327,6 @@
 <span>| tags: <a href="/tag/148.html">148</a></span>
 </footer><!-- /.post-info -->                
                 <a class="readmore" href="/twp-presentation-real-time-messaging-to-webapps-from-a-production-database.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/happy-pi-day-2016-galperins-method.html" rel="bookmark"
-                           title="Permalink to Happy Pi Day 2016! (Galperin's method)">Happy Pi Day 2016! (Galperin's method)</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Tue 15 March 2016</span>
-<span>| tags: <a href="/tag/141.html">141</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/happy-pi-day-2016-galperins-method.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
