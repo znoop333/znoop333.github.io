@@ -7,15 +7,13 @@
 	Licensed by: Smashing Media GmbH <http://www.smashingmagazine.com/>
 	Original author: Enrique Ramírez <http://enrique-ramirez.com/>
 	Customized by : Nassim Kacha <http://www.blueicefield.com/>
-
-@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
 */
 
 /* Imports */
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
-@import url("blog.css");
+@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
 
 /***** Global *****/
 /* Body */
