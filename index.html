@@ -26,24 +26,50 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/book-review-never-lost-again.html">Book review - Never Lost Again</a></h1>
+                    <h1 class="entry-title"><a href="/book-review-the-definitive-antlr-4-reference.html">Book review - The definitive ANTLR 4 reference </a></h1>
 <footer class="post-info">
-        <span>Thu 06 June 2019</span>
+        <span>Sat 18 February 2023</span>
 <span>| tags: <a href="/tag/books.html">books</a></span>
 </footer><!-- /.post-info -->
-    <h2>Book review - Never Lost Again</h2>
+    <h2>Book review - The definitive ANTLR 4 reference </h2>
 <p>
-<a href="https://www.amazon.com/Never-Lost-Again-Revolution-Industries/dp/0062673041">Never lost again: the Google mapping revolution that sparked new industries and augmented our reality</a> by Bill Kilday (HarperBusiness, May 2018). ISBN: <a href="https://isbnsearch.org/isbn/9780062673046">9780062673046</a>.
+
+<a href="https://www.amazon.com/Definitive-ANTLR-4-Reference/dp/1934356999">The Definitive ANTLR 4 Reference Second Edition</a> by Terence Parr (Pragmatic Bookshelf, Feb 2013). ISBN: <a href="https://isbnsearch.org/isbn/978-1934356999">978-1934356999</a>.
 </p>
-<p>Summary: "Never Lost Again chronicles the evolution of mapping technology--the "overnight success twenty years in the making." Bill Kilday takes us behind the scenes of the tech's development, and introduces to the team that gave us not only Google Maps but Google Earth, and most recently, Pokemon GO.</p>
-<p>My take on this book is that the author had incredible courage to be so specific about the events of the book, including names of the key players, their actions under stressful situations (patent violation lawsuits, internal power struggles at Google, and heavy user demand on production servers). Since the book is about the people and not about the underlying technology, this makes sense, but obviously the author had to wait years after leaving Google (from CA in 2006 and then leaving Google entirely) before it was somewhat safe to discuss these subjects. The interpersonal conflict with Marissa Meyer in particular stands out, as the author describe not wanted to be fired from Google on the spot for trying to do his job and being confounded repeatedly by Meyer's interference. To then write a book about it, get it cleared, and still include these details shows the author's commitment to bold, Texas-style storytelling. It would have been far easier to cop out and censor the past or replace all of the names with vague descriptions of headwinds or other euphemisms.</p>
-<p>As the author primarily worked in marketing, he doesn't get involved with the technology throughout much of the story, but he provides enough names of the engineers and other key players to keep the narrative interesting. It's really amazing to see that the author got more inside information after 2006 so that he could provide credit to the engineers who made it all possible. Also, the struggles of John Hanke to keep the startup running and then navigate the internal politics of Google are also presented in brazen detail to warn any ambitious newcomers about the real struggles of managing a fledgling business. </p>
-<p>Anyway, I guess reviews are supposed to have scores, so I would say 4.5 out of 5 stars for a dramatic presentation of the human struggles to achieve mapping for the masses. I would have liked to see a little more discussion of the technology, but the human connection compensates for it.</p>
+
+<p>Summary: Programmers run into parsing problems all the time. Whether it's a data format like JSON, a network protocol like SMTP, a server configuration file for Apache, a PostScript/PDF file, or a simple spreadsheet macro language--ANTLR v4 and this book will demystify the process. ANTLR v4 has been rewritten from scratch to make it easier than ever to build parsers and the language applications built on top. This completely rewritten new edition of the bestselling Definitive ANTLR Reference shows you how to take advantage of these new features.</p>
+
+<p>I had a problem to solve where I needed to take user search strings like "from:2023-01-01 to:2023-01-31 type:large" and turn it into a SQL query with a WHERE clause similar to "SELECT * FROM contoso_products t WHERE 1=1 AND t.startdate >= @P1 AND t.enddate <= @P2 AND t.frobtype IN (@P3)". The number of WHERE clauses was dynamically controlled by the user, so different clauses might not occur at all, or they might occur multiple times (possibly up to 200 parameters). The parameter values were dynamically set by the user, which meant that just dumping the values directly into SQL was unsafe due to injection attacks and/or bugs. Therefore, the input string had to be parsed and carefully translated into valid SQL.</p>
+
+<p>A reasonable question is: why not use an ORM? The problem was that the available ORM would not support dynamic WHERE clauses. Each possible query would have to be compiled by the ORM, which could generate bad query execution plans and/or cause problems with joins. It was possible for multiple tables to be involved in the queries, and exposing that complexity to the user was unlikely to be easy to support.</p>
+
+<p>Fortunately, ANTL 4 made it relatively easy to define a grammar and use the Listener interface to build up the WHERE clause. By starting the SQL WHERE clause with "1=1", it meant that all subsequent clauses could generate SQL of the form " AND foo = @P" or similar variations. The parameter numbers started at 1 and counted up, so setting the values was relatively straightforward, as ANTLR provides the matched text in the context provided to the ParseTreeListener. </p>
+
+<p>My main problem with actually using ANTLR 4 from the book was that the practical differences and limitations were not emphasized or even stated at all. I got more help from this stackoverflow post (<a href="https://stackoverflow.com/a/46267981">How does the ANTLR lexer disambiguate its rules</a>) than from the book chapter about lexers. It would really have helped if the book started out stating that lexer rules must start with a capital letter, and the longest matching lexer rule will be preferred over other rules. </p>
+
+<p>I'm also using ANTLR 4 to automatically parse a golang program, but that's a topic for another day.</p>
+
+<p>Overall rating of the book: 3 out of 5 stars. It was very helpful for understanding how to use Listeners, but it was not helpful with several practical problems.</p>
                 </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/book-review-never-lost-again.html" rel="bookmark"
+                           title="Permalink to Book review - Never Lost Again">Book review - Never Lost Again</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Thu 06 June 2019</span>
+<span>| tags: <a href="/tag/books.html">books</a></span>
+</footer><!-- /.post-info -->                I read a book about Keyhole, the startup that produced the software that later became Google Earth and Google Maps
+                <a class="readmore" href="/book-review-never-lost-again.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -312,21 +338,6 @@
 <span>| tags: <a href="/tag/156.html">156</a></span>
 </footer><!-- /.post-info -->                
                 <a class="readmore" href="/codemash-2017-plans.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/twp-presentation-real-time-messaging-to-webapps-from-a-production-database.html" rel="bookmark"
-                           title="Permalink to TWP Presentation: Real-time Messaging to Webapps from a Production Database">TWP Presentation: Real-time Messaging to Webapps from a Production Database</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Wed 19 October 2016</span>
-<span>| tags: <a href="/tag/148.html">148</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/twp-presentation-real-time-messaging-to-webapps-from-a-production-database.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
