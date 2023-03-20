@@ -26,35 +26,40 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/book-review-the-definitive-antlr-4-reference.html">Book review - The definitive ANTLR 4 reference </a></h1>
+                    <h1 class="entry-title"><a href="/presentation-analytics-forward-2023-introduction-to-graph-convolutional-networks-gcns-for-recaptcha-classification.html">Presentation - Analytics Forward 2023 - Introduction to Graph Convolutional Networks (GCNs) for reCAPTCHA Classification</a></h1>
 <footer class="post-info">
-        <span>Sat 18 February 2023</span>
-<span>| tags: <a href="/tag/books.html">books</a></span>
+        <span>Sat 18 March 2023</span>
+<span>| tags: <a href="/tag/machine-learning.html">machine-learning</a></span>
 </footer><!-- /.post-info -->
-    <h2>Book review - The definitive ANTLR 4 reference </h2>
-<p>
-
-<a href="https://www.amazon.com/Definitive-ANTLR-4-Reference/dp/1934356999">The Definitive ANTLR 4 Reference Second Edition</a> by Terence Parr (Pragmatic Bookshelf, Feb 2013). ISBN: <a href="https://isbnsearch.org/isbn/978-1934356999">978-1934356999</a>.
-</p>
-
-<p>Summary: Programmers run into parsing problems all the time. Whether it's a data format like JSON, a network protocol like SMTP, a server configuration file for Apache, a PostScript/PDF file, or a simple spreadsheet macro language--ANTLR v4 and this book will demystify the process. ANTLR v4 has been rewritten from scratch to make it easier than ever to build parsers and the language applications built on top. This completely rewritten new edition of the bestselling Definitive ANTLR Reference shows you how to take advantage of these new features.</p>
-
-<p>I had a problem to solve where I needed to take user search strings like "from:2023-01-01 to:2023-01-31 type:large" and turn it into a SQL query with a WHERE clause similar to "SELECT * FROM contoso_products t WHERE 1=1 AND t.startdate >= @P1 AND t.enddate <= @P2 AND t.frobtype IN (@P3)". The number of WHERE clauses was dynamically controlled by the user, so different clauses might not occur at all, or they might occur multiple times (possibly up to 200 parameters). The parameter values were dynamically set by the user, which meant that just dumping the values directly into SQL was unsafe due to injection attacks and/or bugs. Therefore, the input string had to be parsed and carefully translated into valid SQL.</p>
-
-<p>A reasonable question is: why not use an ORM? The problem was that the available ORM would not support dynamic WHERE clauses. Each possible query would have to be compiled by the ORM, which could generate bad query execution plans and/or cause problems with joins. It was possible for multiple tables to be involved in the queries, and exposing that complexity to the user was unlikely to be easy to support.</p>
-
-<p>Fortunately, ANTL 4 made it relatively easy to define a grammar and use the Listener interface to build up the WHERE clause. By starting the SQL WHERE clause with "1=1", it meant that all subsequent clauses could generate SQL of the form " AND foo = @P" or similar variations. The parameter numbers started at 1 and counted up, so setting the values was relatively straightforward, as ANTLR provides the matched text in the context provided to the ParseTreeListener. </p>
-
-<p>My main problem with actually using ANTLR 4 from the book was that the practical differences and limitations were not emphasized or even stated at all. I got more help from this stackoverflow post (<a href="https://stackoverflow.com/a/46267981">How does the ANTLR lexer disambiguate its rules</a>) than from the book chapter about lexers. It would really have helped if the book started out stating that lexer rules must start with a capital letter, and the longest matching lexer rule will be preferred over other rules. </p>
-
-<p>I'm also using ANTLR 4 to automatically parse a golang program, but that's a topic for another day.</p>
-
-<p>Overall rating of the book: 3 out of 5 stars. It was very helpful for understanding how to use Listeners, but it was not helpful with several practical problems.</p>
-                </article>
+    Here is a link to the slides (<a href="https://docs.google.com/presentation/d/1zbMuJtShgAQx2FqmCkfR2_yRxHgLsZYwJGFT5EOZDo0/edit?usp=sharing">Google slides</a>)
+<br>
+<br>Presented at Analytics Forward 2023, Raleigh, NC, on 3/18/2023; hosted by <a href="https://www.rtpanalysts.org/">Research Triangle Analysts</a> (<a href="https://www.meetup.com/research-triangle-analysts/">meetup group</a>)
+<br>
+<br>Abstract:
+<br>
+<br>Graph Convolutional Networks (GCNs) are a powerful addition to the machine learning toolbox for classification problems. GCNs use the adajency matrix representation of a local subgraph to take the features of nearby nodes into account when predicting the class of the center node. This approach has been reported to greatly increase recall on classification problems, such as reCAPTCHA offline BOT and HUMAN labeling tasks, because suspicious BOT nodes can be identified more readily in clusters than individually. 
+<br>
+<br>&nbsp;
+                    </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/book-review-the-definitive-antlr-4-reference.html" rel="bookmark"
+                           title="Permalink to Book review - The definitive ANTLR 4 reference">Book review - The definitive ANTLR 4 reference </a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 18 February 2023</span>
+<span>| tags: <a href="/tag/books.html">books</a></span>
+</footer><!-- /.post-info -->                I refreshed my knowledge of parsers and lexers because it had been several years since I needed to write a grammar.
+                <a class="readmore" href="/book-review-the-definitive-antlr-4-reference.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -323,21 +328,6 @@
 <span>| tags: <a href="/tag/162.html">162</a></span>
 </footer><!-- /.post-info -->                
                 <a class="readmore" href="/foxcon-toledo-2017-software-developers-conference-abstracts.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/codemash-2017-thu.html" rel="bookmark"
-                           title="Permalink to CodeMash 2017 Thu">CodeMash 2017 Thu</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Mon 16 January 2017</span>
-<span>| tags: <a href="/tag/158.html">158</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/codemash-2017-thu.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
