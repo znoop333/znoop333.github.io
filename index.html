@@ -26,35 +26,98 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/book-review-the-definitive-antlr-4-reference.html">Book review - The definitive ANTLR 4 reference </a></h1>
+                    <h1 class="entry-title"><a href="/book-review-im-feeling-lucky-the-confessions-of-google-employee-number-59.html">Book review - I'm feeling lucky: the confessions of Google employee number 59</a></h1>
 <footer class="post-info">
-        <span>Sat 18 February 2023</span>
+        <span>Wed 18 October 2023</span>
 <span>| tags: <a href="/tag/books.html">books</a></span>
 </footer><!-- /.post-info -->
-    <h2>Book review - The definitive ANTLR 4 reference </h2>
+    <h2>Book review - I'm feeling lucky: the confessions of Google employee number 59</h2>
 <p>
 
-<a href="https://www.amazon.com/Definitive-ANTLR-4-Reference/dp/1934356999">The Definitive ANTLR 4 Reference Second Edition</a> by Terence Parr (Pragmatic Bookshelf, Feb 2013). ISBN: <a href="https://isbnsearch.org/isbn/978-1934356999">978-1934356999</a>.
+<a href="https://www.amazon.com/Im-Feeling-Lucky-Confessions-Employee/dp/0547416997">I'm feeling lucky: the confessions of Google employee number 59</a> by Douglas Edwards (Houghton Mifflin Harcourt, July 2011). ISBN: <a href="https://isbnsearch.org/isbn/978-0547416991">978-0547416991</a>.
 </p>
 
-<p>Summary: Programmers run into parsing problems all the time. Whether it's a data format like JSON, a network protocol like SMTP, a server configuration file for Apache, a PostScript/PDF file, or a simple spreadsheet macro language--ANTLR v4 and this book will demystify the process. ANTLR v4 has been rewritten from scratch to make it easier than ever to build parsers and the language applications built on top. This completely rewritten new edition of the bestselling Definitive ANTLR Reference shows you how to take advantage of these new features.</p>
+<h2>Summary</h2>
+<p> "I'm feeling lucky" (IFL) covers the internal discussions of Google's early days (until and including the 2004 IPO) from the perspective of a marketing expert who felt marginalized by the engineering-centric culture. IFL's high points include discussions of strategic decisions about competing search products and explanations about how end-users can relate to Google's customer-facing products. The less interesting parts of the book are the frequent personality clashes with other famous Googlers of the time and vague descriptions of (allegedly) salacious events, e.g., office romances and booze-filled retreats. Mr. Edwards had a minor role at Google, and his outsized ego probably exaggerates his contributions. </p>
 
-<p>I had a problem to solve where I needed to take user search strings like "from:2023-01-01 to:2023-01-31 type:large" and turn it into a SQL query with a WHERE clause similar to "SELECT * FROM contoso_products t WHERE 1=1 AND t.startdate >= @P1 AND t.enddate <= @P2 AND t.frobtype IN (@P3)". The number of WHERE clauses was dynamically controlled by the user, so different clauses might not occur at all, or they might occur multiple times (possibly up to 200 parameters). The parameter values were dynamically set by the user, which meant that just dumping the values directly into SQL was unsafe due to injection attacks and/or bugs. Therefore, the input string had to be parsed and carefully translated into valid SQL.</p>
+<p>Overall rating of the book: 4 out of 5 stars. Worth reading for the strategic decisions. Reviewed by the WSJ in [Hickins 2011] and [Price 2011].</p>
 
-<p>A reasonable question is: why not use an ORM? The problem was that the available ORM would not support dynamic WHERE clauses. Each possible query would have to be compiled by the ORM, which could generate bad query execution plans and/or cause problems with joins. It was possible for multiple tables to be involved in the queries, and exposing that complexity to the user was unlikely to be easy to support.</p>
+<h2>Notes</h2>
+<p>Page 108. Shared desks, overflowing - "Free is too much". The scrappy startup had to cut costs anywhere it could, which meant the office was overcrowded. The author has a picture <a href="https://xooglers.blogspot.com/2011/04/photo-of-pre-plex.html">on his blog</a> showing desks built out of unfinished doors and sawhorses. The theme of being incredibly cheap with overhead budgets continues throughout the whole book.  </p>
 
-<p>Fortunately, ANTL 4 made it relatively easy to define a grammar and use the Listener interface to build up the WHERE clause. By starting the SQL WHERE clause with "1=1", it meant that all subsequent clauses could generate SQL of the form " AND foo = @P" or similar variations. The parameter numbers started at 1 and counted up, so setting the values was relatively straightforward, as ANTLR provides the matched text in the context provided to the ParseTreeListener. </p>
+<p>Page 132. Feeling unappreciated - Urs H&ouml;lzle set the tone of being very harsh in evaluating engineering employees and never providing praise, and the author writes about how this caused problems across the whole company. One passage in particular stands out: "The company stacked its payroll with high achievers unaccustomed to going unacknowledged, and despite the stock options and the free food, they often felt underappreciated." While some of this has changed, there are still large communities of xooglers on Hacker News and Reddit who have said that they quit for these same reasons. It's worth noting that these xooglers turned down the additional money available at Google in exchange for non-financial rewards.  </p>
 
-<p>My main problem with actually using ANTLR 4 from the book was that the practical differences and limitations were not emphasized or even stated at all. I got more help from this stackoverflow post (<a href="https://stackoverflow.com/a/46267981">How does the ANTLR lexer disambiguate its rules</a>) than from the book chapter about lexers. It would really have helped if the book started out stating that lexer rules must start with a capital letter, and the longest matching lexer rule will be preferred over other rules. </p>
+<p>Page 141. Will you finish your PhD now? This section is the most detailed part about Larry and Sergey, who famously dropped out of a Stanford PhD program to launch Google. The author has repeated personality clashes with the founders, who never really seemed to care about marketing very much.</p>
 
-<p>I'm also using ANTLR 4 to automatically parse a golang program, but that's a topic for another day.</p>
+<p>Page 142. Googlers MISC - this mailing list was the location of debates about a variety of office topics, discussions about news, and flame wars. It sounds like the Memegen of yesteryear.
+</p>
 
-<p>Overall rating of the book: 3 out of 5 stars. It was very helpful for understanding how to use Listeners, but it was not helpful with several practical problems.</p>
+<p>Page 150. Ray Sidney took initiative individually. He was the first employee to really leverage Google's unique culture of individuals being empowered to directly change anything that they felt motivated to change. He unilaterally banned IPs for spammers and attacked the ISPs that hosted them.  </p>
+
+<p>Page 161. Google competed against FAST for Yahoo's renewal on inktomi. This is the best part of the book because it shows the strategic decisions which drove Google to success.  </p>
+
+<p>Page 166. The Google2 source code was a rewrite of the Stanford code (using Perforce instead of CVS). The index was too slow in the original Stanford code, so it had to be productionized. Urs spearheaded the initiative to rewrite it all. Years later, Google3 was created to replace Makefiles with a custom CI-CD system and replace Perforce with an in-house version control system. This part of the book is the most technical, and the tone changes, as if much of it had been written by others.  </p>
+
+<p>Page 188. AdWords sounds like Edwards. He named it. The author named several products, and he maintained the text on the homepage until Marissa Mayer displaced him. Clashes with Marissa became more frequent until Edwards had lost most of his authority. Fortunately for him, post-IPO he had a huge amount of money from his shares and options, so he was able to quit to spend time with his family, which he had not seen regularly for years [Hickins 2011].</p>
+
+<p>Page 228. This is fascinating because the terrorist attacks on September 11, 2001, caused the creation of of Google News, which was a news portal much like the competing products that the founders had so strongly criticized before.
+</p>
+
+<p>Page 268. Details of ad targeting - the ad industry originally focused on how many ads were displayed (CPM), but Google eventually switched to how many ads were clicked (CPC) and then to how many sales occurred ("conversion rate"). The ideas in this chapter were worth billions of dollars, but it certainly wasn't obvious at the time because competitors had already tried all of the easy and obvious ideas. </p>
+
+<p>Page 272. "Ten things we've found to be true" was one of Edwards's longest lasting contributions to corporate culture at Google, including the famous "don't be evil". Most of these ideas seem to have been lost over time. Even within this book, the author later described how "don't be evil" allowed fully evaluating all of the "evil" options in pursuit of growth. Page 310 - "Don't be evil is not the same as don't consider, test, and evaluate evil."
+</p>
+
+<p>Page 293. Scientology lawsuit - The Church of Scientology sued Google using the DMCA to force the removal from search results of the church's internal documents and photos from a dissenter's website. This section has a hilarious example of "malicious compliance" - Google did remove the documents from search, but it provided a note about what was absent and where to go get it. 
+</p>
+
+<p>Page 324. The origin of 20% time projects was Gmail content-targeted ads. This is fascinating because everyone thought it was technically impossible to accomplish this goal, and yet one individual engineer did it in his free time, which established the precedent for 20% time projects. 
+</p>
+
+
+
+<h2>References</h2>
+
+[Hickins 2011] <a href="https://www.wsj.com/articles/BL-SEB-66123">Google Employee No. 59 on Google+, Privacy and Why He Left</a>, Retrieved 10/18/2023. A WSJ interview with the author.
+
+[Price 2011] <a href="https://www.wsj.com/articles/SB10001424052702304066504576351650017002270">How Google Got Going</a>, Retrieved 10/18/2023. A WSJ review of IFL.
+
+
                 </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/presentation-analytics-forward-2023-introduction-to-graph-convolutional-networks-gcns-for-recaptcha-classification.html" rel="bookmark"
+                           title="Permalink to Presentation - Analytics Forward 2023 - Introduction to Graph Convolutional Networks (GCNs) for reCAPTCHA Classification">Presentation - Analytics Forward 2023 - Introduction to Graph Convolutional Networks (GCNs) for reCAPTCHA Classification</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 18 March 2023</span>
+<span>| tags: <a href="/tag/machine-learning.html">machine-learning</a></span>
+</footer><!-- /.post-info -->                I presented a talk about Graph Convolutional Networks at Analytics Forward 2023
+                <a class="readmore" href="/presentation-analytics-forward-2023-introduction-to-graph-convolutional-networks-gcns-for-recaptcha-classification.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/book-review-the-definitive-antlr-4-reference.html" rel="bookmark"
+                           title="Permalink to Book review - The definitive ANTLR 4 reference">Book review - The definitive ANTLR 4 reference </a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Sat 18 February 2023</span>
+<span>| tags: <a href="/tag/books.html">books</a></span>
+</footer><!-- /.post-info -->                I refreshed my knowledge of parsers and lexers because it had been several years since I needed to write a grammar.
+                <a class="readmore" href="/book-review-the-definitive-antlr-4-reference.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -308,36 +371,6 @@
 <span>| tags: <a href="/tag/167.html">167</a></span>
 </footer><!-- /.post-info -->                
                 <a class="readmore" href="/foxcon-toledo-2017-conference-presentation-schedule.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/foxcon-toledo-2017-software-developers-conference-abstracts.html" rel="bookmark"
-                           title="Permalink to FoxCon Toledo 2017 Software Developers Conference - Abstracts">FoxCon Toledo 2017  Software Developers Conference - Abstracts</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Sun 22 January 2017</span>
-<span>| tags: <a href="/tag/162.html">162</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/foxcon-toledo-2017-software-developers-conference-abstracts.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/codemash-2017-thu.html" rel="bookmark"
-                           title="Permalink to CodeMash 2017 Thu">CodeMash 2017 Thu</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <span>Mon 16 January 2017</span>
-<span>| tags: <a href="/tag/158.html">158</a></span>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="/codemash-2017-thu.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
